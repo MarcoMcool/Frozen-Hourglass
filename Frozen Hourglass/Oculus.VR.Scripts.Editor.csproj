@@ -56,11 +56,11 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Oculus\VR\Scripts\Editor\OVRCustomSkeletonEditor.cs" />
+    <Compile Include="Assets\Oculus\VR\Scripts\Editor\OVRProjectConfigEditor.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\Editor\OVREditorUtil.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\Editor\OVROverlayEditor.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\Editor\OVRManagerEditor.cs" />
-    <Compile Include="Assets\Oculus\VR\Scripts\Editor\OVRCustomSkeletonEditor.cs" />
-    <Compile Include="Assets\Oculus\VR\Scripts\Editor\OVRProjectConfigEditor.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Oculus\VR\Scripts\Editor\Oculus.VR.Scripts.Editor.asmdef" />
