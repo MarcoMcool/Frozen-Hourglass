@@ -95,6 +95,7 @@
     <Compile Include="Assets\Oculus\Spatializer\scripts\ONSPPropagationGeometry.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Scripts\MoviePlayerSample.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportDestination.cs" />
+    <Compile Include="Assets\Main Project\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainButtonVisualController.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\BoneCapsuleTriggerLogic.cs" />
     <Compile Include="Assets\Oculus\LipSync\Scenes\Scripts\EnableSwitch.cs" />
@@ -211,7 +212,6 @@
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportAimHandlerLaser.cs" />
     <Compile Include="Assets\Oculus\Avatar\Samples\SocialStarter\Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrackSegment.cs" />
-    <Compile Include="Assets\Main Project\Scripts\MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\XingLightShader.shader" />
