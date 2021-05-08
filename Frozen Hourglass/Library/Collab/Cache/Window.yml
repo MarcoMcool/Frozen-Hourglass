@@ -14,8 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
+    - Assets/Main Project/Animations.meta
+    - Assets/Main Project/Animations/Ladder fall.anim
+    - Assets/Main Project/Animations/Ladder fall.anim.meta
+    - Assets/Main Project/Animations/Ladder.controller
+    - Assets/Main Project/Animations/Ladder.controller.meta
+    - Assets/Main Project/Scenes/MainScene.unity
+    - Assets/Main Project/Scripts/ButtonPress.cs
+    - Assets/Main Project/Scripts/ButtonPress.cs.meta
+    - Assets/Main Project/Scripts/EquipEquipment.cs
+    - Assets/Main Project/Scripts/EquipEquipment.cs.meta
+    - Assets/Main Project/Scripts/Events.cs
+    - Assets/Main Project/Scripts/Events.cs.meta
+    - Assets/Oculus/SampleFramework/Core/Locomotion/TeleportDestination.prefab
+    - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Prefabs/NearFieldButton.prefab
+    - ProjectSettings/TagManager.asset
     - 
-    m_Values: 01
+    m_Values: 01010101010101010101010101010101
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
