@@ -9,9 +9,6 @@ public class BoxTeleport : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print(transform.parent.position.x.ToString());
-        object thing=Input.GetJoystickNames();
-        int t2 = 5;
     }
 
     // Update is called once per frame
