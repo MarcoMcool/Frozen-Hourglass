@@ -30,7 +30,7 @@ MonoBehaviour:
     - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Prefabs/NearFieldButton.prefab
     - ProjectSettings/TagManager.asset
     - 
-    m_Values: 01010101010101010101010101010101
+    m_Values: 00000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
