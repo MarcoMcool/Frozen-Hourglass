@@ -56,7 +56,7 @@ namespace OVRTouchSample
         private int m_animParamIndexFlex = -1;
         private int m_animParamIndexPose = -1;
 
-        public bool m_isPointing = false;
+        private bool m_isPointing = false;
         private bool m_isGivingThumbsUp = false;
         private float m_pointBlend = 0.0f;
         private float m_thumbsUpBlend = 0.0f;
