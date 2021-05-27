@@ -1630,7 +1630,7 @@ Transform:
   m_LocalScale: {x: 6.339928, y: 6.339928, z: 6.339928}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &416484418
 GameObject:
@@ -2047,7 +2047,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7be97bc883f8feb4ca89e97ed92d8aaf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7be97bc883f8feb4ca89e97ed92d8aaf,
         type: 3}
@@ -3307,7 +3307,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &984365032
 GameObject:
@@ -5433,7 +5433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5748,7 +5748,7 @@ PrefabInstance:
     - target: {fileID: 8775281313344877842, guid: b39b74097809e6640a76a2a9a59f95c4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.54
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: 8775281313344877842, guid: b39b74097809e6640a76a2a9a59f95c4,
         type: 3}
@@ -5794,6 +5794,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: OVRCameraRig (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775281313344973106, guid: b39b74097809e6640a76a2a9a59f95c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b39b74097809e6640a76a2a9a59f95c4, type: 3}
