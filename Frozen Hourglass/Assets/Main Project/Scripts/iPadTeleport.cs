@@ -5,21 +5,25 @@ using UnityEngine;
 public class iPadTeleport : MonoBehaviour
 {
     private Vector3 startPos;
+    private Quaternion startRot;
+    private Transform startTrans;
     private OVRGrabbable Grabbable;
     private Rigidbody RigidBody;
-    public Transform Player;
+    public GameObject Player;
     public bool onBelt;
 
     // Start is called before the first frame update
     void Start()
     {
         onBelt = true;
+        startTrans = transform;
         startPos = transform.position;
+        startRot = transform.rotation;
         RigidBody = (Rigidbody)GetComponent("Rigidbody");
         Grabbable = (OVRGrabbable)GetComponent("OVRGrabbable");
         if (Player == null)
         {
-            Player = transform.parent;
+            //Player = transform.parent;
         }
     }
 
@@ -46,11 +50,16 @@ public class iPadTeleport : MonoBehaviour
     {
         if (other.name == "Trigger_Plane")
         {
-            transform.parent = Player;
+            transform.parent = Player.transform;
+            print(startTrans.position);
+            print(startPos);
             transform.position = startPos;
+            transform.rotation = startRot;
+            //transform.position = startTrans.position;
+            //transform.rotation = startTrans.rotation;
             RigidBody.useGravity = false;
             RigidBody.isKinematic = true;
-            transform.parent = Player;
+            transform.parent = Player.transform;
             onBelt = true;
         }
         //print(other.name);
