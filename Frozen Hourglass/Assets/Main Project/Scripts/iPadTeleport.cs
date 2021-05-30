@@ -19,8 +19,11 @@ public class iPadTeleport : MonoBehaviour
         startTrans = transform;
         startPos = transform.position;
         startRot = transform.rotation;
-        RigidBody = (Rigidbody)GetComponent("Rigidbody");
-        Grabbable = (OVRGrabbable)GetComponent("OVRGrabbable");
+        RigidBody = GetComponent<Rigidbody>();
+        Grabbable = GetComponent<OVRGrabbable>();
+        float test = startPos.y - Player.transform.position.y;
+        //Vector3 vector3 = new Vector3(startPos.)
+        startPos.y = test;
         if (Player == null)
         {
             //Player = transform.parent;
@@ -42,6 +45,7 @@ public class iPadTeleport : MonoBehaviour
         }
         else if (!onBelt)
         {
+            transform.parent = null;
             RigidBody.useGravity = true;
             RigidBody.isKinematic = false;
         }
@@ -50,16 +54,18 @@ public class iPadTeleport : MonoBehaviour
     {
         if (other.name == "Trigger_Plane")
         {
-            transform.parent = Player.transform;
+            //transform.parent = Player.transform;
             print(startTrans.position);
             print(startPos);
+            
             transform.position = startPos;
             transform.rotation = startRot;
             //transform.position = startTrans.position;
             //transform.rotation = startTrans.rotation;
             RigidBody.useGravity = false;
             RigidBody.isKinematic = true;
-            transform.parent = Player.transform;
+            //transform.parent = Player.transform;
+            transform.SetParent(Player.transform, false);
             onBelt = true;
         }
         //print(other.name);
