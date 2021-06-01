@@ -16,7 +16,8 @@ public class PlayerCollection: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.GetDown(OVRInput.Button.Three))
+        //if (OVRInput.GetDown(OVRInput.Button.Four))
+        if(Input.GetButton("Oculus_CrossPlatform_Button4"))
         {
             if (handPopup.activeSelf)
             {
