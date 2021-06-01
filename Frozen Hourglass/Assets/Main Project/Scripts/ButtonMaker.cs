@@ -5,7 +5,7 @@ using UnityEngine;
 public class ButtonMaker : MonoBehaviour
 {
     public float BoxSpace = 0.55f;
-    public float NumBoxs = 3f;
+    public float NumBoxs;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,7 @@ public class ButtonMaker : MonoBehaviour
     {
         for (int i =0; i< NumBoxs; i++)
         {
-            Vector3 vector = new Vector3((BoxSpace * (NumBoxs-1))/2 - BoxSpace * i, 7.2f, 0f);
+            Vector3 vector = new Vector3((BoxSpace * (NumBoxs-1))/2 - BoxSpace * i, 2.4f, 0f);
             Transform child= transform.GetChild(i);
             child.localPosition = vector;
  
