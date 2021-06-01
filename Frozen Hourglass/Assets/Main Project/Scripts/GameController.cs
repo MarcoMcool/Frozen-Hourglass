@@ -18,13 +18,18 @@ public class GameController: MonoBehaviour
     public bool button2Pressed;
 
     public float timer = 0f;
-    public ButtonMaker buttonMaker;
+    //public GameObject button1;
+    public ButtonMaker button1;
+    public ButtonMaker button2;
+    
 
     
 
     // Start is called before the first frame update
     void Start()
     {
+        button1.gameObject.SetActive(true);
+        button2.gameObject.SetActive(false);
 
     }
 
@@ -40,7 +45,11 @@ public class GameController: MonoBehaviour
         {
 
         }
-
+        if (!button1Pressed && !button2Pressed)
+        {
+            button1.NumBoxs = 3;
+            button1.SetUp();
+        }
         if (button1Pressed)
         {
             if (timer >= 5f)
@@ -51,8 +60,10 @@ public class GameController: MonoBehaviour
                 text2.SetActive(true);
                 button1Pressed = false;
                 timer = 0f;
-                buttonMaker.NumBoxs = 2;
-                buttonMaker.SetUp();
+                button1.gameObject.SetActive(false);
+                button2.gameObject.SetActive(true);
+
+                button2.SetUp();
             }
             answersq1.SetActive(false);
             fullboxq1.SetActive(true);

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class LadderFall_controll : MonoBehaviour
+public class LadderFall_controll: MonoBehaviour
 {
     private PlayableDirector Director;
     public bool fall = false;
+    bool playing = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,15 +17,18 @@ public class LadderFall_controll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fall)
+        if (OVRInput.Get(OVRInput.Touch.Four) || fall)
         {
+            playing = true;
             Director.Play();
 
         }
-        else
+        if (!playing)
         {
+
+
             Director.Pause();
         }
-        
+
     }
 }
