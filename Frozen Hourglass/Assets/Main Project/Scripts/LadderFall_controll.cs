@@ -17,7 +17,7 @@ public class LadderFall_controll: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.Get(OVRInput.Touch.Four) || fall)
+        if (OVRInput.Get(OVRInput.Button.Four) || fall)
         {
             playing = true;
             Director.Play();
