@@ -25,6 +25,7 @@ public class GameController: MonoBehaviour
     //public GameObject button1;
     public ButtonMaker button1;
     public ButtonMaker button2;
+    private bool done = false;
     
 
     
@@ -45,10 +46,11 @@ public class GameController: MonoBehaviour
         {
 
         }
-        if (!LadderAnimation.playing && question == 1)
+        if (!LadderAnimation.playing && question == 1 && !done)
         {
             PopUp.SetActive(true);
             BoxTeleport.doTelport();
+            done = true;
         }
         if (button1Pressed && question == 0)
         {
