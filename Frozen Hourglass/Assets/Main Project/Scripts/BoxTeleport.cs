@@ -18,10 +18,14 @@ public class BoxTeleport : MonoBehaviour
         if (Input.GetButton("Oculus_CrossPlatform_Button2") || telport)
         {
             //Quaternion rot180degrees = Quaternion.Euler(-transform.rotation.eulerAngles);
-            Box.transform.rotation = transform.rotation* Quaternion.Euler(0, 180f, 0);
-            Vector3 spot = new Vector3(transform.position.x, Box.transform.position.y, transform.position.z);
-            Box.transform.position = spot-Box.transform.forward;
+            doTelport();
             
         } 
+    }
+    public void doTelport()
+    {
+        Box.transform.rotation = transform.rotation * Quaternion.Euler(0, 180f, 0);
+        Vector3 spot = new Vector3(transform.position.x, Box.transform.position.y, transform.position.z);
+        Box.transform.position = spot - Box.transform.forward;
     }
 }

@@ -7,7 +7,7 @@ public class LadderFall_controll: MonoBehaviour
 {
     private PlayableDirector Director;
     public bool fall = false;
-    bool playing = false;
+    public bool playing = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +25,12 @@ public class LadderFall_controll: MonoBehaviour
         }
         if (!playing)
         {
-
-
             Director.Pause();
+        }
+        //print(Director.time);
+        if (Director.time >= 10.01666)
+        {
+            playing = false;
         }
 
     }

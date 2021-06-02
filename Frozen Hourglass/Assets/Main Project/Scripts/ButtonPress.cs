@@ -35,6 +35,11 @@ public class ButtonPress: MonoBehaviour
             transform.position = new Vector3(transform.position.x, startPos.y - pressLength, transform.position.z);
             if (!pressed)
             {
+                if (buttonNumber == 0)
+                {
+                    gameController.button1Pressed = true;
+                    this.transform.parent.gameObject.SetActive(false);
+                }
                 if (buttonNumber == 1)
                 {
                     gameController.button1Pressed = true;

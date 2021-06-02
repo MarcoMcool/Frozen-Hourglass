@@ -6,7 +6,9 @@ public class GameController: MonoBehaviour
 {
     public bool animationActivate;
     public bool animationEnd;
-
+    public LadderFall_controll LadderAnimation;
+    public GameObject PopUp;
+    public BoxTeleport BoxTeleport;
     public GameObject answersq1;
     public GameObject fullboxq1;
     public GameObject answersq2;
@@ -17,7 +19,7 @@ public class GameController: MonoBehaviour
 
     public bool button1Pressed;
     public bool button2Pressed;
-    public int question =1;
+    public int question =0;
 
     public float timer = 0f;
     //public GameObject button1;
@@ -43,9 +45,16 @@ public class GameController: MonoBehaviour
         {
 
         }
-        if (animationEnd)
+        if (!LadderAnimation.playing && question == 1)
         {
-
+            PopUp.SetActive(true);
+            BoxTeleport.doTelport();
+        }
+        if (button1Pressed && question == 0)
+        {
+            LadderAnimation.fall = true;
+            question = 1;
+            button1Pressed = false;
         }
         if (!button1Pressed && !button2Pressed)
         {
