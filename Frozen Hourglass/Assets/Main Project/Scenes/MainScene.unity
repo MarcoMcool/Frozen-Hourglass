@@ -8022,7 +8022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &576102411
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8034,8 +8034,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -16200,6 +16200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fall: 0
+  playing: 0
 --- !u!1 &1207037125
 GameObject:
   m_ObjectHideFlags: 0
@@ -21313,6 +21314,7 @@ MonoBehaviour:
   animationEnd: 0
   LadderAnimation: {fileID: 1195918349}
   PopUp: {fileID: 1662015700}
+  BoxTeleport: {fileID: 2062874303}
   answersq1: {fileID: 35300971}
   fullboxq1: {fileID: 1928266856}
   answersq2: {fileID: 1939410437}
