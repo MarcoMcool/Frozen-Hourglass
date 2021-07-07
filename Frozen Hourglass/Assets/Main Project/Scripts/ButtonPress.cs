@@ -23,11 +23,12 @@ public class ButtonPress: MonoBehaviour
         startPos = transform.position;
         rb = GetComponent<Rigidbody>();
     }
-
+    
     void Update()
     {
         // If our distance is greater than what we specified as a press
         // set it to our max distance and register a press if we haven't already
+        //float distance = Mathf.Abs(transform.position.y - startPos.y);
         float distance = Mathf.Abs(transform.position.y - startPos.y);
         if (distance >= pressLength)
         {

@@ -25,19 +25,14 @@ public class GameController: MonoBehaviour
     //public GameObject button1;
     public ButtonMaker button1;
     public ButtonMaker button2;
-    private bool done = false;
-    
-
-    
+    private bool done = false;   
 
     // Start is called before the first frame update
     void Start()
     {
         button1.gameObject.SetActive(true);
         button2.gameObject.SetActive(false);
-
     }
-
 
     // Update is called once per frame
     void Update()
@@ -63,7 +58,7 @@ public class GameController: MonoBehaviour
             button1.NumBoxs = 3;
             button1.SetUp();
         }
-        if (button1Pressed && question ==1)
+        if (button1Pressed && question == 1)
         {
             answersq1.SetActive(false);
             fullboxq1.SetActive(true);
@@ -98,7 +93,7 @@ public class GameController: MonoBehaviour
                 timer = 0f;
             }
         }
-        if (button1Pressed && question ==2)
+        if (button1Pressed && question == 2)
         {
             answersq2.SetActive(false);
             fullboxq3.SetActive(true);
