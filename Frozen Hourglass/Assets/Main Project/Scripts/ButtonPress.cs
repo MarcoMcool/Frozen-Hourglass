@@ -9,6 +9,11 @@ public class ButtonPress: MonoBehaviour
     public float pressLength;
     public bool pressed;
     public ButtonEvent downEvent;
+    public Material buttonMaterial;
+    public GameObject button;
+    public int buttonNumber;
+
+    public GameController gameController;
 
     Vector3 startPos;
     Rigidbody rb;
@@ -18,11 +23,12 @@ public class ButtonPress: MonoBehaviour
         startPos = transform.position;
         rb = GetComponent<Rigidbody>();
     }
-
+    
     void Update()
     {
         // If our distance is greater than what we specified as a press
         // set it to our max distance and register a press if we haven't already
+        //float distance = Mathf.Abs(transform.position.y - startPos.y);
         float distance = Mathf.Abs(transform.position.y - startPos.y);
         if (distance >= pressLength)
         {
@@ -30,6 +36,22 @@ public class ButtonPress: MonoBehaviour
             transform.position = new Vector3(transform.position.x, startPos.y - pressLength, transform.position.z);
             if (!pressed)
             {
+                if (buttonNumber == 0)
+                {
+                    gameController.button1Pressed = true;
+                    this.transform.parent.gameObject.SetActive(false);
+                }
+                if (buttonNumber == 1)
+                {
+                    gameController.button1Pressed = true;
+                }
+                if (buttonNumber == 2)
+                {
+
+                    gameController.button2Pressed = true;
+                    gameController.button1Pressed = false;
+                }
+                button.GetComponent<MeshRenderer>().material = buttonMaterial;
                 pressed = true;
                 // If we have an event, invoke it
                 downEvent?.Invoke();
