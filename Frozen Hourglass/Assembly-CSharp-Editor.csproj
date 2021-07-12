@@ -53,31 +53,31 @@
     <UnityVersion>2020.3.2f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\Editor\AudioImportPostProcessor.cs" />
-    <Compile Include="Assets\Oculus\LipSync\Editor\OVRLipSyncContextMorphTargetEditor.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\OVROverlayCanvas\Editor\OVROverlayCanvasEditor.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Editor\OculusSampleFrameworkUtil.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Editor\BuildAssetPackages.cs" />
-    <Compile Include="Assets\Oculus\AudioManager\Scripts\Utils\Editor\DrawerInspectorNote.cs" />
-    <Compile Include="Assets\Oculus\Spatializer\editor\ONSPAudioSourceEditor.cs" />
-    <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\Editor\OSPPropsPropertyDrawer.cs" />
-    <Compile Include="Assets\Oculus\LipSync\Editor\OVRLipSyncBuildPostProcessor.cs" />
-    <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\Editor\SoundFXPropertyDrawer.cs" />
-    <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\Editor\MinMaxPropertyDrawer.cs" />
-    <Compile Include="Assets\Oculus\Spatializer\editor\ONSPPropagationSerializationManager.cs" />
-    <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\Editor\AudioManagerInspector.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Editor\AndroidVideoEditorUtil.cs" />
-    <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\Editor\SoundFXRefPropertyDrawer.cs" />
-    <Compile Include="Assets\Oculus\Spatializer\editor\ONSPPropagationGeometryEditor.cs" />
-    <Compile Include="Assets\Oculus\LipSync\Editor\OVRNamedArrayPropertyDrawer.cs" />
-    <Compile Include="Assets\Oculus\Spatializer\editor\ONSPReflectionCustomGUI.cs" />
-    <Compile Include="Assets\Oculus\Spatializer\editor\ONSPAudioPluginUpdater.cs" />
-    <Compile Include="Assets\Oculus\Spatializer\editor\ONSPAudioPluginUpdaterStub.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\Editor\TeleportTransitionWarpInspector.cs" />
-    <Compile Include="Assets\Oculus\Spatializer\editor\ONSPPropagationMaterialEditor.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Editor\MediaPlayerImageEditor.cs" />
-    <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\Editor\MixerSnapshotPropertyDrawer.cs" />
-    <Compile Include="Assets\Oculus\LipSync\Editor\OVRLipSyncTool.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\AudioManager\Scripts\Audio\Editor\AudioImportPostProcessor.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\LipSync\Editor\OVRLipSyncContextMorphTargetEditor.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\SampleFramework\Usage\OVROverlayCanvas\Editor\OVROverlayCanvasEditor.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\SampleFramework\Editor\OculusSampleFrameworkUtil.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\SampleFramework\Editor\BuildAssetPackages.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\AudioManager\Scripts\Utils\Editor\DrawerInspectorNote.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\Spatializer\editor\ONSPAudioSourceEditor.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\AudioManager\Scripts\Audio\Editor\OSPPropsPropertyDrawer.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\LipSync\Editor\OVRLipSyncBuildPostProcessor.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\AudioManager\Scripts\Audio\Editor\SoundFXPropertyDrawer.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\AudioManager\Scripts\Audio\Editor\MinMaxPropertyDrawer.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\Spatializer\editor\ONSPPropagationSerializationManager.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\AudioManager\Scripts\Audio\Editor\AudioManagerInspector.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\SampleFramework\Core\Video\Editor\AndroidVideoEditorUtil.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\AudioManager\Scripts\Audio\Editor\SoundFXRefPropertyDrawer.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\Spatializer\editor\ONSPPropagationGeometryEditor.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\LipSync\Editor\OVRNamedArrayPropertyDrawer.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\Spatializer\editor\ONSPReflectionCustomGUI.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\Spatializer\editor\ONSPAudioPluginUpdater.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\Spatializer\editor\ONSPAudioPluginUpdaterStub.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\Editor\TeleportTransitionWarpInspector.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\Spatializer\editor\ONSPPropagationMaterialEditor.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\SampleFramework\Core\Video\Editor\MediaPlayerImageEditor.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\AudioManager\Scripts\Audio\Editor\MixerSnapshotPropertyDrawer.cs" />
+    <Compile Include="Assets\Oculus Assets\Oculus\LipSync\Editor\OVRLipSyncTool.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -755,13 +755,17 @@
       <Project>{E8856CCA-9B0B-5D6C-59FA-945BFBF152C5}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
-    <ProjectReference Include="Oculus.VR.Editor.csproj">
-      <Project>{3B7716C9-BB9C-CB2F-972B-34DFC39037F4}</Project>
-      <Name>Oculus.VR.Editor</Name>
+    <ProjectReference Include="Oculus.Platform.csproj">
+      <Project>{0928A0B8-EB0C-2F5B-EC01-8E94B4A69666}</Project>
+      <Name>Oculus.Platform</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Platform.Editor.csproj">
       <Project>{A1940326-6A4E-39E4-BB1D-49B15796D4E0}</Project>
       <Name>Oculus.Platform.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Oculus.VR.Editor.csproj">
+      <Project>{3B7716C9-BB9C-CB2F-972B-34DFC39037F4}</Project>
+      <Name>Oculus.VR.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.VR.Scripts.Editor.csproj">
       <Project>{307D63C0-797B-5DBA-2753-F0D99E6F8FA3}</Project>
@@ -770,10 +774,6 @@
     <ProjectReference Include="Oculus.VR.csproj">
       <Project>{2770BF04-C159-5ABF-F73A-9B768B5E2872}</Project>
       <Name>Oculus.VR</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.Platform.csproj">
-      <Project>{0928A0B8-EB0C-2F5B-EC01-8E94B4A69666}</Project>
-      <Name>Oculus.Platform</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
