@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Equip
   - PlayerHands
+  - Highlight
   layers:
   - Default
   - TransparentFX

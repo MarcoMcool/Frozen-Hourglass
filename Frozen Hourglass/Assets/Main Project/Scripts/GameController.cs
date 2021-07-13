@@ -25,7 +25,9 @@ public class GameController: MonoBehaviour
     //public GameObject button1;
     public ButtonMaker button1;
     public ButtonMaker button2;
-    private bool done = false;   
+    private bool done = false;
+
+    bool moveLadderSequence;
 
     // Start is called before the first frame update
     void Start()
@@ -106,5 +108,14 @@ public class GameController: MonoBehaviour
                 timer = 0f;
             }
         }
+
+        if (moveLadderSequence)
+        {
+
+        }
     }
+
+
+
+
 }
