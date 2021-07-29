@@ -27,6 +27,8 @@ public class GameController: MonoBehaviour
     public ButtonMaker button2;
     private bool done = false;
 
+
+    public bool ladderCorrectPosition;
     bool moveLadderSequence;
 
     // Start is called before the first frame update

@@ -17,9 +17,14 @@ public class LadderCollider : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.name == "Ladder")
+        if (other.gameObject.name == "MoveLadder")
         {
             print("ladder in correct area");
+        }
+        else if (other.gameObject.name == "Ladder")
+        {
+            //Needs warning popup telling the user not to move the original ladder until safe to do so
+
         }
     }
 }
