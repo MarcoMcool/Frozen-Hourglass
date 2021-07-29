@@ -64,6 +64,7 @@
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarSkinnedMeshRenderPBSV2Component.cs" />
     <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatar.cs" />
+    <Compile Include="Assets\Main Project\Scripts\QAFunctions.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AudioManager_Sound.cs" />
     <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarMaterialManager.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\ColliderZone.cs" />
@@ -289,7 +290,7 @@
      <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Shaders\Hands_02.shader" />
      <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Materials\Hands_DiffBump.shader" />
      <None Include="Assets\Oculus\Avatar\Resources\Materials\Expressive\Avatar_Mobile_SingleComponentExpressive.shader" />
-     <None Include="Assets\Main Project\Outline.shader" />
+     <None Include="Assets\Main Project\Materials\Outline.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <None Include="Assets\Oculus\LipSync\Plugins\Win64\OVRLipSync.dll" />
      <None Include="Assets\Oculus\SampleFramework\license.txt" />
@@ -479,14 +480,8 @@
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\il2cpp\Managed\UnityEngine.XRModule.dll</HintPath>
     </Reference>
-    <Reference Include="Oculus.VR.Editor">
-      <HintPath>Library\ScriptAssemblies\Oculus.VR.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Oculus.Platform.Editor">
-      <HintPath>Library\ScriptAssemblies\Oculus.Platform.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.InteractiveTutorialsFramework">
       <HintPath>Library\ScriptAssemblies\UnityEditor.InteractiveTutorialsFramework.dll</HintPath>
@@ -499,9 +494,6 @@
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Oculus.VR.Scripts.Editor">
-      <HintPath>Library\ScriptAssemblies\Oculus.VR.Scripts.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.XR.Management.Editor.dll</HintPath>
@@ -535,6 +527,15 @@
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
       <HintPath>Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Oculus.Platform.Editor">
+      <HintPath>Library\ScriptAssemblies\Oculus.Platform.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Oculus.VR.Editor">
+      <HintPath>Library\ScriptAssemblies\Oculus.VR.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Oculus.VR.Scripts.Editor">
+      <HintPath>Library\ScriptAssemblies\Oculus.VR.Scripts.Editor.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -917,13 +918,13 @@
       <Project>{8B793D31-6B9F-63BA-10D1-51ADD7208D8E}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="Oculus.VR.csproj">
-      <Project>{2770BF04-C159-5ABF-F73A-9B768B5E2872}</Project>
-      <Name>Oculus.VR</Name>
-    </ProjectReference>
     <ProjectReference Include="Oculus.Platform.csproj">
       <Project>{0928A0B8-EB0C-2F5B-EC01-8E94B4A69666}</Project>
       <Name>Oculus.Platform</Name>
+    </ProjectReference>
+    <ProjectReference Include="Oculus.VR.csproj">
+      <Project>{2770BF04-C159-5ABF-F73A-9B768B5E2872}</Project>
+      <Name>Oculus.VR</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
