@@ -8,9 +8,9 @@ public class ButtonPress: MonoBehaviour
 
     public float pressLength;
     public bool pressed;
-    public ButtonEvent downEvent;
+    //public ButtonEvent downEvent;
     public Material buttonMaterial;
-    public GameObject button;
+    //public GameObject button;
     public int buttonNumber;
 
     public GameController gameController;
@@ -36,6 +36,7 @@ public class ButtonPress: MonoBehaviour
             transform.position = new Vector3(transform.position.x, startPos.y - pressLength, transform.position.z);
             if (!pressed)
             {
+                /*
                 if (buttonNumber == 0)
                 {
                     gameController.button1Pressed = true;
@@ -51,10 +52,11 @@ public class ButtonPress: MonoBehaviour
                     gameController.button2Pressed = true;
                     gameController.button1Pressed = false;
                 }
-                button.GetComponent<MeshRenderer>().material = buttonMaterial;
+                */
+                GetComponent<MeshRenderer>().material = buttonMaterial;
                 pressed = true;
                 // If we have an event, invoke it
-                downEvent?.Invoke();
+                //downEvent?.Invoke();
             }
         }
         else
