@@ -17,6 +17,10 @@ public class LadderCollider : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
+        if (other.gameObject.GetComponent<MoveObject>())
+        {
+            print("here");
+        }
         if (other.gameObject.name == "MoveLadder")
         {
             print("ladder in correct area");
