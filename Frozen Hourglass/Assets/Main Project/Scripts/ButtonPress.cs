@@ -13,13 +13,15 @@ public class ButtonPress: MonoBehaviour
     //public GameObject button;
     public int buttonNumber;
 
-    public GameController gameController;
+    //public GameController gameController;
+    public QuestionButtons QuestionButtons;
 
     Vector3 startPos;
     Rigidbody rb;
 
     void Start()
     {
+        QuestionButtons=GetComponentInParent<QuestionButtons>();
         startPos = transform.position;
         rb = GetComponent<Rigidbody>();
     }
@@ -54,6 +56,7 @@ public class ButtonPress: MonoBehaviour
                 }
                 */
                 GetComponent<MeshRenderer>().material = buttonMaterial;
+                QuestionButtons.ButtonPressed = buttonNumber;
                 pressed = true;
                 // If we have an event, invoke it
                 //downEvent?.Invoke();
