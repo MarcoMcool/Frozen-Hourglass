@@ -19,7 +19,7 @@ public class GameController: MonoBehaviour
 
     public bool button1Pressed;
     public bool button2Pressed;
-    public int question =0;
+    public int question = 0;
 
     public float timer = 0f;
     //public GameObject button1;
