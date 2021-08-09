@@ -20483,6 +20483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1970863099}
   - component: {fileID: 1970863098}
+  - component: {fileID: 1970863100}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -20535,6 +20536,97 @@ Transform:
   m_Father: {fileID: 1742386977}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1970863100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970863097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5481a06fed4950e459d19bb1abdf35f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Question1:
+  - 
+  - 
+  - 
+  - 
+  - 
+  Question2:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  Q1: What is the incident that occurred?
+  Q1Response1: q1 response 1
+  Q1Response2: q1 response 2
+  Q1Response3: q1 response 3
+  Q1Correct: q1 Correct
+  Q1InCorrect: q1 inCorrect
+  Q2: Should work in the vicinity be stopped?
+  Q2Response1: q2 response 1
+  Q2Response2: q2 response 2
+  Q2Response3: q2 response 3
+  Q2Correct: q2 Correct
+  Q2InCorrect: q2 inCorrect
+  Q3: Is there any potential risks in the environment?
+  Q3Response1: q3 response 1
+  Q3Response2: q3 response 2
+  Q3Response3: q3 response 3
+  Q3Correct: q3 Correct
+  Q3InCorrect: q3 inCorrect
+  Q4: Which option in the hierarchy of control would best suit solving this risk?
+  Q4Response1: q4 response 1
+  Q4Response2: q4 response 2
+  Q4Response3: q4 response 3
+  Q4Correct: q4 Correct
+  Q4InCorrect: q4 inCorrect
+  Q5: Should the emergency services be called?
+  Q5Response1: q5 response 1
+  Q5Response2: q5 response 2
+  Q5Response3: q5 response 3
+  Q5Correct: q5 Correct
+  Q5InCorrect: q5 inCorrect
+  Q6: Is it necessary to render assistance to anyone?
+  Q6Response1: q6 response 1
+  Q6Response2: q6 response 2
+  Q6Response3: q6 response 3
+  Q6Correct: q6 Correct
+  Q6InCorrect: q6 inCorrect
+  Q7: Should the work group supervisor be contacted?
+  Q7Response1: q7 response 1
+  Q7Response2: q7 response 2
+  Q7Response3: q7 response 3
+  Q7Correct: q7 Correct
+  Q7InCorrect: q7 inCorrect
+  Q8: Has the control measure been implemented to prevent escalation of the situation?
+  Q8Response1: q8 response 1
+  Q8Response2: q8 response 2
+  Q8Response3: q8 response 3
+  Q8Correct: q8 Correct
+  Q8InCorrect: q8 inCorrect
+  Q9: Has the site been left unaltered?
+  Q9Response1: q9 response 1
+  Q9Response2: q9 response 2
+  Q9Response3: q9 response 3
+  Q9Correct: q9 Correct
+  Q9InCorrect: q9 inCorrect
+  Q10: Has the work group manager been contacted to release the site?
+  Q10Response1: q10 response 1
+  Q10Response2: q10 response 2
+  Q10Response3: q10 response 3
+  Q10Correct: q10 Correct
+  Q10InCorrect: q10 inCorrect
+  Q11: Have photos and witness recollections been recorded?
+  Q11Response1: q11 response 1
+  Q11Response2: q11 response 2
+  Q11Response3: q11 response 3
+  Q11Correct: q11 Correct
+  Q11InCorrect: q11 inCorrect
 --- !u!1 &1980247661
 GameObject:
   m_ObjectHideFlags: 0
