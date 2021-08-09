@@ -2,26 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class Question : MonoBehaviour
+class Question
 {
-    private int NumberOfAns;
-    private QuestionButtons questionButtons;
-    public Question(GameObject buttons, int numberOfAns)
+    public string questionText;
+    public string[] answers;
+    public string correct;
+    public string incorrect;
+    public int key;
+    public Question(string _questionText, string[] _answers, string _correct, string _incorrect, int _key)
     {
-        questionButtons = buttons.GetComponent<QuestionButtons>();
-        NumberOfAns = numberOfAns;
-        questionButtons.SetUp(NumberOfAns);
+        questionText = _questionText;
+        answers = _answers;
+        correct = _correct;
+        incorrect = _incorrect;
+        key = _key;
     }
-
-    // Start is called before the first frame update
-    void Start()
+    public Question()
     {
-        questionButtons.SetUp(NumberOfAns);
+
     }
-
-    // Update is called once per frame
-    void Update()
+    public string checkAnswer(int ans)
     {
-        
+        if (ans == key)
+        {
+            return correct;
+        }
+        else
+        {
+            return incorrect;
+        }
     }
 }
+
