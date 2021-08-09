@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QAFunctions : MonoBehaviour
+public class QAFunctions: MonoBehaviour
 {
     // The idea is to only use one panel that the user will look at to answer all these questions
     // and since this will be a guided experience, it won't be necessary to create a complicated
     // system for the question and answers section.
 
     // Question 1
-    string Q1 = "What as the incident that occurred?";
+    string Q1 = "What is the incident that occurred?";
     string Q1Response1 = "q1 response 1";
     string Q1Response2 = "q1 response 2";
     string Q1Response3 = "q1 response 3";
