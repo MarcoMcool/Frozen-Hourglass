@@ -25,7 +25,8 @@ public class MainController : MonoBehaviour
         }
         Question Q1O = new Question
         {
-            questionText = qAFunctions.Q1
+            questionText = qAFunctions.Q1, correct = qAFunctions.Q1Correct, incorrect = qAFunctions.Q1InCorrect,
+            
         };
     }
 

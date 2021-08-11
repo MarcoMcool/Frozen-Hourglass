@@ -15,20 +15,20 @@ public class QAFunctions: MonoBehaviour
     // Question 1
     [Header("Question 1")]
     public string Q1 = "What is the incident that occurred?";
-    public string Q1Response1 = "q1 response 1";
-    public string Q1Response2 = "q1 response 2";
-    public string Q1Response3 = "q1 response 3";
-    public string Q1Correct = "q1 Correct";
-    public string Q1InCorrect = "q1 inCorrect";
+    public string Q1Response1 = "A ladder fell on the electrical line causing a short circuit";
+    public string Q1Response2 = "A worker has been electrocuted";
+    public string Q1Response3 = "The electrical line snapped";
+    public string Q1Correct = "Correct! /nA ladder resting against the house has fallen onto the powerlines that were close by./n As the ladder is conductive it has caused a short circuit.";
+    public string Q1InCorrect = "Incorrect! /n An incident has occured so all work must be stopped.";
 
     // Question 2
     [Header("Question 2")]
     public string Q2 = "Should work in the vicinity be stopped?";
-    public string Q2Response1 = "q2 response 1";
-    public string Q2Response2 = "q2 response 2";
-    public string Q2Response3 = "q2 response 3";
-    public string Q2Correct = "q2 Correct";
-    public string Q2InCorrect = "q2 inCorrect";
+    public string Q2Response1 = "No work does not need to be stopped as no one was injured.";
+    public string Q2Response2 = "No work does not need to be stopped as ";
+    public string Q2Response3 = "Yes work should be stopped as an incident has occurred";
+    public string Q2Correct = "Correct! /n All work should be stopped as an incident has occurred with powerlines.";
+    public string Q2InCorrect = "Incorrect! /n Work should be stopped so the correct procedure can be followed.";
 
     // Question 3
     [Header("Question 3")]
@@ -111,20 +111,4 @@ public class QAFunctions: MonoBehaviour
     public string Q11Correct = "q11 Correct";
     public string Q11InCorrect = "q11 inCorrect";
 
-    public void Start()
-    {
-        Question1[0] = Q1;
-        Question1[1] = Q1Response1;
-        Question1[2] = Q1Response2;
-        Question1[3] = Q1Response3;
-        Question1[4] = Q1Correct;
-        Question1[5] = Q1InCorrect;
-
-        Question2[0] = Q2;
-        Question2[1] = Q2Response1;
-        Question2[2] = Q2Response2;
-        Question2[3] = Q2Response3;
-        Question2[4] = Q2Correct;
-        Question2[5] = Q2InCorrect;
-    }
 }

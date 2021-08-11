@@ -14,9 +14,7 @@ public class QuestionButtons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //startPos = transform.position;
-        //SetUp(4);
-        //SetUp(4);
+
     }
 
     // Update is called once per frame
