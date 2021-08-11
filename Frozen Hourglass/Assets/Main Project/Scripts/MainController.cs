@@ -12,7 +12,7 @@ public class MainController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Question[] Questions=QuestionSetup.SetUp();
     }
 
     // Update is called once per frame
