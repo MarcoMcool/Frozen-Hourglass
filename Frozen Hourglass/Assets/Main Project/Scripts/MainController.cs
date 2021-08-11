@@ -8,26 +8,11 @@ public class MainController : MonoBehaviour
     public GameObject Buttons;
     public LadderFall_controll LadderAnimation;
     public bool GO=false;
-    public QAFunctions qAFunctions;
-
-    Question[] questions = new Question[10];
 
     // Start is called before the first frame update
     void Start()
     {
-        Question test = new Question();
-        for (int i =0; i < 10; i++)
-        {
-            questions[i] = new Question
-            {
-                questionText = qAFunctions.Q1
-            };
-        }
-        Question Q1O = new Question
-        {
-            questionText = qAFunctions.Q1, correct = qAFunctions.Q1Correct, incorrect = qAFunctions.Q1InCorrect,
-            
-        };
+        
     }
 
     // Update is called once per frame

@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class Question
+public class Question
 {
     public string questionText;
     public string[] answers;
     public string correct;
     public string incorrect;
     public int key;
-    public Question(string _questionText, string[] _answers, string _correct, string _incorrect, int _key)
+    public Question(string _questionText,string[] _answers , string _correct, string _incorrect , int _key)
     {
         questionText = _questionText;
         answers = _answers;
@@ -32,7 +32,4 @@ class Question
             return incorrect;
         }
     }
-
-    
 }
-
