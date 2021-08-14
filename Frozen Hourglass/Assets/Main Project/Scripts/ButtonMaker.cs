@@ -36,14 +36,11 @@ public class ButtonMaker: MonoBehaviour
         {
 
             Transform child1 = transform.GetChild(0);
-            print(child1.name);
             GameObject child2 = child1.transform.GetChild(1).gameObject;
-            print(child2.name);
+
             TextMeshPro textObj = child2.GetComponent<TextMeshPro>();
             int numw = i + 1;
             textObj.text = "Answer" + numw;
-            print(numw);
-            print(textObj.text);
 
             Vector3 vector = new Vector3((BoxSpace * (NumBoxs - 1)) / 2 - BoxSpace * i, 2.4f, 0f);
             Transform child = transform.GetChild(i);
@@ -52,11 +49,11 @@ public class ButtonMaker: MonoBehaviour
         }
     }
 
-    public void SetAnswers(string _answer1, string _answer2, string _answer3, string _question, string _answerResponseCorrect, string _answerResponseIncorrect)
+    public void SetAnswers(string[] _answer, string _question, string _answerResponseCorrect, string _answerResponseIncorrect)
     {
-        answer1.text = _answer1;
-        answer2.text = _answer2;
-        answer3.text = _answer3;
+        answer1.text = _answer[0];
+        answer2.text = _answer[1];
+        answer3.text = _answer[2];
 
         questionText.text = _question;
         answerResponseTxtCorrect.text = _answerResponseCorrect;

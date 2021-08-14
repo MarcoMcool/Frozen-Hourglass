@@ -8,12 +8,12 @@ public class ButtonPress: MonoBehaviour
 
     public float pressLength;
     public bool pressed;
-    //public ButtonEvent downEvent;
+    public ButtonEvent downEvent;
     public Material buttonMaterial;
     //public GameObject button;
     public int buttonNumber;
 
-    //public GameController gameController;
+    public GameController gameController;
     public QuestionButtons QuestionButtons;
 
     Vector3 startPos;
@@ -59,7 +59,7 @@ public class ButtonPress: MonoBehaviour
                 QuestionButtons.ButtonPressed = buttonNumber;
                 pressed = true;
                 // If we have an event, invoke it
-                //downEvent?.Invoke();
+                downEvent?.Invoke();
             }
         }
         else
@@ -72,5 +72,25 @@ public class ButtonPress: MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, startPos.y, transform.position.z);
         }
+
+        if (Input.GetKeyDown("l") && buttonNumber == 1)
+        {
+            downEvent?.Invoke();
+        }
+        if (Input.GetKeyDown("j") && buttonNumber == 2)
+        {
+            downEvent?.Invoke();
+        }
+        if (Input.GetKeyDown("k") && buttonNumber == 3)
+        {
+            downEvent?.Invoke();
+        }
+        
+    }
+
+    public void TellGameController()
+    {
+        print(buttonNumber);
+        gameController.buttonPressed = buttonNumber;
     }
 }

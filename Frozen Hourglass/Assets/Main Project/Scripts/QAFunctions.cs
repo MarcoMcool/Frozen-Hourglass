@@ -8,10 +8,6 @@ public class QAFunctions: MonoBehaviour
     // and since this will be a guided experience, it won't be necessary to create a complicated
     // system for the question and answers section.
 
-
-    public string[] Question1 = new string[6];
-    public string[] Question2 = new string[6];
-
     // Question 1
     [Header("Question 1")]
     public string Q1 = "What is the incident that occurred?";
