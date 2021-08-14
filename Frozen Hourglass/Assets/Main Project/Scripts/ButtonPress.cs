@@ -91,6 +91,6 @@ public class ButtonPress: MonoBehaviour
     public void TellGameController()
     {
         print(buttonNumber);
-        gameController.buttonPressed = buttonNumber;
+        gameController.PressButton(buttonNumber);
     }
 }

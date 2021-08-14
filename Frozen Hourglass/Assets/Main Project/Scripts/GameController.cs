@@ -56,8 +56,7 @@ public class GameController: MonoBehaviour
         q = QuestionSetup.SetUp();
 
         SetAnswers(q[questionNumber].answers, q[questionNumber].questionText, q[questionNumber].correct, q[questionNumber].incorrect);
-        StartCoroutine(WaitTimer());
-        questionNumber++;
+        
 
         
     }
@@ -67,22 +66,33 @@ public class GameController: MonoBehaviour
     {
 
         QuestionOrdering();
-
+        
     }
 
+    public void PressButton(int buttonPressed)
+    {
+        if (q[questionNumber].key == buttonPressed)
+        {
+            answerResponseObjCorrect.SetActive(true);
+        }
+    }
     public void QuestionOrdering()
     {
         if (answerReceived && correctAnswer)
         {
-            
+            answersOptions.SetActive(false);
+            answerResponseObjCorrect.SetActive(false);
+            answerResponseObjIncorrect.SetActive(false);
+            questionNumber++;
         }
         else if(answerReceived && !correctAnswer)
         {
-
+            answerResponseObjIncorrect.SetActive(true);
         }
         else
         {
-
+            answerResponseObjIncorrect.SetActive(false);
+            answerResponseObjCorrect.SetActive(false);
         }
     }
 
