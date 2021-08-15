@@ -25,6 +25,8 @@ public class LadderPhysics : MonoBehaviour
 
             StartCoroutine(ResetSlide());
         }
+
+        
     }
 
     IEnumerator Slide()
@@ -36,7 +38,7 @@ public class LadderPhysics : MonoBehaviour
 
     IEnumerator ResetSlide()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         pm.dynamicFriction = 0.3f;
         pm.staticFriction = 0.3f;
     }
