@@ -749,6 +749,18 @@
     <Reference Include="Unity.InteractiveTutorials.Core.Scripts">
       <HintPath>Library\ScriptAssemblies\Unity.InteractiveTutorials.Core.Scripts.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProBuilder">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
@@ -766,14 +778,6 @@
     <ProjectReference Include="Oculus.VR.Scripts.Editor.csproj">
       <Project>{307D63C0-797B-5DBA-2753-F0D99E6F8FA3}</Project>
       <Name>Oculus.VR.Scripts.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{FAD37FC9-4C0C-2E53-09FB-EC4426A542E6}</Project>
-      <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{8B793D31-6B9F-63BA-10D1-51ADD7208D8E}</Project>
-      <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.VR.csproj">
       <Project>{2770BF04-C159-5ABF-F73A-9B768B5E2872}</Project>
