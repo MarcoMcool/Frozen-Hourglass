@@ -18,6 +18,8 @@ public class GameController: MonoBehaviour
     public GameObject text1;
     public GameObject text2;
 
+    public bool button1Pressed;
+    public bool button2Pressed;
     public int buttonPressed;
     public int question = 0;
 
@@ -38,66 +40,95 @@ public class GameController: MonoBehaviour
 
     public TextMeshProUGUI questionText;
     public GameObject answersOptions;
-    public GameObject answerResponseObjIncorrect;
-    public GameObject answerResponseObjCorrect;
+    public GameObject answerResponseObj;
     public TextMeshProUGUI answerResponseTxtCorrect;
     public TextMeshProUGUI answerResponseTxtIncorrect;
     public TextMeshProUGUI answer1;
     public TextMeshProUGUI answer2;
     public TextMeshProUGUI answer3;
+    public GameObject buttons;
+
     // Start is called before the first frame update
     void Start()
     {
+        button1.gameObject.SetActive(true);
+        button2.gameObject.SetActive(false);
+
         q = QuestionSetup.SetUp();
 
-        SetAnswers(q[questionNumber].answers, q[questionNumber].questionText, q[questionNumber].correct, q[questionNumber].incorrect);
+        SetAnswers(q[questionNumber]);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        QuestionOrdering();
+
+        //QuestionOrdering();
+        
     }
 
     public void PressButton(int buttonPressed)
     {
         if (q[questionNumber].key == buttonPressed)
         {
-            answerResponseObjCorrect.SetActive(true);
+            answerResponseTxtCorrect.text = q[questionNumber].correct;
+            answerResponseObj.SetActive(true);
+            answersOptions.SetActive(false);
+            buttons.SetActive(false);
+            questionNumber++;
+            StartCoroutine(WaitTimer());
         }
+        else
+        {
+            answerResponseTxtCorrect.text = q[questionNumber].incorrect;
+            answersOptions.SetActive(false);
+            buttons.SetActive(false);
+            answerResponseObj.SetActive(true);
+            StartCoroutine(WaitTimer());
+        }
+
     }
     public void QuestionOrdering()
     {
         if (answerReceived && correctAnswer)
         {
             answersOptions.SetActive(false);
-            answerResponseObjCorrect.SetActive(false);
-            answerResponseObjIncorrect.SetActive(false);
+            answerResponseObj.SetActive(false);
             questionNumber++;
             StartCoroutine(WaitTimer());
         }
         else if(answerReceived && !correctAnswer)
         {
-            answerResponseObjIncorrect.SetActive(true);
+            answerResponseObj.SetActive(true);
+            StartCoroutine(WaitTimer());
         }
         else
         {
-            answerResponseObjIncorrect.SetActive(false);
-            answerResponseObjCorrect.SetActive(false);
+            answerResponseObj.SetActive(false);
         }
     }
 
-    public void SetAnswers(string[] _answer, string _question, string _answerResponseCorrect, string _answerResponseIncorrect)
+    public void SetAnswers(Question question)
     {
+        print(question.questionText);
+        string[] _answer = question.answers;
+        //TODO Make loop
+        TextMeshProUGUI[] UIAnswers = new TextMeshProUGUI[] { answer1, answer2, answer3 };
+        for (int i =0; i<_answer.Length; i++)
+        {
+            UIAnswers[i].text = _answer[i];
+        }
 
-        print(_question);
-        answer1.text = _answer[0];
-        answer2.text = _answer[1];
-        answer3.text = _answer[2];
+        questionText.text = question.questionText;
+        answerResponseTxtCorrect.text = question.correct;
+        answerResponseTxtIncorrect.text = question.incorrect;
 
-        questionText.text = _question;
-        answerResponseTxtCorrect.text = _answerResponseCorrect;
-        answerResponseTxtIncorrect.text = _answerResponseIncorrect;
+        answersOptions.SetActive(true);
+        buttons.SetActive(true);
+
+        answerResponseObj.SetActive(false);
+
     }
     IEnumerator WaitTimer()
     {
@@ -105,8 +136,10 @@ public class GameController: MonoBehaviour
         print("Started Coroutine at timestamp : " + Time.time);
 
         //yield on a new YieldInstruction that waits for 5 seconds.
+        answerReceived = false;
+        correctAnswer = false;
         yield return new WaitForSeconds(5);
-        SetAnswers(q[questionNumber].answers, q[questionNumber].questionText, q[questionNumber].correct, q[questionNumber].incorrect);
+        SetAnswers(q[questionNumber]);
         //After we have waited 5 seconds print the time again.
         print("Finished Coroutine at timestamp : " + Time.time);
     }

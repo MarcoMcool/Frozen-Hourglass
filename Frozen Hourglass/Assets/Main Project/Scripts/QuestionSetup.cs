@@ -17,7 +17,7 @@ public class QuestionSetup
         );
         questions[1] = new Question(
             "Should work in the vicinity be stopped?",
-            new string[] { "q2 response 1", "q2 response 2", "q2 response 3" },
+            new string[] { "True", "False"},
             "q2 Correct",
             "q2 inCorrect",
             1
