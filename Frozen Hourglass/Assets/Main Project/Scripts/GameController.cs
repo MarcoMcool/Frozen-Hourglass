@@ -18,8 +18,6 @@ public class GameController: MonoBehaviour
     public GameObject text1;
     public GameObject text2;
 
-    public bool button1Pressed;
-    public bool button2Pressed;
     public int buttonPressed;
     public int question = 0;
 
@@ -50,23 +48,15 @@ public class GameController: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        button1.gameObject.SetActive(true);
-        button2.gameObject.SetActive(false);
-
         q = QuestionSetup.SetUp();
 
         SetAnswers(q[questionNumber].answers, q[questionNumber].questionText, q[questionNumber].correct, q[questionNumber].incorrect);
-        
-
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-
         QuestionOrdering();
-        
     }
 
     public void PressButton(int buttonPressed)
@@ -84,6 +74,7 @@ public class GameController: MonoBehaviour
             answerResponseObjCorrect.SetActive(false);
             answerResponseObjIncorrect.SetActive(false);
             questionNumber++;
+            StartCoroutine(WaitTimer());
         }
         else if(answerReceived && !correctAnswer)
         {
