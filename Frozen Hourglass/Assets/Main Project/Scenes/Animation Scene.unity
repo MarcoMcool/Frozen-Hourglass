@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17202,7 +17202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &936821691
 Light:
   m_ObjectHideFlags: 0
@@ -24981,7 +24981,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122127001}
-  m_Material: {fileID: 13400000, guid: 4fd66770ff661844c9fb7f0d2d85e29c, type: 2}
+  m_Material: {fileID: 13400000, guid: 7c3629f32f1e35445874f43e299e8132, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -25018,7 +25018,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2122127006}
   topExplosivePosition: {fileID: 426491701}
-  pm: {fileID: 13400000, guid: 4fd66770ff661844c9fb7f0d2d85e29c, type: 2}
+  pmSlide: {fileID: 13400000, guid: 4fd66770ff661844c9fb7f0d2d85e29c, type: 2}
+  pmNoSlide: {fileID: 13400000, guid: 7c3629f32f1e35445874f43e299e8132, type: 2}
+  meshCollider: {fileID: 2122127005}
 --- !u!114 &2122127008
 MonoBehaviour:
   m_ObjectHideFlags: 0
