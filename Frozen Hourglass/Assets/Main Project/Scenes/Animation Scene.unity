@@ -7956,7 +7956,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 300
+      scalar: 400
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -8066,8 +8066,8 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.3
-      minScalar: 0.1
+      scalar: 0.1
+      minScalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -10902,7 +10902,7 @@ ParticleSystem:
       emitProbability: 1
   LightsModule:
     enabled: 1
-    ratio: 0.75
+    ratio: 0.6
     light: {fileID: 1274808590}
     randomDistribution: 0
     color: 1
@@ -10964,7 +10964,7 @@ ParticleSystem:
     intensityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.16
+      scalar: 1.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -11014,7 +11014,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    maxLights: 20
+    maxLights: 30
   TrailModule:
     enabled: 1
     mode: 0
@@ -11022,8 +11022,8 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.3
-      minScalar: 0.1
+      scalar: 0.4
+      minScalar: 0.05
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -11072,7 +11072,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minVertexDistance: 0.2
+    minVertexDistance: 0.25
     textureMode: 0
     ribbonCount: 1
     shadowBias: 0.5
@@ -11086,9 +11086,9 @@ ParticleSystem:
     attachRibbonsToTransform: 0
     colorOverLifetime:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 0.6841278, b: 0, a: 1}
-      maxColor: {r: 1, g: 0.95978874, b: 0.11792451, a: 1}
+      minMaxState: 2
+      minColor: {r: 0.8018868, g: 0.39777336, b: 0.07943218, a: 1}
+      maxColor: {r: 0.9245283, g: 0.8875084, b: 0.09158063, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -11837,7 +11837,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734561641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2937355, y: 4.475692, z: 3.9230552}
+  m_LocalPosition: {x: -0.33, y: 4.475692, z: 3.9230552}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
