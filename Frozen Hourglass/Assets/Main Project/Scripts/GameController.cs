@@ -24,7 +24,6 @@ public class GameController: MonoBehaviour
     public int question = 0;
 
     public float timer = 0f;
-    //public GameObject button1;
     public ButtonMaker button1;
     public ButtonMaker button2;
     private bool done = false;
@@ -35,6 +34,20 @@ public class GameController: MonoBehaviour
 
     public bool ladderCorrectPosition;
     bool moveLadderSequence;
+
+    bool question1Active;
+    bool question2Active;
+    //Question 3
+    bool question3Active;
+    bool question4Active;
+    bool question5Active;
+    bool question6Active;
+    bool question7Active;
+    bool question8Active;
+    bool question9Active;
+    bool question10Active;
+    bool question11Active;
+
 
     Question[] q;
 

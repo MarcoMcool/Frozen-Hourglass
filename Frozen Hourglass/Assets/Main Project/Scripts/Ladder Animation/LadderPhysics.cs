@@ -42,7 +42,7 @@ public class LadderPhysics : MonoBehaviour
 
     IEnumerator ResetSlide()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.7f);
         meshCollider.material = pmNoSlide;
         //pmSlide.dynamicFriction = 0.3f;
         //pmSlide.staticFriction = 0.3f;

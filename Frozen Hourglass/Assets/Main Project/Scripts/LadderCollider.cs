@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class LadderCollider : MonoBehaviour
 {
+    GameController gameController;
     // Start is called before the first frame update
     void Start()
     {
-        
+       gameController = FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class LadderCollider : MonoBehaviour
         }
         if (other.gameObject.name == "MoveLadder")
         {
+            gameController.ladderCorrectPosition = true;
             print("ladder in correct area");
         }
         else if (other.gameObject.name == "Ladder")
