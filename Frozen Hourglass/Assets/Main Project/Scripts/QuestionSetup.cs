@@ -9,29 +9,30 @@ public class QuestionSetup
         Question[] questions = new Question[11];
 
         questions[0] = new Question(
-            "What as the incident that occurred?",
-            new string[] { "q1 response 1", "q1 response 2", "q1 response 3" },
-            "q1 Correct",
-            "q1 inCorrect",
+            "What was the incident that occurred?",
+            new string[] { "A ladder fell on the electrical line causing a short circuit", "A worker has been electrocuted", "The electrical line snapped" },
+            "Correct: It was indeed a ladder that fell onto the powerline",
+            "Incorrect: The incident was a ladder fell onto the powerline",
             1
         );
         questions[1] = new Question(
             "Should work in the vicinity be stopped?",
             new string[] { "True", "False"},
-            "q2 Correct",
-            "q2 inCorrect",
+            "Correct: Work should be stopped immediately in the area",
+            "Incorrect: The answer is True, work should be halted immediately.",
             1
         );
         questions[2] = new Question(
             "Is there any potential risks in the environment?",
-            new string[] { "q3 response 1", "q3 response 2", "q3 response 3" },
-            "q3 Correct",
-            "q3 inCorrect",
+            new string[] { "There is another ladder.", "The bushes in the garden.", "The truck near the powerline." },
+            "Correct: The other ladder poses a risk in shocking anyone if it also touches the powerline.",
+            "Incorrect: The answer is the other ladder in the front of the house.",
             1
         );
         questions[3] = new Question(
             "Which option in the hierarchy of control would best suit solving this risk?",
-            new string[] { "q4 response 1", "q4 response 2", "q4 response 3" },
+            new string[] { "Elimination - Remove hazard from workplace", "Substitution - Replace the hazard with less hazardous condition or process",
+                "Isolation - Isolate the hazard from people at the workplace"},
             "q4 Correct",
             "q4 inCorrect",
             1
