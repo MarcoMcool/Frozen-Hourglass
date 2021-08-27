@@ -59,7 +59,9 @@ public class GameController: MonoBehaviour
     public TextMeshProUGUI answer1;
     public TextMeshProUGUI answer2;
     public TextMeshProUGUI answer3;
+    public GameObject number3;
     public GameObject buttons;
+    public GameObject button3;
 
     // Start is called before the first frame update
     void Start()
@@ -139,6 +141,19 @@ public class GameController: MonoBehaviour
 
         answersOptions.SetActive(true);
         buttons.SetActive(true);
+
+        //TODO fix this hack
+        if (_answer.Length < 3)
+        {
+            number3.SetActive(false);
+            button3.SetActive(false);
+            answer3.text = "";
+        }
+        else
+        {
+            button3.SetActive(true);
+            number3.SetActive(true);
+        }
 
         answerResponseObj.SetActive(false);
 
