@@ -22,6 +22,14 @@ public class GameController: MonoBehaviour
     public bool button2Pressed;
     public int buttonPressed;
     public int question = 0;
+    public enum stage
+    {
+        Animation,
+        Question,
+        Response,
+        Action,
+        Other
+    }
 
     public float timer = 0f;
     public ButtonMaker button1;
