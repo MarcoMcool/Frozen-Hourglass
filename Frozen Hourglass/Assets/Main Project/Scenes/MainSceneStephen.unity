@@ -8643,6 +8643,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &681972656 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4234214373670737324, guid: 11d7b3d367d9fba4a8b713c0dd5434f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1453055891}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb26ceb60d6cf348966b9523480cda4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &697111877
 GameObject:
   m_ObjectHideFlags: 0
@@ -23163,6 +23175,7 @@ MonoBehaviour:
   number3: {fileID: 230414252}
   buttons: {fileID: 327935196}
   button3: {fileID: 1118427259}
+  Ladder: {fileID: 681972656}
 --- !u!4 &1970863099
 Transform:
   m_ObjectHideFlags: 0

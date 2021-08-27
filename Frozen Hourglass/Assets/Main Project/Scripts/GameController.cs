@@ -70,6 +70,7 @@ public class GameController: MonoBehaviour
     public GameObject number3;
     public GameObject buttons;
     public GameObject button3;
+    public LadderPhysics Ladder;
     
 
     // Start is called before the first frame update
@@ -88,17 +89,10 @@ public class GameController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //QuestionOrdering();
-        if (LadderAnimation.playing)
-        {
-            PopUp.SetActive(false);
-            animationActivate = true;
-        }
-        else if(animationActivate==true)
+        if(Ladder.done==true && animationEnd != true)
         {
             PopUp.SetActive(true);
-            animationActivate = false;
+            animationEnd = true;
         }
 
     }
@@ -107,8 +101,9 @@ public class GameController: MonoBehaviour
     {
         if (buttonPressed == 0)
         {
-            LadderAnimation.fall = true;
-            PopUp.SetActive(true);
+            animationEnd = false;
+            Ladder.StartFall();
+            PopUp.SetActive(false);
             return;
         }
         if (LadderAnimation.playing)

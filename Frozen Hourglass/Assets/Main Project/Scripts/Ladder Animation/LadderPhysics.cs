@@ -11,6 +11,7 @@ public class LadderPhysics : MonoBehaviour
     public PhysicMaterial pmSlide;
     public PhysicMaterial pmNoSlide;
     public MeshCollider meshCollider;
+    public bool done;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +23,19 @@ public class LadderPhysics : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            rb.AddExplosionForce(500f, topExplosivePosition.transform.position, 10f);
-
-            StartCoroutine(Slide());
-
-            StartCoroutine(ResetSlide());
+            StartFall();
         }
 
+        
+    }
+    public void StartFall()
+    {
+        done = false;
+        rb.AddExplosionForce(500f, topExplosivePosition.transform.position, 10f);
+
+        StartCoroutine(Slide());
+
+        StartCoroutine(ResetSlide());
         
     }
 
@@ -44,6 +51,8 @@ public class LadderPhysics : MonoBehaviour
     {
         yield return new WaitForSeconds(1.7f);
         meshCollider.material = pmNoSlide;
+        done = true;
+        print("DONE");
         //pmSlide.dynamicFriction = 0.3f;
         //pmSlide.staticFriction = 0.3f;
     }
