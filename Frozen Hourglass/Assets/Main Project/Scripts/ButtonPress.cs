@@ -72,6 +72,10 @@ public class ButtonPress: MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, startPos.y, transform.position.z);
         }
+        if (Input.GetKeyDown("0") && buttonNumber == 0)
+        {
+            downEvent?.Invoke();
+        }
 
         if (Input.GetKeyDown("l") && buttonNumber == 1)
         {

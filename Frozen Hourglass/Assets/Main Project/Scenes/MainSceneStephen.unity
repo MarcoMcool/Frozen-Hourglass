@@ -504,7 +504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &36851606
 Transform:
   m_ObjectHideFlags: 0
@@ -7985,7 +7985,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.19328624, z: 0.000009435667}
+  m_ConnectedAnchor: {x: 0.0000019073486, y: 0.19328624, z: -0.000012131526}
   serializedVersion: 2
   m_Spring: 100
   m_Damper: 10
@@ -19237,7 +19237,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.19423327, z: -0.10001517}
+  m_ConnectedAnchor: {x: 0.0000019073486, y: 0.19423327, z: -0.100009106}
   serializedVersion: 2
   m_Spring: 100
   m_Damper: 10
@@ -20776,10 +20776,22 @@ MonoBehaviour:
   pressed: 0
   downEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1790590020}
+        m_TargetAssemblyTypeName: ButtonPress, Assembly-CSharp
+        m_MethodName: TellGameController
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonMaterial: {fileID: 2100000, guid: d38a1a3bcaba49a4eba0a8a66afff746, type: 2}
   buttonNumber: 0
-  gameController: {fileID: 0}
+  gameController: {fileID: 1970863098}
   QuestionButtons: {fileID: 0}
 --- !u!145 &1790590021
 SpringJoint:
@@ -23150,6 +23162,7 @@ MonoBehaviour:
   answer3: {fileID: 1310317122}
   number3: {fileID: 230414252}
   buttons: {fileID: 327935196}
+  button3: {fileID: 1118427259}
 --- !u!4 &1970863099
 Transform:
   m_ObjectHideFlags: 0

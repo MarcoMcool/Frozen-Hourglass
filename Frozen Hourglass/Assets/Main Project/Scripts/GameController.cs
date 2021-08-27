@@ -70,10 +70,12 @@ public class GameController: MonoBehaviour
     public GameObject number3;
     public GameObject buttons;
     public GameObject button3;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        PopUp.SetActive(false);
         button1.gameObject.SetActive(true);
         button2.gameObject.SetActive(false);
 
@@ -88,11 +90,31 @@ public class GameController: MonoBehaviour
     {
 
         //QuestionOrdering();
-        
+        if (LadderAnimation.playing)
+        {
+            PopUp.SetActive(false);
+            animationActivate = true;
+        }
+        else if(animationActivate==true)
+        {
+            PopUp.SetActive(true);
+            animationActivate = false;
+        }
+
     }
 
     public void PressButton(int buttonPressed)
     {
+        if (buttonPressed == 0)
+        {
+            LadderAnimation.fall = true;
+            PopUp.SetActive(true);
+            return;
+        }
+        if (LadderAnimation.playing)
+        {
+            return;
+        }
         if (q[questionNumber].key == buttonPressed)
         {
             answerResponseTxtCorrect.text = q[questionNumber].correct;
