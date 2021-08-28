@@ -11,7 +11,7 @@ public class QuestionSetup
         questions[0] = new Question(
             "What was the incident that occurred?",
             new string[] { "A ladder fell on the electrical line causing a short circuit", "A worker has been electrocuted", "The electrical line snapped" },
-            "Correct! \nA ladder resting against the house has fallen onto the powerlines that were close by./n As the ladder is conductive it has caused a short circuit.",
+            "Correct! \nA ladder resting against the house has fallen onto the powerlines that were close by.\n As the ladder is conductive it has caused a short circuit.",
             "Incorrect: \nThe incident was a ladder fell onto the powerline",
             1
         );

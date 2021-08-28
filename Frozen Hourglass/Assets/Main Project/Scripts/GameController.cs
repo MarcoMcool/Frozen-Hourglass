@@ -95,10 +95,10 @@ public class GameController: MonoBehaviour
             PopUp.SetActive(false);
             return;
         }
-        if (LadderAnimation.playing)
-        {
-            return;
-        }
+        //if (LadderAnimation.playing)
+        //{
+        //    return;
+        //}
         if (q[questionNumber].key == buttonPressed)
         {
             answerResponseTxtCorrect.text = q[questionNumber].correct;

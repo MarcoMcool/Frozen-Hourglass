@@ -61924,6 +61924,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerController
       objectReference: {fileID: 0}
+    - target: {fileID: 5530679371344062729, guid: 0e765228d5dc4574ca293f5a446680ba,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 320845444}
+    - target: {fileID: 5530679371489474907, guid: 0e765228d5dc4574ca293f5a446680ba,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 320845444}
     - target: {fileID: 5530679371545934003, guid: 0e765228d5dc4574ca293f5a446680ba,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -61954,6 +61964,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5530679371594785545, guid: 0e765228d5dc4574ca293f5a446680ba,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 320845444}
     - target: {fileID: 5530679371631982855, guid: 0e765228d5dc4574ca293f5a446680ba,
         type: 3}
       propertyPath: m_AnchorMax.y
