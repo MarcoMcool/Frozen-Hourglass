@@ -33,8 +33,8 @@ public class QuestionSetup
             "Which option in the hierarchy of control would best suit solving this risk?",
             new string[] { "Elimination - Remove hazard from workplace", "Substitution - Replace the hazard with less hazardous condition or process",
                 "Isolation - Isolate the hazard from people at the workplace"},
-            "q4 Correct",
-            "q4 inCorrect",
+            "Correct! /nEliminating the potential hazard reduces the risk of any other incidents.",
+            "Incorrect! /nEliminating the risk would reduce the risk of incidents occuring.",
             1
         );
         questions[4] = new Question(

@@ -83,7 +83,6 @@ public class GameController: MonoBehaviour
         q = QuestionSetup.SetUp();
 
         SetAnswers(q[questionNumber]);
-
     }
 
     // Update is called once per frame
