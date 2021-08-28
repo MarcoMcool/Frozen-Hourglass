@@ -33,20 +33,20 @@ public class QuestionSetup
             "Which option in the hierarchy of control would best suit solving this risk?",
             new string[] { "Elimination - Remove hazard from workplace", "Substitution - Replace the hazard with less hazardous condition or process",
                 "Isolation - Isolate the hazard from people at the workplace"},
-            "q4 Correct",
-            "q4 inCorrect",
+            "Correct! /nEliminating the potential hazard reduces the risk of any other incidents.",
+            "Incorrect! /nEliminating the risk would reduce the risk of incidents occuring.",
             1
         );
         questions[4] = new Question(
             "Should the emergency services be called?",
-            new string[] { "q5 response 1", "q5 response 2", "q5 response 3" },
-            "q5 Correct",
-            "q5 inCorrect",
+            new string[] { "Yes, to help the person that was injured in the incident.", "Yes, just in case someone may get injured later.", "No, there wasn't anyone who was injured." },
+            "Correct! /nAs no one is hurt or in danger it is not required to call emergency services,",
+            "Incorrect! /nThere isn't a need to call emergency services as no one is hurt and procedures should be in place to prevent any other incidents.",
             1
         );
         questions[5] = new Question(
             "Is it necessary to render assistance to anyone?",
-            new string[] { "q6 response 1", "q6 response 2", "q6 response 3" },
+            new string[] { "Yes, there are people in the house who need help.", "q6 response 2", "q6 response 3" },
             "q6 Correct",
             "q6 inCorrect",
             1
