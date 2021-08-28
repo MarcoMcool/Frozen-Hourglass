@@ -9,17 +9,17 @@ public class GameController: MonoBehaviour
     public bool animationEnd;
     public LadderFall_controll LadderAnimation;
     public GameObject PopUp;
-    public BoxTeleport BoxTeleport;
-    public GameObject answersq1;
-    public GameObject fullboxq1;
-    public GameObject answersq2;
-    public GameObject fullboxq2;
-    public GameObject fullboxq3;
-    public GameObject text1;
-    public GameObject text2;
+    //public BoxTeleport BoxTeleport;
+    //public GameObject answersq1;
+    //public GameObject fullboxq1;
+    //public GameObject answersq2;
+    //public GameObject fullboxq2;
+    //public GameObject fullboxq3;
+    //public GameObject text1;
+    //public GameObject text2;
 
-    public bool button1Pressed;
-    public bool button2Pressed;
+    //public bool button1Pressed;
+    //public bool button2Pressed;
     public int buttonPressed;
     public int question = 0;
     public enum stage
@@ -31,6 +31,8 @@ public class GameController: MonoBehaviour
         Other
     }
 
+    public stage QuestionStage;
+
     public float timer = 0f;
     public ButtonMaker button1;
     public ButtonMaker button2;
@@ -41,24 +43,10 @@ public class GameController: MonoBehaviour
     int questionNumber = 0;
 
     public bool ladderCorrectPosition;
-    bool moveLadderSequence;
-
-    bool question1Active;
-    bool question2Active;
-    //Question 3
-    bool question3Active;
-    bool question4Active;
-    bool question5Active;
-    bool question6Active;
-    bool question7Active;
-    bool question8Active;
-    bool question9Active;
-    bool question10Active;
-    bool question11Active;
-
 
     Question[] q;
 
+    [Header("Question Answer Variables")]
     public TextMeshProUGUI questionText;
     public GameObject answersOptions;
     public GameObject answerResponseObj;
@@ -70,15 +58,17 @@ public class GameController: MonoBehaviour
     public GameObject number3;
     public GameObject buttons;
     public GameObject button3;
+
+
     public LadderPhysics Ladder;
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
         PopUp.SetActive(false);
-        button1.gameObject.SetActive(true);
-        button2.gameObject.SetActive(false);
+        //button1.gameObject.SetActive(true);
+        //button2.gameObject.SetActive(false);
 
         q = QuestionSetup.SetUp();
 
@@ -88,7 +78,7 @@ public class GameController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Ladder.done==true && animationEnd != true)
+        if (Ladder.done == true && animationEnd != true)
         {
             PopUp.SetActive(true);
             animationEnd = true;
@@ -137,7 +127,7 @@ public class GameController: MonoBehaviour
             questionNumber++;
             StartCoroutine(WaitTimer());
         }
-        else if(answerReceived && !correctAnswer)
+        else if (answerReceived && !correctAnswer)
         {
             answerResponseObj.SetActive(true);
             StartCoroutine(WaitTimer());
@@ -154,7 +144,7 @@ public class GameController: MonoBehaviour
         string[] _answer = question.answers;
         //TODO Make loop
         TextMeshProUGUI[] UIAnswers = new TextMeshProUGUI[] { answer1, answer2, answer3 };
-        for (int i =0; i<_answer.Length; i++)
+        for (int i = 0; i < _answer.Length; i++)
         {
             UIAnswers[i].text = _answer[i];
         }
