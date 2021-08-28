@@ -14,8 +14,8 @@ public class QAFunctions: MonoBehaviour
     public string Q1Response1 = "A ladder fell on the electrical line causing a short circuit";
     public string Q1Response2 = "A worker has been electrocuted";
     public string Q1Response3 = "The electrical line snapped";
-    public string Q1Correct = "Correct! /nA ladder resting against the house has fallen onto the powerlines that were close by./n As the ladder is conductive it has caused a short circuit.";
-    public string Q1InCorrect = "Incorrect! /n An incident has occured so all work must be stopped.";
+    public string Q1Correct = "Correct! \nA ladder resting against the house has fallen onto the powerlines that were close by./n As the ladder is conductive it has caused a short circuit.";
+    public string Q1InCorrect = "Incorrect! \n An incident has occured so all work must be stopped.";
 
     // Question 2
     [Header("Question 2")]
@@ -109,6 +109,6 @@ public class QAFunctions: MonoBehaviour
     public string Q11Response2 = "No, the incident wasn't signficant enough to warrent photos and witness recollections to be record.";
     public string Q11Response3 = "No, it isn't important to take photos and record witness statements.";
     public string Q11Correct = "Correct! /nCollecting photos and witness recollections are an important part of documenting an incident for recording and future reviewing.";
-    public string Q11InCorrect = "Incorrect! /nIt is necessary to record photos and witness recollections for future reviewing of incidents.";
+    public string Q11InCorrect = "Incorrect! \nIt is necessary to record photos and witness recollections for future reviewing of incidents.";
 
 }
