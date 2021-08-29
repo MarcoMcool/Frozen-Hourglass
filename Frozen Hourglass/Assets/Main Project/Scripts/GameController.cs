@@ -88,6 +88,7 @@ public class GameController: MonoBehaviour
 
     public void PressButton(int buttonPressed)
     {
+        print("Button hit: "+buttonPressed);
         if (buttonPressed == 0)
         {
             animationEnd = false;
