@@ -8,7 +8,7 @@ public class Workers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(5, 1.006f, -2.415f);
+        //transform.position = new Vector3(5, 1.006f, -2.415f);
         Vector3 startPos = transform.position;
     }
 

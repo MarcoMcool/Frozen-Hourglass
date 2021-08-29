@@ -21,17 +21,22 @@ public class LadderPhysics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    StartFall();
+        //}
+
+        if (OVRInput.GetDown(OVRInput.RawButton.B))
         {
             StartFall();
         }
 
-        
+
     }
     public void StartFall()
     {
         done = false;
-        rb.AddExplosionForce(500f, topExplosivePosition.transform.position, 10f);
+        rb.AddExplosionForce(450f, topExplosivePosition.transform.position, 10f);
 
         StartCoroutine(Slide());
 
