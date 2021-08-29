@@ -21,7 +21,7 @@ public class Pointer: MonoBehaviour
     void Update()
     {
         
-        if (OVRInput.Get(OVRInput.RawButton.RHandTrigger))
+        if (OVRInput.Get(OVRInput.RawButton.RHandTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger))
         {
             CreateLaser(rightHand.transform.position, rightHand.transform.forward, 10f);
 

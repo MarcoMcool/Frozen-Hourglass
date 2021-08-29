@@ -9,17 +9,7 @@ public class GameController: MonoBehaviour
     public bool animationEnd;
     public LadderFall_controll LadderAnimation;
     public GameObject PopUp;
-    //public BoxTeleport BoxTeleport;
-    //public GameObject answersq1;
-    //public GameObject fullboxq1;
-    //public GameObject answersq2;
-    //public GameObject fullboxq2;
-    //public GameObject fullboxq3;
-    //public GameObject text1;
-    //public GameObject text2;
 
-    //public bool button1Pressed;
-    //public bool button2Pressed;
     public int buttonPressed;
     public int question = 0;
     public enum stage
@@ -31,6 +21,13 @@ public class GameController: MonoBehaviour
         Other
     }
 
+    public bool stopWorkStage;
+    public bool selectHazardsStage;
+    public bool moveHazardsStage;
+    public bool callSupervisor;
+    public bool callManager;
+    public bool pictureTaken;
+
     public stage QuestionStage;
 
     public float timer = 0f;
@@ -41,10 +38,16 @@ public class GameController: MonoBehaviour
     bool answerReceived;
     bool correctAnswer;
     int questionNumber = 0;
+    public bool popupAllowed;
 
     public bool ladderCorrectPosition;
 
+    public int numberObjectsHighlighted;
+
     Question[] q;
+
+    bool[] steps = new bool[] { true, false, true, true, false, true, false, true, true, true, false, true, true, true, false, true, false };
+    int stepsCount = 0;
 
     [Header("Question Answer Variables")]
     public TextMeshProUGUI questionText;
@@ -59,9 +62,7 @@ public class GameController: MonoBehaviour
     public GameObject buttons;
     public GameObject button3;
 
-
     public LadderPhysics Ladder;
-
 
     // Start is called before the first frame update
     void Start()
@@ -84,22 +85,29 @@ public class GameController: MonoBehaviour
             animationEnd = true;
         }
 
+        if (steps[stepsCount])
+        {
+            popupAllowed = true;
+            PopUp.SetActive(true);
+        }
+        else
+        {
+            popupAllowed = false;
+            PopUp.SetActive(false);
+        }
     }
 
     public void PressButton(int buttonPressed)
     {
-        print("Button hit: "+buttonPressed);
+        print("Button hit: " + buttonPressed);
         if (buttonPressed == 0)
         {
             animationEnd = false;
             Ladder.StartFall();
             PopUp.SetActive(false);
+            stepsCount++;
             return;
         }
-        //if (LadderAnimation.playing)
-        //{
-        //    return;
-        //}
         if (q[questionNumber].key == buttonPressed)
         {
             answerResponseTxtCorrect.text = q[questionNumber].correct;
@@ -107,6 +115,7 @@ public class GameController: MonoBehaviour
             answersOptions.SetActive(false);
             buttons.SetActive(false);
             questionNumber++;
+            stepsCount++;
             StartCoroutine(WaitTimer());
         }
         else
@@ -117,7 +126,6 @@ public class GameController: MonoBehaviour
             answerResponseObj.SetActive(true);
             StartCoroutine(WaitTimer());
         }
-
     }
     public void QuestionOrdering()
     {
@@ -171,7 +179,6 @@ public class GameController: MonoBehaviour
         }
 
         answerResponseObj.SetActive(false);
-
     }
     IEnumerator WaitTimer()
     {
@@ -186,81 +193,4 @@ public class GameController: MonoBehaviour
         //After we have waited 5 seconds print the time again.
         print("Finished Coroutine at timestamp : " + Time.time);
     }
-
-
 }
-
-//if (animationActivate)
-//{
-
-//}
-//if (!LadderAnimation.playing && question == 1 && !done)
-//{
-//    PopUp.SetActive(true);
-//    BoxTeleport.doTelport();
-//    done = true;
-//}
-//if (button1Pressed && question == 0)
-//{
-//    LadderAnimation.fall = true;
-//    question = 1;
-//    button1Pressed = false;
-//}
-//if (!button1Pressed && !button2Pressed)
-//{
-//    button1.NumBoxs = 3;
-//    button1.SetUp();
-//}
-//if (button1Pressed && question == 1)
-//{
-//    answersq1.SetActive(false);
-//    fullboxq1.SetActive(true);
-//    timer += Time.deltaTime;
-//    if (timer >= 5f)
-//    {
-//        text1.SetActive(false);
-//        fullboxq1.SetActive(false);
-//        answersq1.SetActive(false);
-//        answersq2.SetActive(true);
-//        text2.SetActive(true);
-//        button1Pressed = false;
-//        timer = 0f;
-//        button1.gameObject.SetActive(false);
-//        button2.gameObject.SetActive(true);
-//        question = 2;
-//        button2.SetUp();
-//    }
-
-
-//}
-//if (button2Pressed)
-//{
-//    answersq2.SetActive(false);
-//    fullboxq2.SetActive(true);
-//    timer += Time.deltaTime;
-//    if (timer >= 5f)
-//    {
-//        answersq2.SetActive(true);
-//        fullboxq2.SetActive(false);
-//        button2Pressed = false;
-//        timer = 0f;
-//    }
-//}
-//if (button1Pressed && question == 2)
-//{
-//    answersq2.SetActive(false);
-//    fullboxq3.SetActive(true);
-//    timer += Time.deltaTime;
-//    if (timer >= 5f)
-//    {
-//        answersq2.SetActive(true);
-//        fullboxq3.SetActive(false);
-//        button1Pressed = false;
-//        timer = 0f;
-//    }
-//}
-
-//if (moveLadderSequence)
-//{
-
-//}
