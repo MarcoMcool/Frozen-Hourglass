@@ -99,7 +99,8 @@ public class ButtonPress: MonoBehaviour
         gameController.PressButton(buttonNumber);
         if (buttonNumber == 0)
         {
-            gameObject.SetActive(false);
+            gameObject.transform.parent.gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
 }
