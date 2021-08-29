@@ -62593,6 +62593,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5530679371344062743, guid: 0e765228d5dc4574ca293f5a446680ba,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 122
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530679371489474905, guid: 0e765228d5dc4574ca293f5a446680ba,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 122
+      objectReference: {fileID: 0}
     - target: {fileID: 5530679371489474907, guid: 0e765228d5dc4574ca293f5a446680ba,
         type: 3}
       propertyPath: gameController
@@ -62642,6 +62652,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530679371594785559, guid: 0e765228d5dc4574ca293f5a446680ba,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 122
       objectReference: {fileID: 0}
     - target: {fileID: 5530679371631982855, guid: 0e765228d5dc4574ca293f5a446680ba,
         type: 3}
