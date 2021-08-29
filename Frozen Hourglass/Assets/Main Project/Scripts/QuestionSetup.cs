@@ -11,83 +11,81 @@ public class QuestionSetup
         questions[0] = new Question(
             "What was the incident that occurred?",
             new string[] { "A ladder fell on the electrical line causing a short circuit", "A worker has been electrocuted", "The electrical line snapped" },
-            "Correct: It was indeed a ladder that fell onto the powerline",
-            "Incorrect: The incident was a ladder fell onto the powerline",
+            "Correct! \nA ladder resting against the house has fallen onto the powerlines that were close by.\n As the ladder is conductive it has caused a short circuit.",
+            "Incorrect: \nThe incident was a ladder fell onto the powerline",
             1
         );
         questions[1] = new Question(
             "Should work in the vicinity be stopped?",
             new string[] { "True", "False"},
-            "Correct: Work should be stopped immediately in the area",
-            "Incorrect: The answer is True, work should be halted immediately.",
+            "Correct: \nWork should be stopped immediately in the area",
+            "Incorrect: \nThe answer is True, work should be halted immediately.",
             1
         );
         questions[2] = new Question(
             "Is there any potential risks in the environment?",
             new string[] { "There is another ladder.", "The bushes in the garden.", "The truck near the powerline." },
-            "Correct: The other ladder poses a risk in shocking anyone if it also touches the powerline.",
-            "Incorrect: The answer is the other ladder in the front of the house.",
+            "Correct: \nThe other ladder poses a risk in shocking anyone if it also touches the powerline.",
+            "Incorrect: \nThe answer is the other ladder in the front of the house.",
             1
         );
         questions[3] = new Question(
             "Which option in the hierarchy of control would best suit solving this risk?",
             new string[] { "Elimination - Remove hazard from workplace", "Substitution - Replace the hazard with less hazardous condition or process",
                 "Isolation - Isolate the hazard from people at the workplace"},
-            "Correct! /nEliminating the potential hazard reduces the risk of any other incidents.",
-            "Incorrect! /nEliminating the risk would reduce the risk of incidents occuring.",
+            "Correct! \nEliminating the potential hazard reduces the risk of any other incidents.",
+            "Incorrect! \nEliminating the risk would reduce the risk of incidents occuring.",
             1
         );
         questions[4] = new Question(
             "Should the emergency services be called?",
             new string[] { "Yes, to help the person that was injured in the incident.", "Yes, just in case someone may get injured later.", "No, there wasn't anyone who was injured." },
-            "Correct! /nAs no one is hurt or in danger it is not required to call emergency services,",
-            "Incorrect! /nThere isn't a need to call emergency services as no one is hurt and procedures should be in place to prevent any other incidents.",
+            "Correct! \nAs no one is hurt or in danger it is not required to call emergency services,",
+            "Incorrect! \nThere isn't a need to call emergency services as no one is hurt and procedures should be in place to prevent any other incidents.",
             1
         );
         questions[5] = new Question(
             "Is it necessary to render assistance to anyone?",
-            new string[] { "Yes, there are people in the house who need help.", "q6 response 2", "q6 response 3" },
-            "q6 Correct",
-            "q6 inCorrect",
+            new string[] { "Yes, there are people in the house who need help.", "No, everyone has been ordered to a safe distance.", "Yes, there passersby that are next to the powerline." },
+            "Correct! \nThe workers on site are all unhurt and at a safe distance, and anyone inside won't be in direct contact with the powerline.",
+            "Incorrect! \nAll workers on site are a safe distance away from the powerline so there should be a need to assist anyone.",
             1
         );
         questions[6] = new Question(
             "Should the work group supervisor be contacted?",
-            new string[] { "q7 response 1", "q7 response 2", "q7 response 3" },
-            "q1 Correct",
-            "q1 inCorrect",
+            new string[] { "Yes, the group supervisor must be informed of any incident", "No, it was a small event and no one was hurt.", "No, there is no visable damage so everything is fine." },
+            "Correct! \nThe work group supervisor should be informed if any incidents occur so to ensure everyones safety while working.",
+            "Incorrect! \nThe work group supervisor must be contacted if there are any incidents that occur to the powerline.",
             1
         );
         questions[7] = new Question(
             "Has the control measure been implemented to prevent escalation of the situation?",
-            new string[] { "q1 response 1", "q1 response 2", "q1 response 3" },
-            "q1 Correct",
-            "q1 inCorrect",
+            new string[] { "Yes, the ladder was eliminated from the scene to prevent anymore incidents from potentially occuring.", "No, the site has been left untouched to secure the situation.", "Yes, the ladder was substituted with a wooden ladder to prevent another incident from occuring." },
+            "Correct! \nThe elimination of the ladder earlier prevented any possible incidents from occuring.",
+            "Incorrect! \nThe ladder was eliminated from the site earlier to prevent possible incidents from occuring.",
             1
         );
         questions[8] = new Question(
             "Has the site been left unaltered?",
-            new string[] { "q1 response 1", "q1 response 2", "q1 response 3" },
+            new string[] { "Yes, nothing has been removed from the site.", "No, a ladder was removed from the site.", "No, the workers were removed from the site." },
             "q1 Correct",
             "q1 inCorrect",
             1
         );
         questions[9] = new Question(
             "Has the work group manager been contacted to release the site?",
-            new string[] { "q1 response 1", "q1 response 2", "q1 response 3" },
-            "q1 Correct",
-            "q1 inCorrect",
+            new string[] { "Yes, the work group manager's permission is needed to continue work on the site.", "No, work on the site can commence after deeming the site safe by the workers.", "qNo, the work group manager doesn't need to inspect the site to deem it safe and release the site." },
+            "Correct! \nThe work groups manager's permission to release the site is needed after deeming the site safe again to continue work.",
+            "Incorrect! \nIf the work group manager isn't contacted work cannot commence as it hasn't been deemed safe yet.",
             1
         );
         questions[10] = new Question(
             "Have photos and witness recollections been recorded?",
-            new string[] { "q1 response 1", "q1 response 2", "q1 response 3" },
-            "q1 Correct",
-            "q1 inCorrect",
+            new string[] { "Yes, photos and witness recollections have been recorded to be reported and stored for furture recording", "No, the incident wasn't signficant enough to warrent photos and witness recollections to be record.", "No, it isn't important to take photos and record witness statements." },
+            "Correct! \nCollecting photos and witness recollections are an important part of documenting an incident for recording and future reviewing.",
+            "Incorrect! \nIt is necessary to record photos and witness recollections for future reviewing of incidents.",
             1
         );
-
-
 
         return questions;
     }
