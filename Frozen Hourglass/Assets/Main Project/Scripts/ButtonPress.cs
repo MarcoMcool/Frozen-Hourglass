@@ -56,7 +56,7 @@ public class ButtonPress: MonoBehaviour
                 }
                 */
                 GetComponent<MeshRenderer>().material = buttonMaterial;
-                QuestionButtons.ButtonPressed = buttonNumber;
+                //QuestionButtons.ButtonPressed = buttonNumber;
                 pressed = true;
                 // If we have an event, invoke it
                 downEvent?.Invoke();
@@ -94,7 +94,12 @@ public class ButtonPress: MonoBehaviour
 
     public void TellGameController()
     {
+        
         print(buttonNumber);
         gameController.PressButton(buttonNumber);
+        if (buttonNumber == 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
