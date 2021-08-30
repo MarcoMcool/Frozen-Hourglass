@@ -46,7 +46,7 @@ public class GameController: MonoBehaviour
 
     Question[] q;
 
-    bool[] steps = new bool[] { true, false, true, true, false, true, false, true, true, true, false, true, true, true, false, true, false };
+    public bool[] steps = new bool[] {false, true, false, true, true, false, true, false, true, true, true, false, true, true, true, false, true, false };
     int stepsCount = 0;
 
     [Header("Question Answer Variables")]
@@ -81,6 +81,7 @@ public class GameController: MonoBehaviour
     {
         if (Ladder.done == true && animationEnd != true)
         {
+            stepsCount++;
             PopUp.SetActive(true);
             animationEnd = true;
         }
@@ -94,6 +95,16 @@ public class GameController: MonoBehaviour
         {
             popupAllowed = false;
             PopUp.SetActive(false);
+
+            if (stepsCount == 5)
+            {
+                if (selectHazardsStage)
+                {
+                    stepsCount++;
+                    selectHazardsStage = false;
+                }
+            }
+            
         }
     }
 
@@ -105,7 +116,6 @@ public class GameController: MonoBehaviour
             animationEnd = false;
             Ladder.StartFall();
             PopUp.SetActive(false);
-            stepsCount++;
             return;
         }
         if (q[questionNumber].key == buttonPressed)
