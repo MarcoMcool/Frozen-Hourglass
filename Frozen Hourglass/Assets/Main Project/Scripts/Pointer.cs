@@ -21,13 +21,13 @@ public class Pointer: MonoBehaviour
     void Update()
     {
         
-        if (OVRInput.Get(OVRInput.RawButton.RHandTrigger))
+        if (OVRInput.Get(OVRInput.RawButton.RHandTrigger) && OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
         {
             CreateLaser(rightHand.transform.position, rightHand.transform.forward, 10f);
 
             lineRenderer.enabled = true;
         }
-        else if (OVRInput.Get(OVRInput.RawButton.LHandTrigger))
+        else if (OVRInput.Get(OVRInput.RawButton.LHandTrigger) && OVRInput.Get(OVRInput.RawButton.LIndexTrigger))
         {
             CreateLaser(leftHand.transform.position, leftHand.transform.forward, 10f);
 

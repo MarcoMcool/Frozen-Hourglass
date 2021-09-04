@@ -151,9 +151,9 @@
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\DeserializeableList.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\CallbackRunner.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\ShareMediaStatus.cs" />
-    <Compile Include="Assets\Oculus\Platform\Scripts\TimeWindow.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\CloudStorageUpdateStatus.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\SdkAccount.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\TimeWindow.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\RichPresenceExtraContext.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\CloudStorageDataStatus.cs" />
     <Compile Include="Assets\Oculus\Platform\Samples\SimplePlatformSample\DataEntry.cs" />
@@ -163,10 +163,10 @@
     <Compile Include="Assets\Oculus\Platform\Scripts\PlatformInitializeResult.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\CalApplicationSuggestion.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\StandalonePlatform.cs" />
-    <Compile Include="Assets\Oculus\Platform\Scripts\IMicrophone.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\LeaderboardEntry.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\Product.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\ChallengeOptions.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\IMicrophone.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\UserReportID.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\MatchmakingStats.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\CloudStorageMetadata.cs" />
@@ -199,8 +199,8 @@
     <Compile Include="Assets\Oculus\Platform\Scripts\LaunchResult.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\UserOptions.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\PlatformSettings.cs" />
-    <Compile Include="Assets\Oculus\Platform\Scripts\ChallengeViewerFilter.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\UserDataStoreUpdateResponse.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\ChallengeViewerFilter.cs" />
     <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\AIPlayer.cs" />
     <Compile Include="Assets\Oculus\Platform\Samples\NetChat\DataEntry.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\LivestreamingStartResult.cs" />
@@ -224,8 +224,8 @@
     <Compile Include="Assets\Oculus\Platform\Samples\VrVoiceChat\Scripts\P2PManager.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\MatchmakingOptions.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\SdkAccountType.cs" />
-    <Compile Include="Assets\Oculus\Platform\Samples\RichPresenceSample\Scripts\RichPresenceSample.cs" />
     <Compile Include="Assets\Oculus\Platform\Samples\VrVoiceChat\Scripts\VREyeRaycaster.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\RichPresenceSample\Scripts\RichPresenceSample.cs" />
     <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\P2PNetworkBall.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\OrgScopedID.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\LeaderboardFilterType.cs" />
