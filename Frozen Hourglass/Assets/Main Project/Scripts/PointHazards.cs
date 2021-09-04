@@ -18,11 +18,12 @@ public class PointHazards : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameController.stepsCount != 6)
+        if (gameController.stepsCount != 5)
         {
             objectsFound.Clear();
         }
-        if (numberOfHazards == objectsFound.Count)
+
+        if (gameController.stepsCount == 5 && numberOfHazards == objectsFound.Count)
         {
             gameController.stepsCount++;
         }
