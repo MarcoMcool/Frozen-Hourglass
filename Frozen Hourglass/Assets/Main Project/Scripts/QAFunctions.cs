@@ -90,8 +90,8 @@ public class QAFunctions: MonoBehaviour
     public string Q9Response1 = "Yes, nothing has been removed from the site.";
     public string Q9Response2 = "No, a ladder was removed from the site,";
     public string Q9Response3 = "No, the workers were removed from the site.";
-    public string Q9Correct = "q9 Correct";
-    public string Q9InCorrect = "q9 inCorrect";
+    public string Q9Correct = "Correct: \nThe site as been altered to removed a hazardous ladder reducing the risk of further incidents.";
+    public string Q9InCorrect = "Incorrect: \nThe site has been altered, by removing the ladder from the site earlier.";
 
     // Question 10
     [Header("Question 10")]
