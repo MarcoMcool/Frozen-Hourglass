@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Workers : MonoBehaviour
 {
-
+    public GameController gameController;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +16,9 @@ public class Workers : MonoBehaviour
     void Update()
     {
         
-        if (gameObject.GetComponent<OVRGrabbable>().isGrabbed)
+        if (gameObject.GetComponent<OVRGrabbable>().isGrabbed || Input.GetKeyDown(KeyCode.M))
         {
+            gameController.stepsCount++;
             // Move worker to a distance away from house
             if (Vector3.Distance(transform.position, new Vector3(10, transform.position.y, transform.position.z)) <= 5)
             {

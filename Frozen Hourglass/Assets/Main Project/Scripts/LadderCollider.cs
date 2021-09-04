@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LadderCollider : MonoBehaviour
 {
-    GameController gameController;
+    public GameController gameController;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +26,12 @@ public class LadderCollider : MonoBehaviour
         {
             gameController.ladderCorrectPosition = true;
             print("ladder in correct area");
+
+            if (gameController.stepsCount == 8)
+            {
+                gameController.stepsCount++;
+                print("correct time for the ladder");
+            }
         }
         else if (other.gameObject.name == "Ladder")
         {

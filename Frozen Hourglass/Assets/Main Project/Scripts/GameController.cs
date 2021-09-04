@@ -47,7 +47,7 @@ public class GameController: MonoBehaviour
     Question[] q;
 
     public bool[] steps = new bool[] {false, true, false, true, true, false, true, false, true, true, true, false, true, true, true, false, true, false };
-    int stepsCount = 0;
+    public int stepsCount = 0;
 
     [Header("Question Answer Variables")]
     public TextMeshProUGUI questionText;
@@ -190,6 +190,9 @@ public class GameController: MonoBehaviour
 
         answerResponseObj.SetActive(false);
     }
+
+    public 
+
     IEnumerator WaitTimer()
     {
         //Print the time of when the function is first called.
