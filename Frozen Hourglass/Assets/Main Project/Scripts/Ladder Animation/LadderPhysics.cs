@@ -21,10 +21,10 @@ public class LadderPhysics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.P))
-        //{
-        //    StartFall();
-        //}
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            StartFall();
+        }
 
         if (OVRInput.GetDown(OVRInput.RawButton.B))
         {
@@ -35,13 +35,20 @@ public class LadderPhysics : MonoBehaviour
     }
     public void StartFall()
     {
-        done = false;
-        rb.AddExplosionForce(450f, topExplosivePosition.transform.position, 10f);
+        
 
+        StartCoroutine(WaitForSecond());
         StartCoroutine(Slide());
 
         StartCoroutine(ResetSlide());
         
+    }
+
+    IEnumerator WaitForSecond()
+    {
+        yield return new WaitForSeconds(0.5f);
+        done = false;
+        rb.AddExplosionForce(450f, topExplosivePosition.transform.position, 10f);
     }
 
     IEnumerator Slide()
