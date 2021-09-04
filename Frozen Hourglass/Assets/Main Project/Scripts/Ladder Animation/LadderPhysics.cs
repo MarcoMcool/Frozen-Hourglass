@@ -35,20 +35,14 @@ public class LadderPhysics : MonoBehaviour
     }
     public void StartFall()
     {
-        
 
-        StartCoroutine(WaitForSecond());
+        done = false;
+        rb.AddExplosionForce(450f, topExplosivePosition.transform.position, 10f);
+
         StartCoroutine(Slide());
 
         StartCoroutine(ResetSlide());
         
-    }
-
-    IEnumerator WaitForSecond()
-    {
-        yield return new WaitForSeconds(0.5f);
-        done = false;
-        rb.AddExplosionForce(450f, topExplosivePosition.transform.position, 10f);
     }
 
     IEnumerator Slide()
