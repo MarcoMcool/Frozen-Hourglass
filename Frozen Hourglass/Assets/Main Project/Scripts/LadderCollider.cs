@@ -5,10 +5,13 @@ using UnityEngine;
 public class LadderCollider : MonoBehaviour
 {
     public GameController gameController;
+    public int numberOfHazards;
+    int hazardsMoved;
     // Start is called before the first frame update
     void Start()
     {
-       gameController = FindObjectOfType<GameController>();
+        numberOfHazards = FindObjectsOfType<Hazard>().Length;
+        gameController = FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
@@ -24,10 +27,10 @@ public class LadderCollider : MonoBehaviour
         }
         if (other.gameObject.GetComponent<Hazard>())
         {
-            gameController.ladderCorrectPosition = true;
+            //gameController.ladderCorrectPosition = true;
             print("ladder in correct area");
 
-            if (gameController.stepsCount == 7)
+            if (gameController.stepsCount == 7 && hazardsMoved == numberOfHazards)
             {
                 gameController.stepsCount++;
                 print("correct time for the ladder");
