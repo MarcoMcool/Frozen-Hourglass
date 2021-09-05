@@ -22,12 +22,12 @@ public class LadderCollider : MonoBehaviour
         {
             print("here");
         }
-        if (other.gameObject.name == "MoveLadder")
+        if (other.gameObject.GetComponent<Hazard>())
         {
             gameController.ladderCorrectPosition = true;
             print("ladder in correct area");
 
-            if (gameController.stepsCount == 8)
+            if (gameController.stepsCount == 7)
             {
                 gameController.stepsCount++;
                 print("correct time for the ladder");
