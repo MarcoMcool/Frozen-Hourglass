@@ -42,14 +42,14 @@ public class QuestionSetup
             new string[] { "Yes, to help the person that was injured in the incident.", "Yes, just in case someone may get injured later.", "No, there wasn't anyone who was injured." },
             "Correct! \nAs no one is hurt or in danger it is not required to call emergency services,",
             "Incorrect! \nThere isn't a need to call emergency services as no one is hurt and procedures should be in place to prevent any other incidents.",
-            1
+            3
         );
         questions[5] = new Question(
             "Is it necessary to render assistance to anyone?",
             new string[] { "Yes, there are people in the house who need help.", "No, everyone has been ordered to a safe distance.", "Yes, there passersby that are next to the powerline." },
             "Correct! \nThe workers on site are all unhurt and at a safe distance, and anyone inside won't be in direct contact with the powerline.",
             "Incorrect! \nAll workers on site are a safe distance away from the powerline so there should be a need to assist anyone.",
-            1
+            2
         );
         questions[6] = new Question(
             "Should the work group supervisor be contacted?",
@@ -68,12 +68,12 @@ public class QuestionSetup
         questions[8] = new Question(
             "Has the site been left unaltered?",
             new string[] { "Yes, nothing has been removed from the site.", "No, a ladder was removed from the site.", "No, the workers were removed from the site." },
-            "q1 Correct",
-            "q1 inCorrect",
-            1
+            "Correct: \nThe site as been altered to removed a hazardous ladder reducing the risk of further incidents.",
+            "Incorrect: \nThe site has been altered, by removing the ladder from the site earlier.",
+            2
         );
         questions[9] = new Question(
-            "Has the work group manager been contacted to release the site?",
+            "Does the work group manager need to be contacted to release the site?",
             new string[] { "Yes, the work group manager's permission is needed to continue work on the site.", "No, work on the site can commence after deeming the site safe by the workers.", "qNo, the work group manager doesn't need to inspect the site to deem it safe and release the site." },
             "Correct! \nThe work groups manager's permission to release the site is needed after deeming the site safe again to continue work.",
             "Incorrect! \nIf the work group manager isn't contacted work cannot commence as it hasn't been deemed safe yet.",
