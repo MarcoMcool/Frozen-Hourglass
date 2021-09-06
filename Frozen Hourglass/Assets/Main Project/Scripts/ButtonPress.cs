@@ -9,27 +9,54 @@ public class ButtonPress: MonoBehaviour
     public float pressLength;
     public bool pressed;
     public ButtonEvent downEvent;
+    public Material buttonMaterial;
+    //public GameObject button;
+    public int buttonNumber;
 
-    Vector3 startPos;
+    public GameController gameController;
+    public QuestionButtons QuestionButtons;
+
+    public Vector3 startPos;
     Rigidbody rb;
 
     void Start()
     {
-        startPos = transform.position;
+        QuestionButtons=GetComponentInParent<QuestionButtons>();
+        startPos = transform.localPosition;
         rb = GetComponent<Rigidbody>();
     }
-
+    
     void Update()
     {
         // If our distance is greater than what we specified as a press
         // set it to our max distance and register a press if we haven't already
-        float distance = Mathf.Abs(transform.position.y - startPos.y);
+        //float distance = Mathf.Abs(transform.position.y - startPos.y);
+        float distance = Mathf.Abs(transform.localPosition.y - startPos.y);
         if (distance >= pressLength)
         {
             // Prevent the button from going past the pressLength
-            transform.position = new Vector3(transform.position.x, startPos.y - pressLength, transform.position.z);
+            transform.localPosition = startPos + new Vector3(0,-pressLength,0); //new Vector3(transform.position.x, startPos.y - pressLength, transform.position.z);
             if (!pressed)
             {
+                /*
+                if (buttonNumber == 0)
+                {
+                    gameController.button1Pressed = true;
+                    this.transform.parent.gameObject.SetActive(false);
+                }
+                if (buttonNumber == 1)
+                {
+                    gameController.button1Pressed = true;
+                }
+                if (buttonNumber == 2)
+                {
+
+                    gameController.button2Pressed = true;
+                    gameController.button1Pressed = false;
+                }
+                */
+                //GetComponent<MeshRenderer>().material = buttonMaterial;
+                //QuestionButtons.ButtonPressed = buttonNumber;
                 pressed = true;
                 // If we have an event, invoke it
                 downEvent?.Invoke();
@@ -41,9 +68,40 @@ public class ButtonPress: MonoBehaviour
             pressed = false;
         }
         // Prevent button from springing back up past its original position
-        if (transform.position.y > startPos.y)
+        if (transform.localPosition.y > startPos.y)
         {
-            transform.position = new Vector3(transform.position.x, startPos.y, transform.position.z);
+            transform.localPosition = startPos; //new Vector3(transform.position.x, startPos.y, transform.position.z);
+        }
+        if (Input.GetKeyDown("0") && buttonNumber == 0)
+        {
+            downEvent?.Invoke();
+        }
+
+        if (Input.GetKeyDown("l") && buttonNumber == 1)
+        {
+            downEvent?.Invoke();
+        }
+        if (Input.GetKeyDown("j") && buttonNumber == 2)
+        {
+            downEvent?.Invoke();
+        }
+        if (Input.GetKeyDown("k") && buttonNumber == 3)
+        {
+            downEvent?.Invoke();
+        }
+        
+    }
+
+    public void TellGameController()
+    {
+        transform.localPosition = startPos;
+
+        print(buttonNumber);
+        gameController.PressButton(buttonNumber);
+        if (buttonNumber == 0)
+        {
+            gameObject.transform.parent.gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
 }

@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
    public void PLAY()
     {
         print("play has been pressed.");
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene(1);
     }
     
     public void QUIT()
