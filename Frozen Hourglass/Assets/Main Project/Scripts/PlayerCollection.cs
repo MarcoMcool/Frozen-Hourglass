@@ -8,10 +8,11 @@ public class PlayerCollection: MonoBehaviour
     TouchController controller;
     public GameObject handPopup;
     float timer = 0f;
+    public GameController gc;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -19,9 +20,9 @@ public class PlayerCollection: MonoBehaviour
     {
         timer += Time.deltaTime;
         //if (OVRInput.GetDown(OVRInput.Button.Four))
-        if (Input.GetButton("Oculus_CrossPlatform_Button4"))
+        if (Input.GetButton("Oculus_CrossPlatform_Button4") && gc.popupAllowed)
         {
-            if (timer >= 0.1f)
+            if (timer >= 0.2f)
             {
                 if (handPopup.activeSelf)
                 {

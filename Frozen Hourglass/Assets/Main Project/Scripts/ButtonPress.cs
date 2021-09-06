@@ -14,16 +14,15 @@ public class ButtonPress: MonoBehaviour
     public int buttonNumber;
 
     public GameController gameController;
-    public QuestionButtons QuestionButtons;
 
     public Vector3 startPos;
     Rigidbody rb;
 
     void Start()
     {
-        QuestionButtons=GetComponentInParent<QuestionButtons>();
         startPos = transform.localPosition;
         rb = GetComponent<Rigidbody>();
+        
     }
     
     void Update()
@@ -35,7 +34,7 @@ public class ButtonPress: MonoBehaviour
         if (distance >= pressLength)
         {
             // Prevent the button from going past the pressLength
-            transform.localPosition = startPos - new Vector3(0,-pressLength,0); //new Vector3(transform.position.x, startPos.y - pressLength, transform.position.z);
+            transform.localPosition = startPos + new Vector3(0,-pressLength,0); //new Vector3(transform.position.x, startPos.y - pressLength, transform.position.z);
             if (!pressed)
             {
                 /*
@@ -94,7 +93,8 @@ public class ButtonPress: MonoBehaviour
 
     public void TellGameController()
     {
-        
+        transform.localPosition = startPos;
+
         print(buttonNumber);
         gameController.PressButton(buttonNumber);
         if (buttonNumber == 0)

@@ -18,7 +18,7 @@ public class BoxTeleport : MonoBehaviour
         if (Input.GetButton("Oculus_CrossPlatform_Button2") || telport)
         {
             //Quaternion rot180degrees = Quaternion.Euler(-transform.rotation.eulerAngles);
-            doTelport();
+            //doTelport();
             
         } 
     }
