@@ -5,35 +5,17 @@ using TMPro;
 
 public class GameController: MonoBehaviour
 {
-    public bool animationActivate;
+
     public bool animationEnd;
-    public LadderFall_controll LadderAnimation;
     public GameObject PopUp;
 
     public int buttonPressed;
     public int question = 0;
-    public enum stage
-    {
-        Animation,
-        Question,
-        Response,
-        Action,
-        Other
-    }
 
-    public bool stopWorkStage;
     public bool selectHazardsStage;
     public bool moveHazardsStage;
-    public bool callSupervisor;
-    public bool callManager;
-    public bool pictureTaken;
-
-    public stage QuestionStage;
 
     public float timer = 0f;
-    public ButtonMaker button1;
-    public ButtonMaker button2;
-    private bool done = false;
 
     bool answerReceived;
     bool correctAnswer;
@@ -47,7 +29,7 @@ public class GameController: MonoBehaviour
     Question[] q;
 
     [SerializeField]
-    private bool[] steps = new bool[] {false, true, true, false, true, false, true, false, true, true, true, false, true, true, true, false, true, false };
+    private bool[] steps = new bool[] { false, true, true, false, true, false, true, false, true, true, true, false, true, true, true, false, true, false };
     public int stepsCount = 0;
 
     [Header("Question Answer Variables")]
@@ -69,8 +51,6 @@ public class GameController: MonoBehaviour
     void Start()
     {
         PopUp.SetActive(false);
-        //button1.gameObject.SetActive(true);
-        //button2.gameObject.SetActive(false);
 
         q = QuestionSetup.SetUp();
 
@@ -105,7 +85,6 @@ public class GameController: MonoBehaviour
                     selectHazardsStage = false;
                 }
             }
-            
         }
     }
 
@@ -192,7 +171,6 @@ public class GameController: MonoBehaviour
         answerResponseObj.SetActive(false);
     }
 
-    public 
 
     IEnumerator WaitTimer()
     {
