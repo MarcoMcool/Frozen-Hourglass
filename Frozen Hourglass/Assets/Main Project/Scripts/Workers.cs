@@ -15,18 +15,16 @@ public class Workers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameController.stepsCount == 3)
+        
+        if (gameObject.GetComponent<OVRGrabbable>().isGrabbed || Input.GetKeyDown(KeyCode.M))
         {
-            if (gameObject.GetComponent<OVRGrabbable>().isGrabbed || Input.GetKeyDown(KeyCode.M))
+            gameController.stepsCount++;
+            // Move worker to a distance away from house
+            if (Vector3.Distance(transform.position, new Vector3(10, transform.position.y, transform.position.z)) <= 5)
             {
-                gameController.stepsCount++;
-                // Move worker to a distance away from house
-                if (Vector3.Distance(transform.position, new Vector3(10, transform.position.y, transform.position.z)) <= 5)
-                {
-                    transform.position += new Vector3(3, 0, 0) * Time.deltaTime;
-                }
-                //gameObject.SetActive(false);
+                transform.position += new Vector3(3, 0, 0) * Time.deltaTime;
             }
+            //gameObject.SetActive(false);
         }
     }
 
