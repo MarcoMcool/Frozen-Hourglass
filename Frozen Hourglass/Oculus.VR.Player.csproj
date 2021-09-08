@@ -98,9 +98,9 @@
     <Compile Include="Assets\Oculus\VR\Scripts\Util\OVRGrabbable.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\OVRDebugHeadController.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\OVRSceneLoader.cs" />
-    <Compile Include="Assets\Oculus\VR\Scripts\OVRPlatformMenu.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\Util\OVRProfiler.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\Util\OVRGearVrControllerTest.cs" />
+    <Compile Include="Assets\Oculus\VR\Scripts\OVRPlatformMenu.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\Util\OVRResetOrientation.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\Util\OVRSceneSampleController.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\Util\OVRSystemPerfMetrics.cs" />
@@ -116,9 +116,9 @@
     <Compile Include="Assets\Oculus\VR\Scripts\Util\OVRCustomSkeleton.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\Util\OVRMixedRealityCaptureSettings.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\Util\OVRAutoDestroyInMRC.cs" />
-    <Compile Include="Assets\Oculus\VR\Scripts\Util\OVRControllerHelper.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\OVRTracker.cs" />
     <Compile Include="Assets\Oculus\VR\ThirdParty\SimpleJSON.cs" />
+    <Compile Include="Assets\Oculus\VR\Scripts\Util\OVRControllerHelper.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\Util\OVRMixedRealityCaptureConfiguration.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\Composition\OVRExternalComposition.cs" />
     <Compile Include="Assets\Oculus\VR\Scripts\OVRPlugin.cs" />
