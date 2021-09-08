@@ -14,14 +14,12 @@ public class ButtonPress: MonoBehaviour
     public int buttonNumber;
 
     public GameController gameController;
-    public QuestionButtons QuestionButtons;
 
     public Vector3 startPos;
     Rigidbody rb;
 
     void Start()
     {
-        QuestionButtons=GetComponentInParent<QuestionButtons>();
         startPos = transform.localPosition;
         rb = GetComponent<Rigidbody>();
     }
