@@ -60,7 +60,8 @@ public class GameController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Ladder.done == true && animationEnd != true)
+        
+            if (Ladder.done == true && animationEnd != true)
         {
             stepsCount++;
             PopUp.SetActive(true);
@@ -79,11 +80,11 @@ public class GameController: MonoBehaviour
 
             if (stepsCount == 5)
             {
-                if (selectHazardsStage)
-                {
-                    stepsCount++;
-                    selectHazardsStage = false;
-                }
+                //if (selectHazardsStage)
+                //{
+                //    stepsCount++;
+                //    selectHazardsStage = false;
+                //}
             }
         }
     }
