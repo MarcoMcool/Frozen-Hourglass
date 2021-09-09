@@ -7,6 +7,7 @@ public class PlayerCollection: MonoBehaviour
 {
     TouchController controller;
     public GameObject handPopup;
+    public GameObject RightPopup;
     float timer = 0f;
     public GameController gc;
     // Start is called before the first frame update
@@ -38,7 +39,7 @@ public class PlayerCollection: MonoBehaviour
         }
         if (Input.GetButtonDown("Oculus_CrossPlatform_SecondaryIndexTrigger"))
         {
-            //Make Popup hide when doing teleport
+            RightPopup.SetActive(false);
         }
         
     }
