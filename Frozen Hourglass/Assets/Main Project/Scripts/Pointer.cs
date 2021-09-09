@@ -68,15 +68,18 @@ public class Pointer: MonoBehaviour
     {
         if (objectHit.collider.GetComponent<Hazard>())
         {
-            GameObject gO;
-            gO = objectHit.collider.gameObject;
-            if (PointHazards.objectsFound.Contains(gO))
+            print("object has hazard script");
+            GameObject hazardObject;
+            hazardObject = objectHit.collider.gameObject;
+            if (PointHazards.objectsFound.Contains(hazardObject))
             {
+                print("object in objects found");
                 return;
             }
             else
             {
-                PointHazards.objectsFound.Add(gO);
+                print("hazard not in objects found");
+                PointHazards.objectsFound.Add(hazardObject);
             }
         }
     }

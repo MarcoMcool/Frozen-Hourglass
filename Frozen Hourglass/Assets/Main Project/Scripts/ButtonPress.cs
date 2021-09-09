@@ -22,7 +22,6 @@ public class ButtonPress: MonoBehaviour
     {
         startPos = transform.localPosition;
         rb = GetComponent<Rigidbody>();
-        
     }
     
     void Update()

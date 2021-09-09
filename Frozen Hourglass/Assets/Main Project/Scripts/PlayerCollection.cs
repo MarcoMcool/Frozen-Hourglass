@@ -20,7 +20,7 @@ public class PlayerCollection: MonoBehaviour
     {
         timer += Time.deltaTime;
         //if (OVRInput.GetDown(OVRInput.Button.Four))
-        if (Input.GetButton("Oculus_CrossPlatform_Button4") && gc.popupAllowed)
+        if (Input.GetButtonDown("Oculus_CrossPlatform_Button4") && gc.popupAllowed)
         {
             if (timer >= 0.2f)
             {
