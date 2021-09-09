@@ -36,6 +36,10 @@ public class PlayerCollection: MonoBehaviour
                 }
             }
         }
+        if (Input.GetButtonDown("Oculus_CrossPlatform_SecondaryIndexTrigger"))
+        {
+            //Make Popup hide when doing teleport
+        }
         
     }
 }
