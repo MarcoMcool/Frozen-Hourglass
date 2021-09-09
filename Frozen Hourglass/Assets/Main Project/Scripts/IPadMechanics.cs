@@ -11,7 +11,7 @@ public class IPadMechanics : MonoBehaviour
     public Material cameraImage;
 
     private float timer = 0;
-    private float time = 0f;
+    private float time = 0.5f;
     
     // Start is called before the first frame update
     void Start()
@@ -22,14 +22,7 @@ public class IPadMechanics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //pictureSnap();
-        print("The amoun of time the timer has been going for: " + timer);
-        timer += Time.deltaTime;
-
-        if(time + 0.5 <= timer)
-        {
-            camera.GetComponent<Image>().material = cameraImage;
-        }
+        pictureSnap();
     }
 
     public void calling()
@@ -41,21 +34,17 @@ public class IPadMechanics : MonoBehaviour
 
     // Bind to the take picture button to activte
     public void pictureSnap()
-    {
-        print("Picture taking");
-        
+    {        
         // Timer for flash
-        timer = 0;
-        //time = 0.5f;
-        
+        timer += Time.deltaTime;
 
         if (time <= timer && time + 0.5 >= timer)
         {
             camera.GetComponent<Image>().material = flash;
         }
-        //else
-        //{
-        //    camera.GetComponent<Image>().material = cameraImage;
-        //}
+        else
+        {
+            camera.GetComponent<Image>().material = cameraImage;
+        }
     }
 }
