@@ -37,8 +37,10 @@ public class PlayerCollection: MonoBehaviour
                 }
             }
         }
-        if (Input.GetButtonDown("Oculus_CrossPlatform_SecondaryIndexTrigger"))
+        //if (Input.GetButtonDown("Oculus_CrossPlatform_SecondaryIndexTrigger"))
+        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
         {
+            print("HERE");
             RightPopup.SetActive(false);
         }
         
