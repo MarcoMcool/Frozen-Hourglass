@@ -7,6 +7,7 @@ public class PlayerCollection: MonoBehaviour
 {
     TouchController controller;
     public GameObject handPopup;
+    public GameObject RightPopup;
     float timer = 0f;
     public GameController gc;
     // Start is called before the first frame update
@@ -35,6 +36,12 @@ public class PlayerCollection: MonoBehaviour
                     timer = 0f;
                 }
             }
+        }
+        //if (Input.GetButtonDown("Oculus_CrossPlatform_SecondaryIndexTrigger"))
+        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
+        {
+            print("HERE");
+            RightPopup.SetActive(false);
         }
         
     }
