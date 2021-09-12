@@ -32,6 +32,7 @@ public class GameController: MonoBehaviour
 
     [SerializeField]
     private bool[] steps = new bool[] { false, true, true, false, true, false, true, false, true, true, true, false, true, true, true, false, true, false };
+    
     public int stepsCount = 0;
 
     [Header("Question Answer Variables")]
@@ -49,10 +50,13 @@ public class GameController: MonoBehaviour
 
     public LadderPhysics Ladder;
 
+    public int actionStep = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         PopUp.SetActive(false);
+        ActionPopUp.SetActive(false);
 
         q = QuestionSetup.SetUp();
 
@@ -62,7 +66,6 @@ public class GameController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (Ladder.done == true && animationEnd != true)
         {
             stepsCount++;
@@ -75,17 +78,51 @@ public class GameController: MonoBehaviour
             ActionPopUp.SetActive(false);
             popupAllowed = true;
             PopUp.SetActive(true);
+            actionStep = stepsCount;
         }
         else
         {
             popupAllowed = false;
             PopUp.SetActive(false);
-            if (stepsCount != 0)
+            //Action Steps in order:
+            //Start, Stop work, Point Hazards, Move Hazards, Call Supervisor, Call Group Manager, Take Photos
+            if (stepsCount != 0 && actionStep == stepsCount-1)
             {
                 ActionPopUp.SetActive(true);
-                ActionText.text = "Grab worker to tell him to stop working";
+                if (stepsCount == 3)
+                {
+                    //Stop work
+                    ActionText.text = "Grab worker to tell him to stop working";
+                }
+                if (stepsCount == 5)
+                {
+                    //Point Hazards
+                    ActionText.text = "Point out the Hazards";
+                }
+                if (stepsCount == 7)
+                {
+                    //Move Hazards
+                    ActionText.text = "Move Hazards";
+                }
+                if (stepsCount == 11)
+                {
+                    //Call Supervisor
+                    ActionText.text = "Call Supervisor";
+                }
+                if (stepsCount == 15)
+                {
+                    //Call Group Manager
+                    ActionText.text = "Call Group Manager";
+                }
+                if (stepsCount == 17)
+                {
+                    //Take Photos
+                    ActionText.text = "Take Photos";
+                }
+
+                //Stop loop
+                actionStep++;
             }
-            
 
             if (stepsCount == 5)
             {
@@ -95,6 +132,7 @@ public class GameController: MonoBehaviour
                 //    selectHazardsStage = false;
                 //}
             }
+            
         }
     }
 
