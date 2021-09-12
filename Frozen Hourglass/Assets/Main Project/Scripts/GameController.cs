@@ -8,6 +8,8 @@ public class GameController: MonoBehaviour
 
     public bool animationEnd;
     public GameObject PopUp;
+    public GameObject ActionPopUp;
+    public TextMeshProUGUI ActionText;
 
     public int buttonPressed;
     public int question = 0;
@@ -61,7 +63,7 @@ public class GameController: MonoBehaviour
     void Update()
     {
         
-            if (Ladder.done == true && animationEnd != true)
+        if (Ladder.done == true && animationEnd != true)
         {
             stepsCount++;
             PopUp.SetActive(true);
@@ -70,6 +72,7 @@ public class GameController: MonoBehaviour
 
         if (steps[stepsCount])
         {
+            ActionPopUp.SetActive(false);
             popupAllowed = true;
             PopUp.SetActive(true);
         }
@@ -77,6 +80,12 @@ public class GameController: MonoBehaviour
         {
             popupAllowed = false;
             PopUp.SetActive(false);
+            if (stepsCount != 0)
+            {
+                ActionPopUp.SetActive(true);
+                ActionText.text = "Grab worker to tell him to stop working";
+            }
+            
 
             if (stepsCount == 5)
             {
