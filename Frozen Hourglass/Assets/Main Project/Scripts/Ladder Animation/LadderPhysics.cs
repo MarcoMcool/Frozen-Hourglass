@@ -21,17 +21,15 @@ public class LadderPhysics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            StartFall();
-        }
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    StartFall();
+        //}
 
-        if (OVRInput.GetDown(OVRInput.RawButton.B))
-        {
-            StartFall();
-        }
-
-
+        //if (OVRInput.GetDown(OVRInput.RawButton.B))
+        //{
+        //    StartFall();
+        //}
     }
     public void StartFall()
     {

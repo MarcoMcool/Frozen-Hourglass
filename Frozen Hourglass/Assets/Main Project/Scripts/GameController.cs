@@ -92,32 +92,32 @@ public class GameController: MonoBehaviour
                 if (stepsCount == 3)
                 {
                     //Stop work
-                    ActionText.text = "Grab worker to tell him to stop working";
+                    ActionText.text = "Grab the worker by the pole to tell him to stop working";
                 }
                 if (stepsCount == 5)
                 {
                     //Point Hazards
-                    ActionText.text = "Point out the Hazards";
+                    ActionText.text = "Point out the Hazards by pressing B or Y on the controller";
                 }
                 if (stepsCount == 7)
                 {
                     //Move Hazards
-                    ActionText.text = "Move Hazards";
+                    ActionText.text = "Move Hazards by grabbing them and moving them into the street";
                 }
                 if (stepsCount == 11)
                 {
                     //Call Supervisor
-                    ActionText.text = "Call Supervisor";
+                    ActionText.text = "Call Supervisor by using your iPad on your belt below you, press A to use your pointer to press the buttons";
                 }
                 if (stepsCount == 15)
                 {
                     //Call Group Manager
-                    ActionText.text = "Call Group Manager";
+                    ActionText.text = "Call Group Manager with your iPad";
                 }
                 if (stepsCount == 17)
                 {
                     //Take Photos
-                    ActionText.text = "Take Photos";
+                    ActionText.text = "Take Photos with your iPad";
                 }
 
                 //Stop loop
