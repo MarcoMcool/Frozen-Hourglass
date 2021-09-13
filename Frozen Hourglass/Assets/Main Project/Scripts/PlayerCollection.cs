@@ -10,6 +10,8 @@ public class PlayerCollection: MonoBehaviour
     public GameObject RightPopup;
     float timer = 0f;
     public GameController gc;
+    bool on;
+    public GameObject laserPointer;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +22,10 @@ public class PlayerCollection: MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        //if (OVRInput.GetDown(OVRInput.Button.Four))
-        if (Input.GetButtonDown("Oculus_CrossPlatform_Button4") && gc.popupAllowed)
+        //)
+        if (OVRInput.GetDown(OVRInput.Button.Four) && gc.popupAllowed)
         {
-            if (timer >= 0.2f)
+            if (timer >= 0.5f)
             {
                 if (handPopup.activeSelf)
                 {
@@ -37,10 +39,24 @@ public class PlayerCollection: MonoBehaviour
                 }
             }
         }
+
+        if (OVRInput.GetDown(OVRInput.RawButton.B))
+        {
+            print("test here pointer");
+            on = true;
+            laserPointer.SetActive(true);
+        }
+        if (OVRInput.GetDown(OVRInput.RawButton.B) && on)
+        {
+            on = false;
+            laserPointer.SetActive(false);
+            print("line rendere disabled");
+        }
         //if (Input.GetButtonDown("Oculus_CrossPlatform_SecondaryIndexTrigger"))
         if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
         {
             print("HERE");
+            
             RightPopup.SetActive(false);
         }
         
