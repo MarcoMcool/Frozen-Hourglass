@@ -97,7 +97,7 @@ public class GameController: MonoBehaviour
                 if (stepsCount == 5)
                 {
                     //Point Hazards
-                    ActionText.text = "Point out the Hazards by pressing B or Y on the controller";
+                    ActionText.text = "Point out the Hazards by pressing A or X and the grip button on the controller";
                 }
                 if (stepsCount == 7)
                 {
