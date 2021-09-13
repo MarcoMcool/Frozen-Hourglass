@@ -153,8 +153,8 @@ public class GameController: MonoBehaviour
             answersOptions.SetActive(false);
             buttons.SetActive(false);
             questionNumber++;
-            stepsCount++;
-            StartCoroutine(WaitTimer());
+            StartCoroutine(WaitTimer_2());
+            
         }
         else
         {
@@ -232,5 +232,19 @@ public class GameController: MonoBehaviour
         SetAnswers(q[questionNumber]);
         //After we have waited 5 seconds print the time again.
         print("Finished Coroutine at timestamp : " + Time.time);
+    }
+    IEnumerator WaitTimer_2()
+    {
+        //Print the time of when the function is first called.
+        print("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        answerReceived = false;
+        correctAnswer = false;
+        yield return new WaitForSeconds(5);
+        SetAnswers(q[questionNumber]);
+        //After we have waited 5 seconds print the time again.
+        print("Finished Coroutine at timestamp : " + Time.time);
+        stepsCount++;
     }
 }
