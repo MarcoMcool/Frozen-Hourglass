@@ -15,7 +15,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System;
 
-public class LaserPointer : OVRCursor
+public class LaserPointer: OVRCursor
 {
     public enum LaserBeamBehavior
     {
@@ -61,6 +61,11 @@ public class LaserPointer : OVRCursor
         lineRenderer = GetComponent<LineRenderer>();
     }
 
+    private void Update()
+    {
+        
+    }
+
     private void Start()
     {
         if (cursorVisual) cursorVisual.SetActive(false);
@@ -88,7 +93,7 @@ public class LaserPointer : OVRCursor
         if (_hitTarget)
         {
 
-            if (Physics.Linecast(_startPoint, _endPoint,out hit))
+            if (Physics.Linecast(_startPoint, _endPoint, out hit))
             {
                 print("hit object");
                 print(hit.collider.name);
@@ -97,7 +102,7 @@ public class LaserPointer : OVRCursor
                 {
                     print("highlighted ladder");
                     hit.collider.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-                    
+
                 }
 
             }

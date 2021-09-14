@@ -8,6 +8,8 @@ public class GameController: MonoBehaviour
 
     public bool animationEnd;
     public GameObject PopUp;
+    public GameObject ActionPopUp;
+    public TextMeshProUGUI ActionText;
 
     public int buttonPressed;
     public int question = 0;
@@ -30,6 +32,7 @@ public class GameController: MonoBehaviour
 
     [SerializeField]
     private bool[] steps = new bool[] { false, true, true, false, true, false, true, false, true, true, true, false, true, true, true, false, true, false };
+    
     public int stepsCount = 0;
 
     [Header("Question Answer Variables")]
@@ -47,10 +50,13 @@ public class GameController: MonoBehaviour
 
     public LadderPhysics Ladder;
 
+    public int actionStep = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         PopUp.SetActive(false);
+        ActionPopUp.SetActive(false);
 
         q = QuestionSetup.SetUp();
 
@@ -60,8 +66,7 @@ public class GameController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-            if (Ladder.done == true && animationEnd != true)
+        if (Ladder.done == true && animationEnd != true)
         {
             stepsCount++;
             PopUp.SetActive(true);
@@ -70,13 +75,54 @@ public class GameController: MonoBehaviour
 
         if (steps[stepsCount])
         {
+            ActionPopUp.SetActive(false);
             popupAllowed = true;
             PopUp.SetActive(true);
+            actionStep = stepsCount;
         }
         else
         {
             popupAllowed = false;
             PopUp.SetActive(false);
+            //Action Steps in order:
+            //Start, Stop work, Point Hazards, Move Hazards, Call Supervisor, Call Group Manager, Take Photos
+            if (stepsCount != 0 && actionStep == stepsCount-1)
+            {
+                ActionPopUp.SetActive(true);
+                if (stepsCount == 3)
+                {
+                    //Stop work
+                    ActionText.text = "Grab the worker by the pole to tell him to stop working";
+                }
+                if (stepsCount == 5)
+                {
+                    //Point Hazards
+                    ActionText.text = "Point out the Hazards by pressing A or X and the grip button on the controller";
+                }
+                if (stepsCount == 7)
+                {
+                    //Move Hazards
+                    ActionText.text = "Move Hazards by grabbing them and moving them into the street";
+                }
+                if (stepsCount == 11)
+                {
+                    //Call Supervisor
+                    ActionText.text = "Call Supervisor by using your iPad on your belt below you, press A to use your pointer to press the buttons";
+                }
+                if (stepsCount == 15)
+                {
+                    //Call Group Manager
+                    ActionText.text = "Call Group Manager with your iPad";
+                }
+                if (stepsCount == 17)
+                {
+                    //Take Photos
+                    ActionText.text = "Take Photos with your iPad";
+                }
+
+                //Stop loop
+                actionStep++;
+            }
 
             if (stepsCount == 5)
             {
@@ -86,6 +132,7 @@ public class GameController: MonoBehaviour
                 //    selectHazardsStage = false;
                 //}
             }
+            
         }
     }
 
@@ -106,8 +153,8 @@ public class GameController: MonoBehaviour
             answersOptions.SetActive(false);
             buttons.SetActive(false);
             questionNumber++;
-            stepsCount++;
-            StartCoroutine(WaitTimer());
+            StartCoroutine(WaitTimer_2());
+            
         }
         else
         {
@@ -185,5 +232,19 @@ public class GameController: MonoBehaviour
         SetAnswers(q[questionNumber]);
         //After we have waited 5 seconds print the time again.
         print("Finished Coroutine at timestamp : " + Time.time);
+    }
+    IEnumerator WaitTimer_2()
+    {
+        //Print the time of when the function is first called.
+        print("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        answerReceived = false;
+        correctAnswer = false;
+        yield return new WaitForSeconds(5);
+        SetAnswers(q[questionNumber]);
+        //After we have waited 5 seconds print the time again.
+        print("Finished Coroutine at timestamp : " + Time.time);
+        stepsCount++;
     }
 }
