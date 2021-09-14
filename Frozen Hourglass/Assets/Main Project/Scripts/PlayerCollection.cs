@@ -6,9 +6,12 @@ using OVRTouchSample;
 public class PlayerCollection: MonoBehaviour
 {
     TouchController controller;
+    public GameObject RightPopup;
     public GameObject handPopup;
     float timer = 0f;
     public GameController gc;
+    bool on;
+    public GameObject laserPointer;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,8 +39,6 @@ public class PlayerCollection: MonoBehaviour
                 }
             }
         }
-<<<<<<< Updated upstream
-=======
        
 
         if (OVRInput.GetDown(OVRInput.RawButton.B))
@@ -59,8 +60,7 @@ public class PlayerCollection: MonoBehaviour
             
             RightPopup.SetActive(false);
         }
->>>>>>> Stashed changes
-        
+
     }
 
     void TestControllerPresses()
