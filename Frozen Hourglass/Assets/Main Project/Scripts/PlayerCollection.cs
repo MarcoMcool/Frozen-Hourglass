@@ -40,13 +40,13 @@ public class PlayerCollection: MonoBehaviour
             }
         }
 
-        if (OVRInput.GetDown(OVRInput.RawButton.B))
+        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) && !on)
         {
             print("test here pointer");
             on = true;
             laserPointer.SetActive(true);
         }
-        if (OVRInput.GetDown(OVRInput.RawButton.B) && on)
+        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) && on)
         {
             on = false;
             laserPointer.SetActive(false);
