@@ -36,6 +36,50 @@ public class PlayerCollection: MonoBehaviour
                 }
             }
         }
+<<<<<<< Updated upstream
+=======
+       
+
+        if (OVRInput.GetDown(OVRInput.RawButton.B))
+        {
+            print("test here pointer");
+            on = true;
+            laserPointer.SetActive(true);
+        }
+        if (OVRInput.GetDown(OVRInput.RawButton.B) && on)
+        {
+            on = false;
+            laserPointer.SetActive(false);
+            print("line rendere disabled");
+        }
+        //if (Input.GetButtonDown("Oculus_CrossPlatform_SecondaryIndexTrigger"))
+        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
+        {
+            print("HERE");
+            
+            RightPopup.SetActive(false);
+        }
+>>>>>>> Stashed changes
         
+    }
+
+    void TestControllerPresses()
+    {
+        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
+        {
+            print("right hand trigger");
+        }
+        if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
+        {
+            print("left hand trigger");
+        }
+        if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
+        {
+            print("left hand grip");
+        }
+        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
+        {
+            print("right hand grip");
+        }
     }
 }
