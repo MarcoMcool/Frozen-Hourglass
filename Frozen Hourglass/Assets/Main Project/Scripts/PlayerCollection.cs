@@ -21,6 +21,7 @@ public class PlayerCollection: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TestControllerPresses();
         timer += Time.deltaTime;
         //if (OVRInput.GetDown(OVRInput.Button.Four))
         if (Input.GetButtonDown("Oculus_CrossPlatform_Button4") && gc.popupAllowed)
