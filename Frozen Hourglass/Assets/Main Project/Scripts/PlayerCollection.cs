@@ -10,7 +10,6 @@ public class PlayerCollection: MonoBehaviour
     public GameObject handPopup;
     float timer = 0f;
     public GameController gc;
-    bool on;
     public GameObject laserPointer;
     // Start is called before the first frame update
     void Start()
@@ -42,15 +41,13 @@ public class PlayerCollection: MonoBehaviour
         }
        
 
-        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) && !on)
+        if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
         {
             print("test here pointer");
-            on = true;
             laserPointer.SetActive(true);
         }
-        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) && on)
+        else
         {
-            on = false;
             laserPointer.SetActive(false);
             print("line rendere disabled");
         }
@@ -81,6 +78,10 @@ public class PlayerCollection: MonoBehaviour
         if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
         {
             print("right hand grip");
+        }
+        if (OVRInput.GetDown(OVRInput.RawButton.B))
+        {
+            print("b button clicked");
         }
     }
 }
