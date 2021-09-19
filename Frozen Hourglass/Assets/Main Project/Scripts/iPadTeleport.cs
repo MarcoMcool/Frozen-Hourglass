@@ -59,6 +59,7 @@ public class iPadTeleport : MonoBehaviour
             //transform.rotation = startTrans.rotation;
             RigidBody.useGravity = false;
             RigidBody.isKinematic = true;
+            RigidBody.velocity = Vector3.zero;
             transform.parent = Player.transform;
             onBelt = true;
         }
