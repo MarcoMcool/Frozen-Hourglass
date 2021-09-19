@@ -12,7 +12,7 @@ public class Pointer: MonoBehaviour
     public RaycastHit objectHit;
 
     public PointHazards PointHazards;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,14 +25,14 @@ public class Pointer: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if ((OVRInput.Get(OVRInput.RawButton.RHandTrigger) && OVRInput.Get(OVRInput.RawButton.A)) ||Input.GetKey(KeyCode.U))
+
+        if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) || Input.GetKey(KeyCode.U))
         {
             CreateLaser(rightHand.transform.position, rightHand.transform.forward, 10f);
             laserActive = true;
             lineRenderer.enabled = true;
         }
-        else if ((OVRInput.Get(OVRInput.RawButton.LHandTrigger) && OVRInput.Get(OVRInput.RawButton.X)) || Input.GetKey(KeyCode.I))
+        else if (OVRInput.Get(OVRInput.RawButton.LIndexTrigger) || Input.GetKey(KeyCode.I))
         {
             CreateLaser(leftHand.transform.position, leftHand.transform.forward, 10f);
             laserActive = true;
@@ -52,7 +52,7 @@ public class Pointer: MonoBehaviour
         Vector3 endPos = targetPos + (direction * length);
         int layerMask = 1 << 8;
         layerMask = ~layerMask;
-        if (Physics.Raycast(ray, out RaycastHit hit, length,layerMask))
+        if (Physics.Raycast(ray, out RaycastHit hit, length, layerMask))
         {
             endPos = hit.point;
             objectHit = hit;
@@ -66,7 +66,7 @@ public class Pointer: MonoBehaviour
 
     void checkObject()
     {
-        if (objectHit.collider.GetComponent<Hazard>())
+        if (objectHit.collider.GetComponent<Hazard>() && (OVRInput.Get(OVRInput.RawButton.A) || OVRInput.Get(OVRInput.RawButton.X)))
         {
             print("object has hazard script");
             GameObject hazardObject;
