@@ -17,8 +17,8 @@ public class iPadTeleport : MonoBehaviour
     {
         onBelt = true;
         startTrans = transform;
-        startPos = transform.position;
-        startRot = transform.rotation;
+        startPos = transform.localPosition;
+        startRot = transform.localRotation;
         RigidBody = (Rigidbody)GetComponent("Rigidbody");
         Grabbable = (OVRGrabbable)GetComponent("OVRGrabbable");
         if (Player == null)
@@ -53,8 +53,8 @@ public class iPadTeleport : MonoBehaviour
             transform.parent = Player.transform;
             print(startTrans.position);
             print(startPos);
-            transform.position = startPos;
-            transform.rotation = startRot;
+            transform.localPosition = startPos;
+            transform.localRotation = startRot;
             //transform.position = startTrans.position;
             //transform.rotation = startTrans.rotation;
             RigidBody.useGravity = false;
