@@ -18,8 +18,8 @@ public class Pointer: MonoBehaviour
     {
         PointHazards.GetComponent<PointHazards>();
         lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.startWidth = 0.02f;
-        lineRenderer.endWidth = 0.02f;
+        lineRenderer.startWidth = 0.01f;
+        lineRenderer.endWidth = 0.01f;
     }
 
     // Update is called once per frame
