@@ -17,7 +17,7 @@ public class QuestionSetup
         );
         questions[1] = new Question(
             "Should work in the vicinity be stopped?",
-            new string[] { "True", "False"},
+            new string[] { "Yes", "No"},
             "Correct: \nWork should be stopped immediately in the area",
             "Incorrect: \nThe answer is True, work should be halted immediately.",
             1

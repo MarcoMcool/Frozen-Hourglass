@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 29968327}
   - component: {fileID: 29968326}
   m_Layer: 0
-  m_Name: w
+  m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,7 +246,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.53895676, g: 0.8773585, b: 0.24417053, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.09
   m_Range: 18.17
   m_SpotAngle: 30
@@ -305,7 +305,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29968325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8.1, z: -3.35}
+  m_LocalPosition: {x: 0, y: 6.83, z: -3.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
