@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class IPadMechanics : MonoBehaviour
 {  
     public GameObject camera;
-
+    
     public Material flash;
     public Material cameraImage;
 
@@ -30,6 +30,7 @@ public class IPadMechanics : MonoBehaviour
         // When the user tries to call a person, being when they get click to call a person,
         // they will see a calling screen for about four seconds which will then go to another screen
         // that looks like the call was answered, and a sound effect plays, sounding like someone mumbling.
+
     }
 
     // Bind to the take picture button to activte
