@@ -378,7 +378,8 @@ public class OVRPlayerController : MonoBehaviour
 			moveInfluence *= 1.0f + OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
 #endif
 
-			Vector2 primaryAxis = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
+			Vector2 primaryAxis = OVRInput.Get(OVRInput.RawAxis2D.LThumbstick);
+			//Vector2 primaryAxis = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
 
 			// If speed quantization is enabled, adjust the input to the number of fixed speed steps.
 			if (FixedSpeedSteps > 0)
@@ -433,25 +434,42 @@ public class OVRPlayerController : MonoBehaviour
 
 			if (SnapRotation)
 			{
-				if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickLeft) ||
-					(RotationEitherThumbstick && OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft)))
-				{
-					if (ReadyToSnapTurn)
-					{
-						euler.y -= RotationRatchet;
-						ReadyToSnapTurn = false;
-					}
-				}
-				else if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickRight) ||
-					(RotationEitherThumbstick && OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight)))
-				{
-					if (ReadyToSnapTurn)
-					{
-						euler.y += RotationRatchet;
-						ReadyToSnapTurn = false;
-					}
-				}
-				else
+                if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickLeft))
+                {
+                    if (ReadyToSnapTurn)
+                    {
+                        euler.y -= RotationRatchet;
+                        ReadyToSnapTurn = false;
+                    }
+                }
+                else
+                if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickRight))
+                {
+                    if (ReadyToSnapTurn)
+                    {
+                        euler.y += RotationRatchet;
+                        ReadyToSnapTurn = false;
+                    }
+                }
+                //if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickLeft) ||
+                //	(RotationEitherThumbstick && OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft)))
+                //{
+                //	if (ReadyToSnapTurn)
+                //	{
+                //		euler.y -= RotationRatchet;
+                //		ReadyToSnapTurn = false;
+                //	}
+                //}
+                //else if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickRight) ||
+                //	(RotationEitherThumbstick && OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight)))
+                //{
+                //	if (ReadyToSnapTurn)
+                //	{
+                //		euler.y += RotationRatchet;
+                //		ReadyToSnapTurn = false;
+                //	}
+                //}
+                else
 				{
 					ReadyToSnapTurn = true;
 				}

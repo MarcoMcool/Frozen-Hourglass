@@ -10,6 +10,7 @@ public class GameController: MonoBehaviour
     public GameObject PopUp;
     public GameObject ActionPopUp;
     public TextMeshProUGUI ActionText;
+    public GameObject iPad;
 
     public int buttonPressed;
     public int question = 0;
@@ -55,6 +56,7 @@ public class GameController: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        iPad.SetActive(false);
         PopUp.SetActive(false);
         ActionPopUp.SetActive(false);
 
@@ -107,6 +109,7 @@ public class GameController: MonoBehaviour
                 if (stepsCount == 11)
                 {
                     //Call Supervisor
+                    iPad.SetActive(true);
                     ActionText.text = "Call Supervisor by using your iPad on your belt below you, press A to use your pointer to press the buttons";
                 }
                 if (stepsCount == 15)

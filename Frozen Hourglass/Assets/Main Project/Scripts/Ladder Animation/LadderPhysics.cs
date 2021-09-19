@@ -35,7 +35,7 @@ public class LadderPhysics : MonoBehaviour
     {
 
         done = false;
-        rb.AddExplosionForce(450f, topExplosivePosition.transform.position, 10f);
+        rb.AddExplosionForce(600f, topExplosivePosition.transform.position, 10f);
 
         StartCoroutine(Slide());
 

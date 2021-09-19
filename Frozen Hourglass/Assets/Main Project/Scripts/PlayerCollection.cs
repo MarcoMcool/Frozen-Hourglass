@@ -6,11 +6,10 @@ using OVRTouchSample;
 public class PlayerCollection: MonoBehaviour
 {
     TouchController controller;
-    public GameObject handPopup;
     public GameObject RightPopup;
+    public GameObject handPopup;
     float timer = 0f;
     public GameController gc;
-    bool on;
     public GameObject laserPointer;
     // Start is called before the first frame update
     void Start()
@@ -21,11 +20,12 @@ public class PlayerCollection: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TestControllerPresses();
         timer += Time.deltaTime;
-        //)
-        if (OVRInput.GetDown(OVRInput.Button.Four) && gc.popupAllowed)
+        //if (OVRInput.GetDown(OVRInput.Button.Four))
+        if (Input.GetButtonDown("Oculus_CrossPlatform_Button4") && gc.popupAllowed)
         {
-            if (timer >= 0.5f)
+            if (timer >= 0.2f)
             {
                 if (handPopup.activeSelf)
                 {
@@ -39,16 +39,15 @@ public class PlayerCollection: MonoBehaviour
                 }
             }
         }
+       
 
-        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) && !on)
+        if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
         {
             print("test here pointer");
-            on = true;
             laserPointer.SetActive(true);
         }
-        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) && on)
+        else
         {
-            on = false;
             laserPointer.SetActive(false);
             print("line rendere disabled");
         }
@@ -59,6 +58,30 @@ public class PlayerCollection: MonoBehaviour
             
             RightPopup.SetActive(false);
         }
-        
+
+    }
+
+    void TestControllerPresses()
+    {
+        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
+        {
+            print("right hand trigger");
+        }
+        if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
+        {
+            print("left hand trigger");
+        }
+        if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
+        {
+            print("left hand grip");
+        }
+        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
+        {
+            print("right hand grip");
+        }
+        if (OVRInput.GetDown(OVRInput.RawButton.B))
+        {
+            print("b button clicked");
+        }
     }
 }
