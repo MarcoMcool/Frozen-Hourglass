@@ -57,8 +57,18 @@ public class LadderCollider: MonoBehaviour
         }
         else if (other.gameObject.name == "Ladder")
         {
+            gameController.ActionPopUp.SetActive(true);
+            gameController.ActionText.text = "Do not touch this ladder. The scene should be quarantined.";
+           
             //Needs warning popup telling the user not to move the original ladder until safe to do so
 
         }
+    }
+
+    IEnumerator WaitTime()
+    {
+        yield return new WaitForSeconds(3f);
+        gameController.ActionPopUp.SetActive(false);
+        gameController.ActionText.text = "";
     }
 }
