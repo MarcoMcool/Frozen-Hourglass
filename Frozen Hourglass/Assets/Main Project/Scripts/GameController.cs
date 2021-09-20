@@ -5,7 +5,6 @@ using TMPro;
 
 public class GameController: MonoBehaviour
 {
-
     public bool animationEnd;
     public GameObject PopUp;
     public GameObject ActionPopUp;
