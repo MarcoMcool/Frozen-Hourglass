@@ -25,15 +25,18 @@ public class ControllerTutorial: MonoBehaviour
         {
             text.text = "Nice! \n" +
                 "when holding down the trigger pressing A will select the highlighted question \n" +
-                "try that now. if unsure look at the model of the controller in front of you for where the buttons are";
+                "press the A button now. if unsure look at the model of the controller in front of you for where the buttons are";
             step++;
         }
-        if (step == 2 && ((OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger) || OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger)) && OVRInput.GetDown(OVRInput.RawButton.A)))
+        if (step == 2)//  && (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger) || OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger)))
         {
-            text.text = "Great work. \n" +
-                "now we'll try grabbing. On the controller where your middle, ring and pinkie fingers are, there is a button, this is the grip or grab button.\n" +
-                "Give it a press now.";
-            step++;
+            if (OVRInput.GetDown(OVRInput.RawButton.A))
+            {
+                text.text = "Great work. \n" +
+                    "now we'll try grabbing. On the controller where your middle, ring and pinkie fingers are, there is a button, this is the grip or grab button.\n" +
+                    "Give it a press now.";
+                step++;
+            }
         }
         if (step == 3 && OVRInput.GetDown(OVRInput.RawButton.RHandTrigger))
         {
@@ -47,20 +50,15 @@ public class ControllerTutorial: MonoBehaviour
         if (step == 4 && OVRInput.GetDown(OVRInput.RawButton.RThumbstickUp))
         {
             text.text = "well done. \n" +
-                "the other way to move is to use the left joystick, this will simulate walking.\n Be careful, if you get motionsick within VR please just teleport around the scene.";
-            StartCoroutine(WaitTime());
+                "The other way to move is to use the left joystick, this will simulate walking.\n Be careful, if you get motionsick within VR please just teleport around the scene. \n" +
+                "Press any button to continue";
+            step++;
         }
-        if (step == 5)
+        if (step == 5 && OVRInput.GetDown(OVRInput.RawButton.Any))
         {
             text.text = "Thats it for the tutorial, there are some hints and help within the training aid. \n" +
                       "feel free to see which buttons are where on the model infront." +
                       "if you are ready turn around and select the play button.";
         }
-    }
-
-    IEnumerator WaitTime()
-    {
-        yield return new WaitForSeconds(5f);
-        step++;
     }
 }
