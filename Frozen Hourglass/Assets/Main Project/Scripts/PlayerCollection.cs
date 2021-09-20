@@ -43,18 +43,18 @@ public class PlayerCollection: MonoBehaviour
 
         if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
         {
-            print("test here pointer");
+            //print("test here pointer");
             laserPointer.SetActive(true);
         }
         else
         {
             laserPointer.SetActive(false);
-            print("line rendere disabled");
+            //print("line rendere disabled");
         }
         //if (Input.GetButtonDown("Oculus_CrossPlatform_SecondaryIndexTrigger"))
         if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
         {
-            print("HERE");
+            //print("HERE");
             
             RightPopup.SetActive(false);
         }
