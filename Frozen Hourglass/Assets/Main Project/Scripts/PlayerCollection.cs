@@ -52,7 +52,8 @@ public class PlayerCollection: MonoBehaviour
             //print("line rendere disabled");
         }
         //if (Input.GetButtonDown("Oculus_CrossPlatform_SecondaryIndexTrigger"))
-        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
+        
+        if (OVRInput.GetDown(OVRInput.RawButton.RThumbstickUp))
         {
             //print("HERE");
             
