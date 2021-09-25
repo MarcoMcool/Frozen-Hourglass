@@ -10,14 +10,16 @@ public class IPadMechanics : MonoBehaviour
     public Material flash;
     public Material cameraImage;
 
-    private float timer = 0;
-    private float time = 0.5f;
+    public GameObject callingScreen;
+    public GameObject callScreen;
+    public Text callText;
+    public Text callTimeText;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float flashTimer = 0;
+    private float flashTime = 0.5f;
+
+    private float callTimer = 0;
+    private float callTime = 4;
 
     // Update is called once per frame
     void Update()
@@ -25,21 +27,39 @@ public class IPadMechanics : MonoBehaviour
         pictureSnap();
     }
 
-    public void calling()
+    public void workSupervisorCalling()
     {
-        // When the user tries to call a person, being when they get click to call a person,
-        // they will see a calling screen for about four seconds which will then go to another screen
-        // that looks like the call was answered, and a sound effect plays, sounding like someone mumbling.
+        callingScreen.SetActive(true);
+        callScreen.SetActive(false);
+        callText.text = "Calling Work Group Supervisor";
 
+        // Timer for call to start
+        callTimer += Time.deltaTime;
+
+        if (callTime <= callTimer)
+        {
+            //callTimeText.text = callTimer.ToString();
+            callTimeText.text = "0";
+            print("CAll Answered");
+        }
+    }
+
+    public void siteSupervisorCalling()
+    {
+        callingScreen.SetActive(true);
+        callScreen.SetActive(false);
+        callText.text = "Calling Site Supervisor";
     }
 
     // Bind to the take picture button to activte
     public void pictureSnap()
-    {        
+    {
         // Timer for flash
-        timer += Time.deltaTime;
+        flashTimer += Time.deltaTime;
 
-        if (time <= timer && time + 0.5 >= timer)
+        print("Flash Time: " + flashTimer);
+
+        if (flashTime <= flashTimer && flashTime + 0.5 >= flashTimer)
         {
             camera.GetComponent<Image>().material = flash;
         }
