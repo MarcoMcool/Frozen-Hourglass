@@ -107,14 +107,14 @@ public class GameController: MonoBehaviour
                 }
                 if (stepsCount == 11)
                 {
-                    //Call Supervisor
+                    //Call Work Group Supervisor
                     iPad.SetActive(true);
-                    ActionText.text = "Call Supervisor by using your iPad on your belt below you, press A to use your pointer to press the buttons";
+                    ActionText.text = "Call Work Group Supervisor by using your iPad on your belt below you, press A to use your pointer to press the buttons";
                 }
                 if (stepsCount == 15)
                 {
-                    //Call Group Manager
-                    ActionText.text = "Call Group Manager with your iPad";
+                    //Call Site Supervisor
+                    ActionText.text = "Call Site Manager with your iPad";
                 }
                 if (stepsCount == 17)
                 {

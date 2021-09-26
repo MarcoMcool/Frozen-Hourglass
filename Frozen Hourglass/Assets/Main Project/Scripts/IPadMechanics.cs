@@ -9,7 +9,7 @@ public class IPadMechanics : MonoBehaviour
 
     public GameObject camera;
     public GameObject ladder;
-    
+
     public Material flash;
     public Material cameraImage;
 
@@ -17,12 +17,17 @@ public class IPadMechanics : MonoBehaviour
     public GameObject callScreen;
     public Text callText;
     public Text callTimeText;
-    
+
     private float flashTimer = 0;
     private float flashTime = 0.5f;
 
     private float callTimer = 0;
-    private float callTime = 4;
+    private float callTime = 9;
+    private bool callingWorkSupervisor = false;
+    private bool callingSiteSupervisor = false;
+    private bool callAnswered = false;
+    private bool calledWorkSupervisor = false;
+    private bool calledSiteSupervisor = false;
 
     private int distanceToHazard = 13;
 
@@ -34,33 +39,85 @@ public class IPadMechanics : MonoBehaviour
         flashTimer += Time.deltaTime;
         // Timer for call to start
         callTimer += Time.deltaTime;
+
+        print("Flash Time: " + flashTimer);
+
+        // Change material to white then change it back to the camera
+        if (flashTime >= flashTimer)
+        {
+            camera.GetComponent<Image>().material = flash;
+        }
+        else
+        {
+            camera.GetComponent<Image>().material = cameraImage;
+        }
+
+        // Change text when after X seconds
+        if (callTime <= callTimer)
+        {
+            // Could try to increment
+            callTimeText.text = "Talking";
+            print("CAll Answered");
+            callAnswered = true;
+        }
+
+        if ((callingWorkSupervisor == true || callingSiteSupervisor == true) && callAnswered == true)
+        {
+            print("Supervisor called");
+            gameController.stepsCount++;
+            callAnswered = false;
+            callingWorkSupervisor = false;
+            callingSiteSupervisor = false;
+            if(callingWorkSupervisor == true)
+            {
+                calledWorkSupervisor = true;
+            }
+            if(callingSiteSupervisor == true)
+            {
+                calledSiteSupervisor = true;
+            }
+           
+        }
     }
 
     public void workSupervisorCalling()
     {
-        callingScreen.SetActive(true);
-        callScreen.SetActive(false);
-        callText.text = "Calling Work Group Supervisor";
-
-        callTimer = 0;
-
-        if (callTime <= callTimer)
+        if (calledWorkSupervisor == false)
         {
-            //callTimeText.text = callTimer.ToString();
-            callTimeText.text = "0";
-            print("CAll Answered");
-        }
+            callingScreen.SetActive(true);
+            callScreen.SetActive(false);
+            callText.text = "Calling Work Group Supervisor";
 
-        gameController.stepsCount++;
+            callTimer = 0;
+            callAnswered = false;
+            callTimeText.text = "Calling...";
+            callingWorkSupervisor = true;
+        }
+        else
+        {
+            // Turn this into a prompt
+            print("You shouldn't call the work supervisor again");
+        }
     }
 
     public void siteSupervisorCalling()
     {
-        callingScreen.SetActive(true);
-        callScreen.SetActive(false);
-        callText.text = "Calling Site Supervisor";
+        if (calledSiteSupervisor == false)
+        {
+            callingScreen.SetActive(true);
+            callScreen.SetActive(false);
+            callText.text = "Calling Site Supervisor";
 
-        gameController.stepsCount++;
+            callTimer = 0;
+            callAnswered = false;
+            callTimeText.text = "Calling...";
+            callingSiteSupervisor = true;
+        }
+        else
+        {
+            // Turn this into a prompt
+            print("You shouldn't call the site supervisor again");
+        }
     }
 
     // Bind to the take picture button to activte
@@ -70,24 +127,12 @@ public class IPadMechanics : MonoBehaviour
         if (Vector3.Distance(gameObject.transform.position, ladder.transform.position) <= distanceToHazard)
         {
             print("Picture has been taken");
-            //print("Flash Time: " + flashTimer);
-
-            if (flashTime <= flashTimer && flashTime + flashTime >= flashTimer)
-            {
-                camera.GetComponent<Image>().material = flash;
-            }
-            else
-            {
-                camera.GetComponent<Image>().material = cameraImage;
-            }
-
             gameController.stepsCount++;
         }
         else
         {
+            // Have message displayed to prompt
             print("Get closer to the hazard and point camera to it");
         }
     }
-
-    // The main point of the iPad apart from making the phone calls and
 }
