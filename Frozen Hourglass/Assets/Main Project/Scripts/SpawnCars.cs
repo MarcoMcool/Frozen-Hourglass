@@ -18,7 +18,7 @@ public class SpawnCars : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(currentTime + "current time" + randomTime);
+
         currentTime += Time.deltaTime;
         if (currentTime >= randomTime)
         {
