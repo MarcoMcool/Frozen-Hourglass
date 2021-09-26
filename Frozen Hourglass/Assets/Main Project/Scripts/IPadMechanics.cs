@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class IPadMechanics : MonoBehaviour
-{  
+{
+    public GameController gameController;
+
     public GameObject camera;
+    public GameObject ladder;
     
     public Material flash;
     public Material cameraImage;
@@ -21,10 +24,16 @@ public class IPadMechanics : MonoBehaviour
     private float callTimer = 0;
     private float callTime = 4;
 
+    private int distanceToHazard = 13;
+
     // Update is called once per frame
     void Update()
     {
-        pictureSnap();
+        print(Vector3.Distance(gameObject.transform.position, ladder.transform.position));
+        // Timer for flash
+        flashTimer += Time.deltaTime;
+        // Timer for call to start
+        callTimer += Time.deltaTime;
     }
 
     public void workSupervisorCalling()
@@ -33,8 +42,7 @@ public class IPadMechanics : MonoBehaviour
         callScreen.SetActive(false);
         callText.text = "Calling Work Group Supervisor";
 
-        // Timer for call to start
-        callTimer += Time.deltaTime;
+        callTimer = 0;
 
         if (callTime <= callTimer)
         {
@@ -42,6 +50,8 @@ public class IPadMechanics : MonoBehaviour
             callTimeText.text = "0";
             print("CAll Answered");
         }
+
+        gameController.stepsCount++;
     }
 
     public void siteSupervisorCalling()
@@ -49,23 +59,35 @@ public class IPadMechanics : MonoBehaviour
         callingScreen.SetActive(true);
         callScreen.SetActive(false);
         callText.text = "Calling Site Supervisor";
+
+        gameController.stepsCount++;
     }
 
     // Bind to the take picture button to activte
     public void pictureSnap()
     {
-        // Timer for flash
-        flashTimer += Time.deltaTime;
-
-        print("Flash Time: " + flashTimer);
-
-        if (flashTime <= flashTimer && flashTime + 0.5 >= flashTimer)
+        flashTimer = 0;
+        if (Vector3.Distance(gameObject.transform.position, ladder.transform.position) <= distanceToHazard)
         {
-            camera.GetComponent<Image>().material = flash;
+            print("Picture has been taken");
+            //print("Flash Time: " + flashTimer);
+
+            if (flashTime <= flashTimer && flashTime + flashTime >= flashTimer)
+            {
+                camera.GetComponent<Image>().material = flash;
+            }
+            else
+            {
+                camera.GetComponent<Image>().material = cameraImage;
+            }
+
+            gameController.stepsCount++;
         }
         else
         {
-            camera.GetComponent<Image>().material = cameraImage;
+            print("Get closer to the hazard and point camera to it");
         }
     }
+
+    // The main point of the iPad apart from making the phone calls and
 }
