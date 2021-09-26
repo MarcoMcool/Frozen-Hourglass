@@ -8,6 +8,7 @@ TagManager:
   - PlayerHands
   - Highlight
   - PowerLine
+  - CarNode
   layers:
   - Default
   - TransparentFX
