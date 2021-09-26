@@ -2555,7 +2555,6 @@ MonoBehaviour:
   EnableRotationDuringPostTeleport: 1
   TeleportDestinationPrefab: {fileID: 114000013141257940, guid: 1b474618c4fc5f54e8a8b803c8352c7d,
     type: 3}
-  TeleportDestinationLayer: 0
   AimCollisionType: 0
   UseCharacterCollisionData: 1
   AimCollisionRadius: 0.03
@@ -3416,9 +3415,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3dab24f74bdd34f9875185ccc0d0da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handPopup: {fileID: 5530679371313838994}
   RightPopup: {fileID: 235486304}
+  handPopup: {fileID: 5530679371313838994}
   gc: {fileID: 0}
+  laserPointer: {fileID: 0}
 --- !u!1 &5530679371020543790
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,7 +5201,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000019073486, y: 0.19423327, z: -0.100009106}
+  m_ConnectedAnchor: {x: 0.000002861023, y: 0.19421923, z: -0.100009106}
   serializedVersion: 2
   m_Spring: 100
   m_Damper: 10
@@ -5682,7 +5682,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000019073486, y: 0.19328624, z: -0.000012131526}
+  m_ConnectedAnchor: {x: 0.0000019073486, y: 0.1932792, z: -0.000012131526}
   serializedVersion: 2
   m_Spring: 100
   m_Damper: 10
@@ -6173,7 +6173,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000019073486, y: 0.19328624, z: 2.0568078e-11}
+  m_ConnectedAnchor: {x: 0.0000019073486, y: 0.1932792, z: 0.000026959013}
   serializedVersion: 2
   m_Spring: 100
   m_Damper: 10
