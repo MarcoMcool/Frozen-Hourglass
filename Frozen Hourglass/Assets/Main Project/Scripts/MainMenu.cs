@@ -15,4 +15,10 @@ public class MainMenu : MonoBehaviour
         print("quit game");
         Application.Quit();
     }
+
+    public void MAINMENU()
+    {
+        print("play has been pressed.");
+        SceneManager.LoadScene(0);
+    }
 }
