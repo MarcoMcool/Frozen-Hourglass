@@ -2096,7 +2096,7 @@ GameObject:
   - component: {fileID: 1922003891776230004}
   - component: {fileID: 8833293817769856145}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: Better Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2169,7 +2169,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1922003891776230004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2356,7 +2356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -93}
+  m_AnchoredPosition: {x: 203, y: -90}
   m_SizeDelta: {x: 408.4, y: 399.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3477173549563554604
@@ -3352,7 +3352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -330.05002, y: -93}
+  m_AnchoredPosition: {x: -335, y: -90}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5234686810543073853
@@ -4420,8 +4420,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 191.40625}
-  m_SizeDelta: {x: 600, y: 150}
+  m_AnchoredPosition: {x: 0, y: 183.3}
+  m_SizeDelta: {x: 600, y: 186.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9105928167576866141
 CanvasRenderer:
