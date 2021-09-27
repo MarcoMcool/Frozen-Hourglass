@@ -208,14 +208,14 @@ public class GameController: MonoBehaviour
         //TODO fix this hack
         if (_answer.Length < 3)
         {
-            number3.SetActive(false);
+            //number3.SetActive(false);
             button3.SetActive(false);
             answer3.text = "";
         }
         else
         {
             button3.SetActive(true);
-            number3.SetActive(true);
+            //number3.SetActive(true);
         }
 
         answerResponseObj.SetActive(false);

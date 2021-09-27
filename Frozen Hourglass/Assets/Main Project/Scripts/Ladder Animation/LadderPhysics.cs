@@ -8,6 +8,7 @@ public class LadderPhysics : MonoBehaviour
     public Rigidbody rb;
     public GameObject topExplosivePosition;
 
+    public GameObject floor;
     public PhysicMaterial pmSlide;
     public PhysicMaterial pmNoSlide;
     public MeshCollider meshCollider;
@@ -35,7 +36,7 @@ public class LadderPhysics : MonoBehaviour
     {
 
         done = false;
-        rb.AddExplosionForce(600f, topExplosivePosition.transform.position, 10f);
+        rb.AddExplosionForce(650f, topExplosivePosition.transform.position, 10f);
 
         StartCoroutine(Slide());
 
@@ -54,6 +55,7 @@ public class LadderPhysics : MonoBehaviour
     IEnumerator ResetSlide()
     {
         yield return new WaitForSeconds(1.7f);
+        floor.SetActive(false);
         meshCollider.material = pmNoSlide;
         done = true;
         print("DONE");
