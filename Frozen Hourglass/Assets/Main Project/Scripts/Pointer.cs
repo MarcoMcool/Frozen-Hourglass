@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Pointer: MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Pointer: MonoBehaviour
     public RaycastHit objectHit;
 
     public PointHazards PointHazards;
+    public TextMeshProUGUI wrongHazardText;
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +68,7 @@ public class Pointer: MonoBehaviour
 
     void checkObject()
     {
-        if (objectHit.collider.GetComponent<Hazard>() && (OVRInput.Get(OVRInput.RawButton.A) || OVRInput.Get(OVRInput.RawButton.X)))
+        if (objectHit.collider.GetComponent<Hazard>() && (OVRInput.Get(OVRInput.RawButton.A)))
         {
             print("object has hazard script");
             GameObject hazardObject;
@@ -82,7 +84,17 @@ public class Pointer: MonoBehaviour
                 PointHazards.objectsFound.Add(hazardObject);
             }
         }
+        else if (!objectHit.collider.GetComponent<Hazard>() && (OVRInput.Get(OVRInput.RawButton.A)))
+        {
+            StopCoroutine(WaitTime());
+            wrongHazardText.text = "This is not a hazard";
+            StartCoroutine(WaitTime());
+        }
     }
 
-
+    IEnumerator WaitTime()
+    {
+        yield return new WaitForSeconds(3f);
+        wrongHazardText.text = "";
+    }
 }
