@@ -54,7 +54,7 @@ public class ControllerTutorial: MonoBehaviour
                 "Press any button to continue";
             step++;
         }
-        if (step == 5 && OVRInput.GetDown(OVRInput.RawButton.Any))
+        if (step == 5 && (OVRInput.GetDown(OVRInput.RawButton.LThumbstickDown)||OVRInput.GetDown(OVRInput.RawButton.LThumbstickUp)||OVRInput.GetDown(OVRInput.RawButton.LThumbstickLeft)||OVRInput.GetDown(OVRInput.RawButton.LThumbstickRight)))
         {
             text.text = "Thats it for the tutorial, there are some hints and help within the training aid. \n" +
                       "feel free to see which buttons are where on the model infront." +

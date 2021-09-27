@@ -20,10 +20,10 @@ public class PlayerCollection: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TestControllerPresses();
+        //TestControllerPresses();
         timer += Time.deltaTime;
         //if (OVRInput.GetDown(OVRInput.Button.Four))
-        if (OVRInput.Get(OVRInput.RawButton.B) && gc.popupAllowed)
+        if (OVRInput.Get(OVRInput.RawButton.Y) && gc.popupAllowed)
         {
             if (timer >= 0.2f)
             {
