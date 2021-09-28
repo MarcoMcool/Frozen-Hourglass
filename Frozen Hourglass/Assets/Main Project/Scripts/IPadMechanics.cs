@@ -8,6 +8,7 @@ public class IPadMechanics : MonoBehaviour
     public GameController gameController;
 
     public GameObject camera;
+    public Camera cameraObj;
     public GameObject ladder;
 
     public Material flash;
@@ -31,16 +32,25 @@ public class IPadMechanics : MonoBehaviour
 
     private int distanceToHazard = 13;
 
+
+    private void Start()
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {
-        print(Vector3.Distance(gameObject.transform.position, ladder.transform.position));
+        //print(Vector3.Distance(gameObject.transform.position, ladder.transform.position));
         // Timer for flash
         flashTimer += Time.deltaTime;
         // Timer for call to start
         callTimer += Time.deltaTime;
 
-        print("Flash Time: " + flashTimer);
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            pictureSnap();
+        }
+        //print("Flash Time: " + flashTimer);
 
         // Change material to white then change it back to the camera
         if (flashTime >= flashTimer)
@@ -124,15 +134,18 @@ public class IPadMechanics : MonoBehaviour
     public void pictureSnap()
     {
         flashTimer = 0;
-        if (Vector3.Distance(gameObject.transform.position, ladder.transform.position) <= distanceToHazard)
+
+        Vector3 objectVisible = cameraObj.WorldToViewportPoint(ladder.transform.position);
+
+        if (objectVisible.x > 0 && objectVisible.x < 1 && objectVisible.y > 0 && objectVisible.y < 1)
         {
-            print("Picture has been taken");
+            print("the object was visible in the camera");
             gameController.stepsCount++;
         }
         else
         {
             // Have message displayed to prompt
-            print("Get closer to the hazard and point camera to it");
+            print("Make sure the object is visible in this picture");
         }
     }
 }
