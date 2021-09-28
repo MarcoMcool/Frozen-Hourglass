@@ -84,7 +84,7 @@ public class Pointer: MonoBehaviour
                 PointHazards.objectsFound.Add(hazardObject);
             }
         }
-        else if (!objectHit.collider.GetComponent<Hazard>() && (OVRInput.Get(OVRInput.RawButton.A)))
+        else if (!objectHit.collider.GetComponent<Hazard>() && (OVRInput.Get(OVRInput.RawButton.A)) && gameController.stepsCount == 5)
         {
             StopCoroutine(WaitTime());
             wrongHazardText.text = "This is not a hazard";
