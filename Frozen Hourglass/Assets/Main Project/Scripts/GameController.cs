@@ -121,6 +121,14 @@ public class GameController: MonoBehaviour
                     //Take Photos
                     ActionText.text = "Take Photos with your iPad";
                 }
+                // End of Experience Pop-up
+                //if(stepsCount == 18)
+                //{
+                //    GameObject.Find("End Sequence").SetActive(true);
+                //    // Or
+                //    GameObject.Find("PlayerController/OVRCameraRig(1)/End Sequence").SetActive(true);
+                //    // Alternatively just get the gameobject from the script
+                //}
 
                 //Stop loop
                 actionStep++;
