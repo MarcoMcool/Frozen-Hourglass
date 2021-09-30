@@ -9,6 +9,7 @@ public class IPadMechanics : MonoBehaviour
 
     public GameObject camera;
     public GameObject ladder;
+    public GameObject iPad;
 
     public Material flash;
     public Material cameraImage;
@@ -56,15 +57,15 @@ public class IPadMechanics : MonoBehaviour
 
     public void CheckCalling(int num)
     {
-        if (!calledWorkSupervisor && num ==1)
+        if (!calledWorkSupervisor && num == 1)
         {
             callText.text = "Calling Work Group Supervisor";
 
             calledWorkSupervisor = true;
         }
-        else if (!calledSiteSupervisor && calledWorkSupervisor && num==2)
+        else if (!calledSiteSupervisor && calledWorkSupervisor && num == 2)
         {
-            callText.text = "Calling Site Supervisor";
+            callText.text = "Calling Work Group Manager";
 
             calledSiteSupervisor = true;
         }
@@ -76,6 +77,7 @@ public class IPadMechanics : MonoBehaviour
         }
         StartCoroutine(Call());
     }
+
     IEnumerator Call()
     {
         //Print the time of when the function is first called.
@@ -100,6 +102,8 @@ public class IPadMechanics : MonoBehaviour
 
         //After we have waited 9 seconds print the time again.
         print("Finished Coroutine at timestamp : " + Time.time);
+
+        iPad.SetActive(false);
     }
 
     public void workSupervisorCalling(int num)
@@ -118,7 +122,7 @@ public class IPadMechanics : MonoBehaviour
         else
         {
             // Turn this into a prompt
-            print("You shouldn't call the work supervisor again");
+            print("You shouldn't call the work group supervisor again");
         }
     }
 
@@ -128,7 +132,7 @@ public class IPadMechanics : MonoBehaviour
         {
             callingScreen.SetActive(true);
             callScreen.SetActive(false);
-            callText.text = "Calling Site Supervisor";
+            callText.text = "Calling Work Group Manager";
 
             callTimer = 0;
             callAnswered = false;
@@ -138,7 +142,7 @@ public class IPadMechanics : MonoBehaviour
         else
         {
             // Turn this into a prompt
-            print("You shouldn't call the site supervisor again");
+            print("You shouldn't call the Work Group Manager again");
         }
     }
 
@@ -150,11 +154,12 @@ public class IPadMechanics : MonoBehaviour
         {
             print("Picture has been taken");
             gameController.stepsCount++;
+            iPad.SetActive(false);
         }
         else
         {
             // Have message displayed to prompt
             print("Get closer to the hazard and point camera to it");
         }
-    }
+    }    
 }

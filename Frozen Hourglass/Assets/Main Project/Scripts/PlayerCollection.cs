@@ -8,9 +8,11 @@ public class PlayerCollection: MonoBehaviour
     TouchController controller;
     public GameObject RightPopup;
     public GameObject handPopup;
+    //public GameObject LCanvas;
     float timer = 0f;
     public GameController gc;
     public GameObject laserPointer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,4 +87,12 @@ public class PlayerCollection: MonoBehaviour
             print("b button clicked");
         }
     }
+
+    //public void closePrompt()
+    //{
+    //    if (OVRInput.GetDown(OVRInput.RawButton.X))
+    //    {
+    //        LCanvas.SetActive(false);
+    //    }
+    //}
 }

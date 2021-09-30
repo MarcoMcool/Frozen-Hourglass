@@ -1342,7 +1342,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 85
+    m_FontSize: 74
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1353,7 +1353,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Site Supervisor
+  m_Text: Work Group Manager
 --- !u!1 &2956168639985577633
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,7 +1671,7 @@ GameObject:
   - component: {fileID: 6970094078952810891}
   - component: {fileID: 1623192603138968668}
   m_Layer: 0
-  m_Name: Site Supervisor
+  m_Name: Work Group Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3640,8 +3640,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameController: {fileID: 0}
   camera: {fileID: 521136744829807924}
-  cameraObj: {fileID: 0}
   ladder: {fileID: 0}
+  iPad: {fileID: 0}
   flash: {fileID: 2100000, guid: dba8c0ee92af5ba49a1d0bb8f49454af, type: 2}
   cameraImage: {fileID: 2100000, guid: d2894d6370346fb47915bab3d398f21b, type: 2}
   callingScreen: {fileID: 0}

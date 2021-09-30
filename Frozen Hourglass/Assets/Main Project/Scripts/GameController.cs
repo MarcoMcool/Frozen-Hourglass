@@ -10,6 +10,7 @@ public class GameController: MonoBehaviour
     public GameObject ActionPopUp;
     public TextMeshProUGUI ActionText;
     public GameObject iPad;
+    public GameObject endSequence;
 
     public int buttonPressed;
     public int question = 0;
@@ -88,7 +89,7 @@ public class GameController: MonoBehaviour
             //Action Steps in order:
             //Start, Stop work, Point Hazards, Move Hazards, Call Supervisor, Call Group Manager, Take Photos
             if (stepsCount != 0 && actionStep == stepsCount-1)
-            {
+            {                
                 ActionPopUp.SetActive(true);
                 if (stepsCount == 3)
                 {
@@ -98,37 +99,36 @@ public class GameController: MonoBehaviour
                 if (stepsCount == 5)
                 {
                     //Point Hazards
-                    ActionText.text = "Point out the Hazards by pressing A or X and the grip button on the controller";
+                    ActionText.text = "Point out the Hazards by holding the trigger and pressing the A button on the controller";
                 }
                 if (stepsCount == 7)
                 {
                     //Move Hazards
-                    ActionText.text = "Move Hazards by grabbing them and moving them into the street";
+                    ActionText.text = "Move Hazards by grabbing them and moving them into the street safe zone";
                 }
                 if (stepsCount == 11)
                 {
                     //Call Work Group Supervisor
                     iPad.SetActive(true);
-                    ActionText.text = "Call Work Group Supervisor by using your iPad on your belt below you, press A to use your pointer to press the buttons";
+                    ActionText.text = "Call Work Group Supervisor by using your iPad in front of you, hold trigger and A to select icons on the iPad";
                 }
                 if (stepsCount == 15)
                 {
                     //Call Site Supervisor
-                    ActionText.text = "Call Site Manager with your iPad";
+                    iPad.SetActive(true);
+                    ActionText.text = "Call Work Group Supervisor Manager with your iPad";
                 }
                 if (stepsCount == 17)
                 {
                     //Take Photos
+                    iPad.SetActive(true);
                     ActionText.text = "Take Photos with your iPad";
                 }
                 // End of Experience Pop-up
-                //if(stepsCount == 18)
-                //{
-                //    GameObject.Find("End Sequence").SetActive(true);
-                //    // Or
-                //    GameObject.Find("PlayerController/OVRCameraRig(1)/End Sequence").SetActive(true);
-                //    // Alternatively just get the gameobject from the script
-                //}
+                if (stepsCount == 18)
+                {
+                    endSequence.SetActive(true);
+                }
 
                 //Stop loop
                 actionStep++;
@@ -142,7 +142,11 @@ public class GameController: MonoBehaviour
                 //    selectHazardsStage = false;
                 //}
             }
-            
+            // Hide prompt if user presses X
+            if (OVRInput.GetDown(OVRInput.RawButton.X))
+            {
+                ActionPopUp.SetActive(false);
+            }
         }
     }
 
