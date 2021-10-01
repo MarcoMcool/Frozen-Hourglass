@@ -26,6 +26,7 @@ public class Workers: MonoBehaviour
             if (gameObject.GetComponent<OVRGrabbable>().isGrabbed || Input.GetKeyDown(KeyCode.M))
             {
                 workerMove = true;
+                gameObject.GetComponent<OVRGrabbable>().enabled = false;
             }
             if (workerMove)
             {
