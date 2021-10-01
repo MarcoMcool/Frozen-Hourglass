@@ -6,7 +6,7 @@ public class QuestionSetup
 {
     public static Question[] SetUp()
     {
-        Question[] questions = new Question[11];
+        Question[] questions = new Question[12];
 
         questions[0] = new Question(
             "What was the incident that occurred?",
