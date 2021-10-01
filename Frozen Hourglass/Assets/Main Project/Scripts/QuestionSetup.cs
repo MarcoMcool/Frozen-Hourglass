@@ -86,6 +86,13 @@ public class QuestionSetup
             "Incorrect! \nIt is necessary to record photos and witness recollections for future reviewing of incidents.",
             1
         );
+        questions[11] = new Question(
+            "This is a dummy question",
+            new string[] { "This should not be here", "Oh no", "Pls" },
+            "Correct! \nSend help",
+            "Incorrect! \nIt is necessary to record photos and witness recollections for future reviewing of incidents.",
+            1
+        );
 
         return questions;
     }
