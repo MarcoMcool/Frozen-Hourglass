@@ -32,7 +32,7 @@ public class GameController: MonoBehaviour
     Question[] q;
 
     [SerializeField]
-    private bool[] steps = new bool[] { false, true, true, false, true, false, true, false, true, true, true, false, true, true, true, false, true, false };
+    private bool[] steps = new bool[] { false, true, true, false, true, false, true, false, true, true, true, false, true, true, true, false, true, false, false };
     
     public int stepsCount = 0;
 
@@ -68,6 +68,8 @@ public class GameController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print("The current step count is: " + stepsCount);
+
         if (Ladder.done == true && animationEnd != true)
         {
             stepsCount++;
