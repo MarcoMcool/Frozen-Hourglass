@@ -164,5 +164,27 @@ public class IPadMechanics : MonoBehaviour
             // Have message displayed to prompt
             print("Make sure the object is visible in this picture");
         }
-    }    
+    }
+    public Text notepadText;
+    public void notepad()
+    {
+        notepadText.text = "Worker: The Ladder fell down and hit the wire.";
+        StartCoroutine(Wait());
+    }
+    IEnumerator Wait()
+    {
+        //Print the time of when the function is first called.
+        print("Started Coroutine at timestamp : " + Time.time);
+        
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+
+        yield return new WaitForSeconds(5);
+
+        //After we have waited 5 seconds print the time again.
+        print("Finished Coroutine at timestamp : " + Time.time);
+
+        iPad.SetActive(false);
+        gameController.stepsCount++;
+    }
 }

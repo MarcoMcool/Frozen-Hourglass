@@ -32,7 +32,7 @@ public class GameController: MonoBehaviour
     Question[] q;
 
     [SerializeField]
-    private bool[] steps = new bool[] { false, true, true, false, true, false, true, false, true, true, true, false, true, true, true, false, true, false, false };
+    private bool[] steps = new bool[] { false, true, true, false, true, false, true, false, true, true, true, false, true, true, true, false, true, false, /*Talk*/ false, /*Record*/false, false };
     
     public int stepsCount = 0;
 
@@ -50,6 +50,9 @@ public class GameController: MonoBehaviour
     public GameObject button3;
 
     public LadderPhysics Ladder;
+
+    public GameObject askWorker;
+    public GameObject workerText;
 
     public int actionStep = 0;
 
@@ -126,9 +129,22 @@ public class GameController: MonoBehaviour
                     iPad.SetActive(true);
                     ActionText.text = "Take Photos with your iPad";
                 }
-                // End of Experience Pop-up
                 if (stepsCount == 18)
                 {
+                    askWorker.SetActive(true);
+                    ActionText.text = "Ask the worker for witness recollections";
+                }
+                if (stepsCount == 19)
+                {
+                    ActionText.text = "Record the worker recollections on the iPad";
+                    iPad.SetActive(true);
+                    askWorker.SetActive(false);
+                    workerText.SetActive(true);
+                }
+                // End of Experience Pop-up
+                if (stepsCount == 20)
+                {
+                    workerText.SetActive(false);
                     endSequence.SetActive(true);
                 }
 
@@ -162,6 +178,12 @@ public class GameController: MonoBehaviour
             PopUp.SetActive(false);
             return;
         }
+
+        //if (buttonPressed == 4)
+        //{
+        //    stepsCount++;
+        //    return;
+        //}
         if (q[questionNumber].key == buttonPressed)
         {
             answerResponseTxtCorrect.text = q[questionNumber].correct;
