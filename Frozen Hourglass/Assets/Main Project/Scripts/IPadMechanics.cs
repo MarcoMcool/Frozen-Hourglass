@@ -10,6 +10,7 @@ public class IPadMechanics : MonoBehaviour
     public GameObject camera;
     public GameObject ladder;
     public GameObject iPad;
+    public Camera cameraObj;
 
     public Material flash;
     public Material cameraImage;
@@ -150,16 +151,18 @@ public class IPadMechanics : MonoBehaviour
     public void pictureSnap()
     {
         flashTimer = 0;
-        if (Vector3.Distance(gameObject.transform.position, ladder.transform.position) <= distanceToHazard)
+
+        Vector3 objectVisible = cameraObj.WorldToViewportPoint(ladder.transform.position);
+
+        if (objectVisible.x > 0 && objectVisible.x < 1 && objectVisible.y > 0 && objectVisible.y < 1)
         {
-            print("Picture has been taken");
+            print("the object was visible in the camera");
             gameController.stepsCount++;
-            iPad.SetActive(false);
         }
         else
         {
             // Have message displayed to prompt
-            print("Get closer to the hazard and point camera to it");
+            print("Make sure the object is visible in this picture");
         }
     }    
 }
