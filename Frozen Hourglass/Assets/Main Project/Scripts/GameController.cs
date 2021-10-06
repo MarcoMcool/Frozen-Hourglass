@@ -10,6 +10,7 @@ public class GameController: MonoBehaviour
     public GameObject ActionPopUp;
     public TextMeshProUGUI ActionText;
     public GameObject iPad;
+    public GameObject endSequence;
 
     public int buttonPressed;
     public int question = 0;
@@ -31,7 +32,7 @@ public class GameController: MonoBehaviour
     Question[] q;
 
     [SerializeField]
-    private bool[] steps = new bool[] { false, true, true, false, true, false, true, false, true, true, true, false, true, true, true, false, true, false };
+    private bool[] steps = new bool[] { false, true, true, false, true, false, true, false, true, true, true, false, true, true, true, false, true, false, /*Talk*/ false, /*Record*/false, false };
     
     public int stepsCount = 0;
 
@@ -50,6 +51,9 @@ public class GameController: MonoBehaviour
 
     public LadderPhysics Ladder;
 
+    public GameObject askWorker;
+    public GameObject workerText;
+
     public int actionStep = 0;
 
     // Start is called before the first frame update
@@ -67,6 +71,8 @@ public class GameController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print("The current step count is: " + stepsCount);
+
         if (Ladder.done == true && animationEnd != true)
         {
             stepsCount++;
@@ -88,7 +94,7 @@ public class GameController: MonoBehaviour
             //Action Steps in order:
             //Start, Stop work, Point Hazards, Move Hazards, Call Supervisor, Call Group Manager, Take Photos
             if (stepsCount != 0 && actionStep == stepsCount-1)
-            {
+            {                
                 ActionPopUp.SetActive(true);
                 if (stepsCount == 3)
                 {
@@ -98,28 +104,48 @@ public class GameController: MonoBehaviour
                 if (stepsCount == 5)
                 {
                     //Point Hazards
-                    ActionText.text = "Point out the Hazards by pressing A or X and the grip button on the controller";
+                    ActionText.text = "Point out the Hazards by holding the trigger and pressing the A button on the controller";
                 }
                 if (stepsCount == 7)
                 {
                     //Move Hazards
-                    ActionText.text = "Move Hazards by grabbing them and moving them into the street";
+                    ActionText.text = "Move Hazards by grabbing them and moving them into the street safe zone";
                 }
                 if (stepsCount == 11)
                 {
-                    //Call Supervisor
+                    //Call Work Group Supervisor
                     iPad.SetActive(true);
-                    ActionText.text = "Call Supervisor by using your iPad on your belt below you, press A to use your pointer to press the buttons";
+                    ActionText.text = "Call Work Group Supervisor by using your iPad in front of you, hold trigger and A to select icons on the iPad";
                 }
                 if (stepsCount == 15)
                 {
-                    //Call Group Manager
-                    ActionText.text = "Call Group Manager with your iPad";
+                    //Call Site Supervisor
+                    iPad.SetActive(true);
+                    ActionText.text = "Call Work Group Supervisor Manager with your iPad";
                 }
                 if (stepsCount == 17)
                 {
                     //Take Photos
+                    iPad.SetActive(true);
                     ActionText.text = "Take Photos with your iPad";
+                }
+                if (stepsCount == 18)
+                {
+                    askWorker.SetActive(true);
+                    ActionText.text = "Ask the worker for witness recollections";
+                }
+                if (stepsCount == 19)
+                {
+                    ActionText.text = "Record the worker recollections on the iPad";
+                    iPad.SetActive(true);
+                    askWorker.SetActive(false);
+                    workerText.SetActive(true);
+                }
+                // End of Experience Pop-up
+                if (stepsCount == 20)
+                {
+                    workerText.SetActive(false);
+                    endSequence.SetActive(true);
                 }
 
                 //Stop loop
@@ -134,7 +160,11 @@ public class GameController: MonoBehaviour
                 //    selectHazardsStage = false;
                 //}
             }
-            
+            // Hide prompt if user presses X
+            if (OVRInput.GetDown(OVRInput.RawButton.X))
+            {
+                ActionPopUp.SetActive(false);
+            }
         }
     }
 
@@ -148,6 +178,12 @@ public class GameController: MonoBehaviour
             PopUp.SetActive(false);
             return;
         }
+
+        //if (buttonPressed == 4)
+        //{
+        //    stepsCount++;
+        //    return;
+        //}
         if (q[questionNumber].key == buttonPressed)
         {
             answerResponseTxtCorrect.text = q[questionNumber].correct;

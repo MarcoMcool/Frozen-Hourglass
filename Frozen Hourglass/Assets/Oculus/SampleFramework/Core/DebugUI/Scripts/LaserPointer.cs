@@ -157,6 +157,7 @@ public class LaserPointer: OVRCursor
 
     void OnDisable()
     {
+        print("Pointer is disabled");
         if (cursorVisual) cursorVisual.SetActive(false);
     }
     public void OnInputFocusLost()

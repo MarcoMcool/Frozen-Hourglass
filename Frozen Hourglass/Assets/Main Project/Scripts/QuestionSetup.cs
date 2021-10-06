@@ -6,7 +6,7 @@ public class QuestionSetup
 {
     public static Question[] SetUp()
     {
-        Question[] questions = new Question[11];
+        Question[] questions = new Question[12];
 
         questions[0] = new Question(
             "What was the incident that occurred?",
@@ -83,6 +83,13 @@ public class QuestionSetup
             "Have photos and witness recollections been recorded?",
             new string[] { "Yes, photos and witness recollections have been recorded to be reported and stored for furture recording", "No, the incident wasn't signficant enough to warrent photos and witness recollections to be record.", "No, it isn't important to take photos and record witness statements." },
             "Correct! \nCollecting photos and witness recollections are an important part of documenting an incident for recording and future reviewing.",
+            "Incorrect! \nIt is necessary to record photos and witness recollections for future reviewing of incidents.",
+            1
+        );
+        questions[11] = new Question(
+            "This is a dummy question",
+            new string[] { "This should not be here", "Oh no", "Pls" },
+            "Correct! \nSend help",
             "Incorrect! \nIt is necessary to record photos and witness recollections for future reviewing of incidents.",
             1
         );
