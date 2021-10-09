@@ -31,7 +31,7 @@ public class PlayerCollection: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WallLimit();
+        //WallLimit();
         //TestControllerPresses();
         timer += Time.deltaTime;
         //if (OVRInput.GetDown(OVRInput.Button.Four))

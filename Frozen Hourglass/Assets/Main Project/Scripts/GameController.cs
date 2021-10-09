@@ -49,6 +49,9 @@ public class GameController: MonoBehaviour
     public GameObject buttons;
     public GameObject button3;
 
+    public GameObject yesNoQuestions;
+    public GameObject normalQuestions;
+
     public LadderPhysics Ladder;
 
     public GameObject askWorker;
@@ -152,14 +155,6 @@ public class GameController: MonoBehaviour
                 actionStep++;
             }
 
-            if (stepsCount == 5)
-            {
-                //if (selectHazardsStage)
-                //{
-                //    stepsCount++;
-                //    selectHazardsStage = false;
-                //}
-            }
             // Hide prompt if user presses X
             if (OVRInput.GetDown(OVRInput.RawButton.X))
             {
@@ -245,12 +240,16 @@ public class GameController: MonoBehaviour
         if (_answer.Length < 3)
         {
             //number3.SetActive(false);
+            yesNoQuestions.SetActive(true);
+            normalQuestions.SetActive(false);
             button3.SetActive(false);
             answer3.text = "";
         }
         else
         {
             button3.SetActive(true);
+            yesNoQuestions.SetActive(false);
+            normalQuestions.SetActive(true);
             //number3.SetActive(true);
         }
 
