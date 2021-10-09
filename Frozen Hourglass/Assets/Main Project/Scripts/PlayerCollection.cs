@@ -31,6 +31,7 @@ public class PlayerCollection: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        WallLimit();
         //TestControllerPresses();
         timer += Time.deltaTime;
         //if (OVRInput.GetDown(OVRInput.Button.Four))
@@ -110,6 +111,7 @@ public class PlayerCollection: MonoBehaviour
         if (Vector3.Distance(playerPosition.transform.position, wall1.transform.position) < 3f)
         {
             wall1.SetActive(true);
+            print("wall1 close");
         }
         else
         {
@@ -117,7 +119,7 @@ public class PlayerCollection: MonoBehaviour
         }
         if (Vector3.Distance(playerPosition.transform.position, wall2.transform.position) < 3f)
         {
-            wall2.SetActive(true);
+            wall2.SetActive(true); print("wall2 close");
         }
         else
         {
@@ -125,7 +127,7 @@ public class PlayerCollection: MonoBehaviour
         }
         if (Vector3.Distance(playerPosition.transform.position, wall3.transform.position) < 3f)
         {
-            wall3.SetActive(true);
+            wall3.SetActive(true); print("wall3 close");
         }
         else
         {
@@ -133,7 +135,7 @@ public class PlayerCollection: MonoBehaviour
         }
         if (Vector3.Distance(playerPosition.transform.position, wall4.transform.position) < 3f)
         {
-            wall4.SetActive(true);
+            wall4.SetActive(true); print("wall4 close");
         }
         else
         {
