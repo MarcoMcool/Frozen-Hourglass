@@ -22,10 +22,7 @@ public class PlayerCollection: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        wall1.SetActive(false);
-        wall2.SetActive(false);
-        wall3.SetActive(false);
-        wall4.SetActive(false);
+
     }
 
     // Update is called once per frame
