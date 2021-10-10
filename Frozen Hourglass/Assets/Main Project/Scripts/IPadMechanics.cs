@@ -17,6 +17,7 @@ public class IPadMechanics : MonoBehaviour
 
     public GameObject callingScreen;
     public GameObject callScreen;
+    public GameObject cameraMessage;
     public Text callText;
     public Text callTimeText;
 
@@ -162,15 +163,19 @@ public class IPadMechanics : MonoBehaviour
         else
         {
             // Have message displayed to prompt
+            cameraMessage.SetActive(true);
+            cameraMessage.GetComponentInChildren<Text>().text = "Make sure the object is visible in this picture. Click on message to remove!";
             print("Make sure the object is visible in this picture");
         }
     }
     public Text notepadText;
+
     public void notepad()
     {
         notepadText.text = "Worker: The Ladder fell down and hit the wire.";
         StartCoroutine(Wait());
     }
+
     IEnumerator Wait()
     {
         //Print the time of when the function is first called.
