@@ -47,6 +47,7 @@ public class LadderPhysics : MonoBehaviour
             StartCoroutine(Slide());
 
             StartCoroutine(ResetSlide());
+            
         }
     }
 
