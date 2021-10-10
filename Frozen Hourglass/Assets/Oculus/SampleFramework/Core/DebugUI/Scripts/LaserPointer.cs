@@ -95,8 +95,8 @@ public class LaserPointer: OVRCursor
 
             if (Physics.Linecast(_startPoint, _endPoint, out hit))
             {
-                print("hit object");
-                print(hit.collider.name);
+                //print("hit object");
+                //print(hit.collider.name);
 
                 if (hit.collider.tag == "HighLight")
                 {

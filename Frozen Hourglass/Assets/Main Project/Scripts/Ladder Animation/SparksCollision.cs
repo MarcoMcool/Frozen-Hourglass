@@ -25,7 +25,7 @@ public class SparksCollision: MonoBehaviour
           
             if (!bangSound.isPlaying)
             {
-                print("The sound has started here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                //print("The sound has started here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 bangSound.Play();
             }
             sparksObject.SetActive(true);

@@ -130,7 +130,7 @@ public abstract class TeleportTargetHandler : TeleportSupport
 		start.y += radius + ERROR_MARGIN;
 		var end = start;
 		end.y += character.height - ERROR_MARGIN;
-		print(AimData.TargetHitInfo.collider.name);
+		//print(AimData.TargetHitInfo.collider.name);
 		var result = Physics.CheckCapsule(start, end, radius,
 			AimCollisionLayerMask, QueryTriggerInteraction.Ignore);
 		if (result)

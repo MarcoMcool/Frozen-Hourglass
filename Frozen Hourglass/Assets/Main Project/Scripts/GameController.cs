@@ -33,7 +33,7 @@ public class GameController: MonoBehaviour
 
     [SerializeField]
     private bool[] steps = new bool[] { false, true, true, false, true, false, true, false, true, true, true, false, true, true, true, false, true, false, /*Talk*/ false, /*Record*/false, false };
-    
+
     public int stepsCount = 0;
 
     [Header("Question Answer Variables")]
@@ -49,8 +49,13 @@ public class GameController: MonoBehaviour
     public GameObject buttons;
     public GameObject button3;
 
+    public TextMeshProUGUI yesNoAnswerResponse;
+    public GameObject yesNoAnswerResponseObj;
+    public GameObject yesNoButtons;
     public GameObject yesNoQuestions;
     public GameObject normalQuestions;
+    public GameObject yesNoQuestionText;
+    
 
     public LadderPhysics Ladder;
 
@@ -74,7 +79,7 @@ public class GameController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("The current step count is: " + stepsCount);
+        //print("The current step count is: " + stepsCount);
 
         if (Ladder.done == true && animationEnd != true)
         {
@@ -96,8 +101,8 @@ public class GameController: MonoBehaviour
             PopUp.SetActive(false);
             //Action Steps in order:
             //Start, Stop work, Point Hazards, Move Hazards, Call Supervisor, Call Group Manager, Take Photos
-            if (stepsCount != 0 && actionStep == stepsCount-1)
-            {                
+            if (stepsCount != 0 && actionStep == stepsCount - 1)
+            {
                 ActionPopUp.SetActive(true);
                 if (stepsCount == 3)
                 {
@@ -165,7 +170,8 @@ public class GameController: MonoBehaviour
 
     public void PressButton(int buttonPressed)
     {
-        print("Button hit: " + buttonPressed);
+        //print(buttonPressed + "button presssed" + q[questionNumber].key + "question number: they should be the same");
+        //print("Button hit: " + buttonPressed);
         if (buttonPressed == 0)
         {
             animationEnd = false;
@@ -173,6 +179,7 @@ public class GameController: MonoBehaviour
             PopUp.SetActive(false);
             return;
         }
+        print(questionNumber + "question Numbers");
 
         //if (buttonPressed == 4)
         //{
@@ -181,21 +188,46 @@ public class GameController: MonoBehaviour
         //}
         if (q[questionNumber].key == buttonPressed)
         {
-            answerResponseTxtCorrect.text = q[questionNumber].correct;
-            answerResponseObj.SetActive(true);
-            answersOptions.SetActive(false);
-            buttons.SetActive(false);
-            questionNumber++;
-            StartCoroutine(WaitTimer_2());
-            
+            if (questionNumber == 2)
+            {
+                yesNoAnswerResponse.text = q[questionNumber].correct;
+                yesNoAnswerResponseObj.SetActive(true);
+                yesNoButtons.SetActive(false);
+                yesNoQuestionText.SetActive(false);
+                questionNumber++;
+                StartCoroutine(WaitTimer_2());
+            }
+            else
+            {
+                answerResponseTxtCorrect.text = q[questionNumber].correct;
+                answerResponseObj.SetActive(true);
+                answersOptions.SetActive(false);
+                //yesNoQuestionText.SetActive(false);
+                buttons.SetActive(false);
+                questionNumber++;
+                StartCoroutine(WaitTimer_2());
+            }
         }
         else
         {
-            answerResponseTxtCorrect.text = q[questionNumber].incorrect;
-            answersOptions.SetActive(false);
-            buttons.SetActive(false);
-            answerResponseObj.SetActive(true);
-            StartCoroutine(WaitTimer());
+            if (questionNumber == 2)
+            {
+                yesNoAnswerResponse.text = q[questionNumber].correct;
+                yesNoAnswerResponseObj.SetActive(true);
+                yesNoButtons.SetActive(false);
+                
+                questionNumber++;
+                StartCoroutine(WaitTimer());
+            }
+            else
+            {
+                answerResponseTxtCorrect.text = q[questionNumber].incorrect;
+                answersOptions.SetActive(false);
+                buttons.SetActive(false);
+
+                answerResponseObj.SetActive(true);
+                StartCoroutine(WaitTimer());
+            }
         }
     }
     public void QuestionOrdering()
@@ -239,15 +271,16 @@ public class GameController: MonoBehaviour
         //TODO fix this hack
         if (_answer.Length < 3)
         {
+            //print(stepsCount + "steps count look at this !!!!!!!!!!!!!!!!!!!!");
             //number3.SetActive(false);
             yesNoQuestions.SetActive(true);
             normalQuestions.SetActive(false);
-            button3.SetActive(false);
-            answer3.text = "";
+            //button3.SetActive(false);
+            //answer3.text = "";
         }
         else
         {
-            button3.SetActive(true);
+            // button3.SetActive(true);
             yesNoQuestions.SetActive(false);
             normalQuestions.SetActive(true);
             //number3.SetActive(true);
@@ -260,7 +293,7 @@ public class GameController: MonoBehaviour
     IEnumerator WaitTimer()
     {
         //Print the time of when the function is first called.
-        print("Started Coroutine at timestamp : " + Time.time);
+        //print("Started Coroutine at timestamp : " + Time.time);
 
         //yield on a new YieldInstruction that waits for 5 seconds.
         answerReceived = false;
@@ -268,12 +301,12 @@ public class GameController: MonoBehaviour
         yield return new WaitForSeconds(5);
         SetAnswers(q[questionNumber]);
         //After we have waited 5 seconds print the time again.
-        print("Finished Coroutine at timestamp : " + Time.time);
+        //print("Finished Coroutine at timestamp : " + Time.time);
     }
     IEnumerator WaitTimer_2()
     {
         //Print the time of when the function is first called.
-        print("Started Coroutine at timestamp : " + Time.time);
+        //print("Started Coroutine at timestamp : " + Time.time);
 
         //yield on a new YieldInstruction that waits for 5 seconds.
         answerReceived = false;
@@ -281,7 +314,15 @@ public class GameController: MonoBehaviour
         yield return new WaitForSeconds(5);
         SetAnswers(q[questionNumber]);
         //After we have waited 5 seconds print the time again.
-        print("Finished Coroutine at timestamp : " + Time.time);
+        //print("Finished Coroutine at timestamp : " + Time.time);
         stepsCount++;
+    }
+
+    IEnumerator YesNoQuestionsContinue()
+    {
+        answerReceived = false;
+        correctAnswer = false;
+        yield return new WaitForSeconds(5);
+        
     }
 }
