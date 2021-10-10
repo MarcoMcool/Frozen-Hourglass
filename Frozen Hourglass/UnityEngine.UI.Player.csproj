@@ -56,10 +56,11 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\GraphicRaycaster.cs" />
     <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\Image.cs" />
+    <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\EventSystem\EventSystem.cs" />
     <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\Text.cs" />
     <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\Toggle.cs" />
-    <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\GraphicRaycaster.cs" />
     <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\Layout\LayoutElement.cs" />
     <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\IGraphicEnabledDisabled.cs" />
     <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\Selectable.cs" />
@@ -86,7 +87,6 @@
     <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\MaterialModifiers\IMaterialModifier.cs" />
     <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\SetPropertyUtility.cs" />
     <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\Layout\AspectRatioFitter.cs" />
-    <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\EventSystem\EventSystem.cs" />
     <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\StencilMaterial.cs" />
     <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\Culling\IClipRegion.cs" />
     <Compile Include="C:\Program Files\Unity\Hub\Editor\2020.3.2f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\Misc.cs" />

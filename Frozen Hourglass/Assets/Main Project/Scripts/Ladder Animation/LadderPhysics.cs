@@ -69,7 +69,7 @@ public class LadderPhysics : MonoBehaviour
         floor.SetActive(false);
         meshCollider.material = pmNoSlide;
         done = true;
-        print("DONE");
+        //print("DONE");
     }
 
     IEnumerator WaitTime()

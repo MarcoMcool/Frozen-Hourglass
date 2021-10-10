@@ -27,9 +27,10 @@ public class LaserPointer: OVRCursor
     public GameObject cursorVisual;
     public float maxLength = 10.0f;
 
+    [SerializeField]
     private LaserBeamBehavior _laserBeamBehavior;
     bool m_restoreOnInputAcquired = false;
-
+    
     public LaserBeamBehavior laserBeamBehavior
     {
         set
@@ -95,8 +96,8 @@ public class LaserPointer: OVRCursor
 
             if (Physics.Linecast(_startPoint, _endPoint, out hit))
             {
-                print("hit object");
-                print(hit.collider.name);
+                //print("hit object");
+                //print(hit.collider.name);
 
                 if (hit.collider.tag == "HighLight")
                 {

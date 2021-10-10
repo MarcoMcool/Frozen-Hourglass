@@ -13,15 +13,22 @@ public class PlayerCollection: MonoBehaviour
     public GameController gc;
     public GameObject laserPointer;
 
+    public GameObject playerPosition;
+    public GameObject wall1;
+    public GameObject wall2;
+    public GameObject wall3;
+    public GameObject wall4;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //WallLimit();
         //TestControllerPresses();
         timer += Time.deltaTime;
         //if (OVRInput.GetDown(OVRInput.Button.Four))
@@ -41,7 +48,7 @@ public class PlayerCollection: MonoBehaviour
                 }
             }
         }
-       
+
 
         if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
         {
@@ -54,14 +61,13 @@ public class PlayerCollection: MonoBehaviour
             //print("line rendere disabled");
         }
         //if (Input.GetButtonDown("Oculus_CrossPlatform_SecondaryIndexTrigger"))
-        
+
         if (OVRInput.GetDown(OVRInput.RawButton.RThumbstickUp))
         {
             //print("HERE");
-            
+
             RightPopup.SetActive(false);
         }
-
     }
 
     void TestControllerPresses()
@@ -95,4 +101,42 @@ public class PlayerCollection: MonoBehaviour
     //        LCanvas.SetActive(false);
     //    }
     //}
+
+
+    void WallLimit()
+    {
+        if (Vector3.Distance(playerPosition.transform.position, wall1.transform.position) < 3f)
+        {
+            wall1.SetActive(true);
+            print("wall1 close");
+        }
+        else
+        {
+            wall1.SetActive(false);
+        }
+        if (Vector3.Distance(playerPosition.transform.position, wall2.transform.position) < 3f)
+        {
+            wall2.SetActive(true); print("wall2 close");
+        }
+        else
+        {
+            wall2.SetActive(false);
+        }
+        if (Vector3.Distance(playerPosition.transform.position, wall3.transform.position) < 3f)
+        {
+            wall3.SetActive(true); print("wall3 close");
+        }
+        else
+        {
+            wall3.SetActive(false);
+        }
+        if (Vector3.Distance(playerPosition.transform.position, wall4.transform.position) < 3f)
+        {
+            wall4.SetActive(true); print("wall4 close");
+        }
+        else
+        {
+            wall4.SetActive(false);
+        }
+    }
 }
