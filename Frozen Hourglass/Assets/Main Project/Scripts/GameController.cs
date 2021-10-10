@@ -181,6 +181,10 @@ public class GameController: MonoBehaviour
         }
         print(questionNumber + "question Numbers");
 
+        if (questionNumber != 2)
+        {
+
+        }
         //if (buttonPressed == 4)
         //{
         //    stepsCount++;
@@ -188,7 +192,9 @@ public class GameController: MonoBehaviour
         //}
         if (q[questionNumber].key == buttonPressed)
         {
-            if (questionNumber == 2)
+            print(questionNumber + "question number pressed here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            //if the input is correct
+            if (questionNumber == 1)
             {
                 yesNoAnswerResponse.text = q[questionNumber].correct;
                 yesNoAnswerResponseObj.SetActive(true);
@@ -210,13 +216,12 @@ public class GameController: MonoBehaviour
         }
         else
         {
-            if (questionNumber == 2)
+            if (questionNumber == 1)
             {
-                yesNoAnswerResponse.text = q[questionNumber].correct;
+                yesNoAnswerResponse.text = q[questionNumber].incorrect;
                 yesNoAnswerResponseObj.SetActive(true);
                 yesNoButtons.SetActive(false);
                 
-                questionNumber++;
                 StartCoroutine(WaitTimer());
             }
             else
@@ -299,6 +304,7 @@ public class GameController: MonoBehaviour
         answerReceived = false;
         correctAnswer = false;
         yield return new WaitForSeconds(5);
+        yesNoQuestions.SetActive(false);
         SetAnswers(q[questionNumber]);
         //After we have waited 5 seconds print the time again.
         //print("Finished Coroutine at timestamp : " + Time.time);
