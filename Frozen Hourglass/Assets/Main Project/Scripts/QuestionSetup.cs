@@ -60,7 +60,7 @@ public class QuestionSetup
         );
         questions[7] = new Question(
             "Has the control measure been implemented to prevent escalation of the situation?",
-            new string[] { "Yes, the ladder was eliminated from the scene to prevent anymore incidents from potentially occuring.", "No, the site has been left untouched to secure the situation.", "Yes, the ladder was substituted with a wooden ladder to prevent another incident from occuring." },
+            new string[] { "Yes, a ladder was removed from the scene.", "No, the site has been left untouched to secure the situation.", "Yes, the ladder was substituted with a wooden ladder." },
             "Correct! \nThe elimination of the ladder earlier prevented any possible incidents from occuring.",
             "Incorrect! \nThe ladder was eliminated from the site earlier to prevent possible incidents from occuring.",
             1
@@ -74,14 +74,14 @@ public class QuestionSetup
         );
         questions[9] = new Question(
             "Does the work group manager need to be contacted to release the site?",
-            new string[] { "Yes, the work group manager's permission is needed to continue work on the site.", "No, work on the site can commence after deeming the site safe by the workers.", "qNo, the work group manager doesn't need to inspect the site to deem it safe and release the site." },
+            new string[] { "Yes, the manage needs to be contacted to continue work.", "No, work on the site can commence if workers deem the site safe.", "No, the manager doesn't need to inspect the site to release the site." },
             "Correct! \nThe work groups manager's permission to release the site is needed after deeming the site safe again to continue work.",
             "Incorrect! \nIf the work group manager isn't contacted work cannot commence as it hasn't been deemed safe yet.",
             1
         );
         questions[10] = new Question(
-            "Have photos and witness recollections been recorded?",
-            new string[] { "Yes, photos and witness recollections have been recorded to be reported and stored for furture recording", "No, the incident wasn't signficant enough to warrent photos and witness recollections to be record.", "No, it isn't important to take photos and record witness statements." },
+            "Do photos and witness recollections need to be recorded?",
+            new string[] { "Yes, photos and witness recollections need to be recorded.", "No, the incident wasn't signficant enough to be record.", "No, it isn't important to take photos and record witness statements." },
             "Correct! \nCollecting photos and witness recollections are an important part of documenting an incident for recording and future reviewing.",
             "Incorrect! \nIt is necessary to record photos and witness recollections for future reviewing of incidents.",
             1
