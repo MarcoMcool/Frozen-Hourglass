@@ -135,6 +135,7 @@ public class GameController: MonoBehaviour
                 }
                 if (stepsCount == 18)
                 {
+                    iPad.SetActive(false);
                     askWorker.SetActive(true);
                     ActionText.text = "Ask the worker for witness recollections";
                 }
@@ -171,6 +172,12 @@ public class GameController: MonoBehaviour
             animationEnd = false;
             Ladder.StartFall();
             PopUp.SetActive(false);
+            return;
+        }
+
+        if (buttonPressed == 4)
+        {
+            stepsCount++;
             return;
         }
 
