@@ -62,10 +62,10 @@ public class LaserPointer: OVRCursor
         lineRenderer = GetComponent<LineRenderer>();
     }
 
-    private void Update()
-    {
+    //private void Update()
+    //{
         
-    }
+    //}
 
     private void Start()
     {
@@ -88,7 +88,7 @@ public class LaserPointer: OVRCursor
         _hitTarget = false;
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         lineRenderer.SetPosition(0, _startPoint);
         if (_hitTarget)
@@ -97,7 +97,7 @@ public class LaserPointer: OVRCursor
             if (Physics.Linecast(_startPoint, _endPoint, out hit))
             {
                 //print("hit object");
-                //print(hit.collider.name);
+                print(hit.collider.name);
 
                 if (hit.collider.tag == "HighLight")
                 {
