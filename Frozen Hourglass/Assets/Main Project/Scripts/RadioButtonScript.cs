@@ -8,7 +8,7 @@ public class RadioButtonScript: MonoBehaviour
     public Toggle toggle;
     GameController gameController;
 
-    int buttonNumber;
+    public int buttonNumber;
     // Start is called before the first frame update
     void Start()
     {
