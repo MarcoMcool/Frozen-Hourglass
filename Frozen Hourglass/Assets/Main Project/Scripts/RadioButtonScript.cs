@@ -6,9 +6,13 @@ public class RadioButtonScript: MonoBehaviour
 {
 
     public Toggle toggle;
+    GameController gameController;
+
+    int buttonNumber;
     // Start is called before the first frame update
     void Start()
     {
+        gameController = FindObjectOfType<GameController>();
         toggle.isOn = false;
     }
 
@@ -20,17 +24,18 @@ public class RadioButtonScript: MonoBehaviour
 
     public void ToggleButton()
     {
-        print(toggle.name + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         if (toggle.isOn)
         {
-            
             toggle.isOn = false;
-            print("toggle is on");
         }
         else
         {
             toggle.isOn = true;
-            print("toggle is off");
         }
+    }
+
+    public void TellGameControllerRadio()
+    {
+        gameController.PressButton(buttonNumber);
     }
 }
