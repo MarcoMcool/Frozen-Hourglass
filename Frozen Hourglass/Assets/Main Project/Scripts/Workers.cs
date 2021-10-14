@@ -12,6 +12,8 @@ public class Workers: MonoBehaviour
     float speed = 4f;
 
     public bool rotationFinish = false;
+
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,11 @@ public class Workers: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            animator.Play("Base Layer.Walking");
+            print("walking");
+        }
         if (gameController.stepsCount == 3)
         {
             if (gameObject.GetComponent<OVRGrabbable>().isGrabbed || Input.GetKeyDown(KeyCode.M))
