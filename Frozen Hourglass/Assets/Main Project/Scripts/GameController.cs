@@ -181,48 +181,50 @@ public class GameController: MonoBehaviour
             return;
         }
 
-        if (q[questionNumber].key == buttonPressed)
-        {
-            //if the input is correct
-            if (questionNumber == 1)
-            {
-                yesNoAnswerResponse.text = q[questionNumber].correct;
-                yesNoAnswerResponseObj.SetActive(true);
-                yesNoButtons.SetActive(false);
-                yesNoQuestionText.SetActive(false);
-                questionNumber++;
-                StartCoroutine(WaitTimer_2());
-            }
-            else
-            {
-                answerResponseTxtCorrect.text = q[questionNumber].correct;
-                answerResponseObj.SetActive(true);
-                answersOptions.SetActive(false);
-                buttons.SetActive(false);
-                questionNumber++;
-                StartCoroutine(WaitTimer_2());
-            }
-        }
-        else
-        {
-            if (questionNumber == 1)
-            {
-                yesNoAnswerResponse.text = q[questionNumber].incorrect;
-                yesNoAnswerResponseObj.SetActive(true);
-                yesNoButtons.SetActive(false);
+        StartCoroutine(question_Handler(buttonPressed));
 
-                StartCoroutine(WaitTimer());
-            }
-            else
-            {
-                answerResponseTxtCorrect.text = q[questionNumber].incorrect;
-                answersOptions.SetActive(false);
-                buttons.SetActive(false);
+        //if (q[questionNumber].key == buttonPressed)
+        //{
+        //    //if the input is correct
+        //    if (questionNumber == 1)
+        //    {
+        //        yesNoAnswerResponse.text = q[questionNumber].correct;
+        //        yesNoAnswerResponseObj.SetActive(true);
+        //        yesNoButtons.SetActive(false);
+        //        yesNoQuestionText.SetActive(false);
+        //        questionNumber++;
+        //        StartCoroutine(WaitTimer_2());
+        //    }
+        //    else
+        //    {
+        //        answerResponseTxtCorrect.text = q[questionNumber].correct;
+        //        answerResponseObj.SetActive(true);
+        //        answersOptions.SetActive(false);
+        //        //buttons.SetActive(false);
+        //        questionNumber++;
+        //        StartCoroutine(WaitTimer_2());
+        //    }
+        //}
+        //else
+        //{
+        //    if (questionNumber == 1)
+        //    {
+        //        yesNoAnswerResponse.text = q[questionNumber].incorrect;
+        //        yesNoAnswerResponseObj.SetActive(true);
+        //        yesNoButtons.SetActive(false);
 
-                answerResponseObj.SetActive(true);
-                StartCoroutine(WaitTimer());
-            }
-        }
+        //        StartCoroutine(WaitTimer());
+        //    }
+        //    else
+        //    {
+        //        answerResponseTxtCorrect.text = q[questionNumber].incorrect;
+        //        answersOptions.SetActive(false);
+        //        //buttons.SetActive(false);
+
+        //        answerResponseObj.SetActive(true);
+        //        StartCoroutine(WaitTimer());
+        //    }
+        //}
     }
     public void QuestionOrdering()
     {
@@ -286,12 +288,49 @@ public class GameController: MonoBehaviour
         yesNoQuestions.SetActive(false);
         SetAnswers(q[questionNumber]);
     }
-    IEnumerator WaitTimer_2()
+    IEnumerator question_Handler(int buttonPressed)
     {
+        correctAnswer = q[questionNumber].key == buttonPressed;
+        string text = "";
+        if (correctAnswer)
+        {
+            text = q[questionNumber].correct;
+        }
+        else
+        {
+            text = q[questionNumber].incorrect;
+        }
+        if (questionNumber == 1)
+        {
+            yesNoAnswerResponse.text = text;
+            yesNoAnswerResponseObj.SetActive(true);
+            yesNoButtons.SetActive(false);
+            yesNoQuestionText.SetActive(false);
+        }
+        else
+        {
+            answerResponseTxtCorrect.text = text;
+            answerResponseObj.SetActive(true);
+            answersOptions.SetActive(false);
+        }
+
+
         answerReceived = false;
-        correctAnswer = false;
-        yield return new WaitForSeconds(5);
+        yield return new WaitUntil(test);
+        //yield return new WaitForSeconds(5);
+        if (correctAnswer)
+        {
+            stepsCount++;
+            questionNumber++;
+        }
         SetAnswers(q[questionNumber]);
-        stepsCount++;
+    }
+    public bool test()
+    {
+        return answerReceived;
+    }
+    public void nextQuestion()
+    {
+        answerReceived = true;
     }
 }
