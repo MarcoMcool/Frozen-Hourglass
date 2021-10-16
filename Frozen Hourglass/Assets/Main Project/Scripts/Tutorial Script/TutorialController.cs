@@ -15,6 +15,7 @@ public class TutorialController : MonoBehaviour
     public GameObject teleportation;
 
     public GameObject backwall;
+    public GameObject otherButton;
     public TextMeshProUGUI backWallText;
     // Start is called before the first frame update
     void Start()
@@ -26,14 +27,21 @@ public class TutorialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (steps == 0)
+        {
+            print("here in step 0");
+        }
         if (steps == 1)
         {
+            print("here in step 1");
             backWallText.text = "The main way to move around the area is by teleporting. \n " +
                 "To Teleport move the right joystick forwards. To continue teleport to the highlighted area";
+            teleportation.SetActive(true);
+            playerController.enabled = true;
         }
         if (steps == 2)
         {
-            backwall.SetActive(false);
+            
         }
     }
 
@@ -44,6 +52,9 @@ public class TutorialController : MonoBehaviour
 
     public void TurnOffJoystick()
     {
+        
         GlobalVariables.joystickMovement = false;
+        otherButton.SetActive(false);
+        steps++;
     }
 }

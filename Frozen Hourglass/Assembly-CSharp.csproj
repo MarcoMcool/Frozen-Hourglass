@@ -232,6 +232,7 @@
     <Compile Include="Assets\Main Project\Scripts\Tutorial Script\TutorialController.cs" />
     <Compile Include="Assets\Main Project\Scripts\Tutorial Script\TeleportArea.cs" />
     <Compile Include="Assets\Main Project\Scripts\GlobalVariables.cs" />
+    <Compile Include="Assets\Main Project\Scripts\Tutorial Script\TutorialPoint.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\XingLightShader.shader" />
