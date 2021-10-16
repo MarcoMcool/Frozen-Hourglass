@@ -62,9 +62,19 @@ public class GameController: MonoBehaviour
 
     public int actionStep = 0;
 
+    public OVRPlayerController vRPlayerController;
+    public SimpleCapsuleWithStickMovement simpleCapsuleWithStickMovement;
+    public GameObject playerControllerObj;
     // Start is called before the first frame update
     void Start()
     {
+
+        if (!GlobalVariables.joystickMovement)
+        {
+            simpleCapsuleWithStickMovement.enabled = true;
+            vRPlayerController.enabled = false;
+            playerControllerObj.AddComponent<Rigidbody>();
+        }
         iPad.SetActive(false);
         PopUp.SetActive(false);
         ActionPopUp.SetActive(false);
