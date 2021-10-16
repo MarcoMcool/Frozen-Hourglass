@@ -17,17 +17,12 @@ public class Workers: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Collider[] collidersOnObject = GetComponentsInChildren<Collider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            animator.Play("Base Layer.Walking");
-            print("walking");
-        }
         if (gameController.stepsCount == 3)
         {
             if (gameObject.GetComponent<OVRGrabbable>().isGrabbed || Input.GetKeyDown(KeyCode.M))
@@ -37,7 +32,9 @@ public class Workers: MonoBehaviour
             }
             if (workerMove)
             {
+                animator.SetBool("Walk", true);
                 WorkerMovement();
+                
             }
         }
     }
@@ -81,6 +78,10 @@ public class Workers: MonoBehaviour
                 }
                 else
                 {
+                    animator.SetBool("Spotting", false);
+                    animator.SetBool("Working", false);
+                    animator.SetBool("Walk", false);
+                    animator.Play("Base Layer.Idle");
                     workerMove = false;
                     gameController.stepsCount++;
                 }
