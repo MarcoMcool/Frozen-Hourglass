@@ -17,9 +17,23 @@ public class TutorialController : MonoBehaviour
     public GameObject backwall;
     public GameObject otherButton;
     public TextMeshProUGUI backWallText;
+
+    public OVRPlayerController vRPlayerController;
+    public SimpleCapsuleWithStickMovement simpleCapsuleWithStickMovement;
+    public GameObject playerControllerObj;
     // Start is called before the first frame update
     void Start()
     {
+
+        if (!GlobalVariables.joystickMovement)
+        {
+            simpleCapsuleWithStickMovement.enabled = true;
+            vRPlayerController.enabled = false;
+            if (!GetComponent<Rigidbody>())
+            {
+                playerControllerObj.AddComponent<Rigidbody>();
+            }
+        }
         playerController.enabled = false;
         teleportation.SetActive(false);
     }

@@ -368,8 +368,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23048210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8660002, y: 1.217, z: 1.5868797}
-  m_LocalScale: {x: 0.31203, y: 0.31203, z: 0.31203}
+  m_LocalPosition: {x: 1.2096, y: 1.1353999, z: 1.4067}
+  m_LocalScale: {x: 0.20281948, y: 0.20281948, z: 0.20281948}
   m_Children: []
   m_Father: {fileID: 689053975}
   m_RootOrder: 0
@@ -669,7 +669,7 @@ GameObject:
   - component: {fileID: 130462294}
   - component: {fileID: 130462293}
   m_Layer: 0
-  m_Name: Cube Teleport area
+  m_Name: Teleportable Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -695,7 +695,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130462292}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -832,7 +832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &179860741
 Transform:
   m_ObjectHideFlags: 0
@@ -855,8 +855,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179860740}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_IsTrigger: 0
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1044,7 +1044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232878669}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1772312195}
@@ -1057,7 +1057,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232878669}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1673,6 +1673,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328635844}
   m_CullTransparentMesh: 1
+--- !u!114 &374539721 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11414578, guid: ce816f2e6abb0504092c23ed9b970dfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 465927035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &388308680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,8 +2021,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431918973}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.6589999, y: 1.541, z: 1.8140001}
-  m_LocalScale: {x: 0.31203, y: 0.31203, z: 0.31203}
+  m_LocalPosition: {x: 1.075, y: 1.346, z: 1.5543}
+  m_LocalScale: {x: 0.20281948, y: 0.20281948, z: 0.20281948}
   m_Children: []
   m_Father: {fileID: 689053975}
   m_RootOrder: 3
@@ -2165,7 +2177,7 @@ GameObject:
   - component: {fileID: 442446211}
   - component: {fileID: 442446210}
   m_Layer: 0
-  m_Name: Pointing Teleport Area
+  m_Name: Teleportable Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2191,7 +2203,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442446209}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4948,8 +4960,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808376092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8660002, y: 1.217, z: 1.9980001}
-  m_LocalScale: {x: 0.31203, y: 0.31203, z: 0.31203}
+  m_LocalPosition: {x: 1.2096, y: 1.1353999, z: 1.6739}
+  m_LocalScale: {x: 0.20281948, y: 0.20281948, z: 0.20281948}
   m_Children: []
   m_Father: {fileID: 689053975}
   m_RootOrder: 1
@@ -5260,7 +5272,7 @@ GameObject:
   - component: {fileID: 898037383}
   - component: {fileID: 898037382}
   m_Layer: 9
-  m_Name: Teleport
+  m_Name: Teleportable Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5300,7 +5312,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898037380}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5312,7 +5324,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5bb115487f414dc498ae6f2691d3134b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5360,7 +5372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &931258718
 Transform:
   m_ObjectHideFlags: 0
@@ -5383,8 +5395,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931258717}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_IsTrigger: 0
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -5395,7 +5407,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931258717}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5854,8 +5866,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040231454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4660001, y: 1.217, z: 1.8140001}
-  m_LocalScale: {x: 0.31203, y: 0.31203, z: 0.31203}
+  m_LocalPosition: {x: 0.9496, y: 1.1353999, z: 1.5543}
+  m_LocalScale: {x: 0.20281948, y: 0.20281948, z: 0.20281948}
   m_Children: []
   m_Father: {fileID: 689053975}
   m_RootOrder: 2
@@ -7064,7 +7076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1302112383
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7073,8 +7085,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302112382}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_IsTrigger: 0
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -7154,7 +7166,7 @@ GameObject:
   - component: {fileID: 1319607553}
   - component: {fileID: 1319607552}
   m_Layer: 0
-  m_Name: Teleport Area
+  m_Name: Teleportable Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7180,7 +7192,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319607551}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -8271,7 +8283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ac96eeca5eff442ba798f7bfc4f002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fader: {fileID: 0}
+  fader: {fileID: 374539721}
   TransitionDuration: 0.5
   TeleportDelay: 0.5
   FadeLevels:
@@ -9234,8 +9246,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736101593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.77, y: 1.35, z: 0.49}
-  m_LocalScale: {x: 1, y: 0.75231, z: 1}
+  m_LocalPosition: {x: 1.1861999, y: 1.2218, z: 0.6937}
+  m_LocalScale: {x: 0.65, y: 0.48900145, z: 0.65}
   m_Children: []
   m_Father: {fileID: 689053975}
   m_RootOrder: 4
@@ -10216,7 +10228,7 @@ GameObject:
   - component: {fileID: 1943382166}
   - component: {fileID: 1943382165}
   m_Layer: 9
-  m_Name: Cube Teleport area (1)
+  m_Name: Teleportable Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10244,7 +10256,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943382163}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -10256,7 +10268,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943382163}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10311,7 +10323,7 @@ GameObject:
   - component: {fileID: 1968516540}
   - component: {fileID: 1968516539}
   m_Layer: 9
-  m_Name: Cube (2)
+  m_Name: Teleportable Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10339,7 +10351,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968516537}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -10351,7 +10363,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968516537}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
