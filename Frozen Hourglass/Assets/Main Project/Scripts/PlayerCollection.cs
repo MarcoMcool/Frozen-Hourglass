@@ -5,19 +5,12 @@ using OVRTouchSample;
 
 public class PlayerCollection: MonoBehaviour
 {
-    TouchController controller;
     public GameObject RightPopup;
     public GameObject handPopup;
-    //public GameObject LCanvas;
     float timer = 0f;
     public GameController gc;
     public GameObject laserPointer;
-
-    public GameObject playerPosition;
-    public GameObject wall1;
-    public GameObject wall2;
-    public GameObject wall3;
-    public GameObject wall4;
+    public GameObject Sphere;
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +21,8 @@ public class PlayerCollection: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //WallLimit();
-        //TestControllerPresses();
         timer += Time.deltaTime;
-        //if (OVRInput.GetDown(OVRInput.Button.Four))
-        if (OVRInput.Get(OVRInput.RawButton.Y) && gc.popupAllowed)
+        if (OVRInput.Get(OVRInput.RawButton.X) && (gc.actionStep == gc.stepsCount))
         {
             if (timer >= 0.2f)
             {
@@ -49,94 +39,30 @@ public class PlayerCollection: MonoBehaviour
             }
         }
 
-
-        if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
+        if (gc.popupAllowed)
         {
-            //print("test here pointer");
             laserPointer.SetActive(true);
+            Sphere.SetActive(true);
         }
         else
         {
             laserPointer.SetActive(false);
-            //print("line rendere disabled");
+            Sphere.SetActive(false);
         }
-        //if (Input.GetButtonDown("Oculus_CrossPlatform_SecondaryIndexTrigger"))
 
         if (OVRInput.GetDown(OVRInput.RawButton.RThumbstickUp))
         {
-            //print("HERE");
 
             RightPopup.SetActive(false);
         }
-    }
 
-    void TestControllerPresses()
-    {
-        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
-        {
-            print("right hand trigger");
-        }
-        if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
-        {
-            print("left hand trigger");
-        }
-        if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
-        {
-            print("left hand grip");
-        }
-        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
-        {
-            print("right hand grip");
-        }
-        if (OVRInput.GetDown(OVRInput.RawButton.B))
-        {
-            print("b button clicked");
-        }
-    }
-
-    //public void closePrompt()
-    //{
-    //    if (OVRInput.GetDown(OVRInput.RawButton.X))
-    //    {
-    //        LCanvas.SetActive(false);
-    //    }
-    //}
-
-
-    void WallLimit()
-    {
-        if (Vector3.Distance(playerPosition.transform.position, wall1.transform.position) < 3f)
-        {
-            wall1.SetActive(true);
-            print("wall1 close");
-        }
-        else
-        {
-            wall1.SetActive(false);
-        }
-        if (Vector3.Distance(playerPosition.transform.position, wall2.transform.position) < 3f)
-        {
-            wall2.SetActive(true); print("wall2 close");
-        }
-        else
-        {
-            wall2.SetActive(false);
-        }
-        if (Vector3.Distance(playerPosition.transform.position, wall3.transform.position) < 3f)
-        {
-            wall3.SetActive(true); print("wall3 close");
-        }
-        else
-        {
-            wall3.SetActive(false);
-        }
-        if (Vector3.Distance(playerPosition.transform.position, wall4.transform.position) < 3f)
-        {
-            wall4.SetActive(true); print("wall4 close");
-        }
-        else
-        {
-            wall4.SetActive(false);
-        }
+        //if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
+        //{
+        //    laserPointer.SetActive(true);
+        //}
+        //else
+        //{
+        //    laserPointer.SetActive(false);
+        //}
     }
 }
