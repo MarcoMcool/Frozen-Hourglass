@@ -12,10 +12,12 @@ public class Workers: MonoBehaviour
     float speed = 4f;
 
     public bool rotationFinish = false;
+
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-
+        Collider[] collidersOnObject = GetComponentsInChildren<Collider>();
     }
 
     // Update is called once per frame
@@ -30,7 +32,9 @@ public class Workers: MonoBehaviour
             }
             if (workerMove)
             {
+                animator.SetBool("Walk", true);
                 WorkerMovement();
+                
             }
         }
     }
@@ -74,6 +78,10 @@ public class Workers: MonoBehaviour
                 }
                 else
                 {
+                    animator.SetBool("Spotting", false);
+                    animator.SetBool("Working", false);
+                    animator.SetBool("Walk", false);
+                    animator.Play("Base Layer.Idle");
                     workerMove = false;
                     gameController.stepsCount++;
                 }

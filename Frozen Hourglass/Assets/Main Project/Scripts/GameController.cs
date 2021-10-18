@@ -62,9 +62,19 @@ public class GameController: MonoBehaviour
 
     public int actionStep = 0;
 
+    public OVRPlayerController vRPlayerController;
+    public SimpleCapsuleWithStickMovement simpleCapsuleWithStickMovement;
+    public GameObject playerControllerObj;
     // Start is called before the first frame update
     void Start()
     {
+
+        if (!GlobalVariables.joystickMovement)
+        {
+            simpleCapsuleWithStickMovement.enabled = true;
+            vRPlayerController.enabled = false;
+            playerControllerObj.AddComponent<Rigidbody>();
+        }
         iPad.SetActive(false);
         PopUp.SetActive(false);
         ActionPopUp.SetActive(false);
@@ -135,6 +145,7 @@ public class GameController: MonoBehaviour
                 }
                 if (stepsCount == 18)
                 {
+                    iPad.SetActive(false);
                     askWorker.SetActive(true);
                     ActionText.text = "Ask the worker for witness recollections";
                 }
@@ -171,6 +182,12 @@ public class GameController: MonoBehaviour
             animationEnd = false;
             Ladder.StartFall();
             PopUp.SetActive(false);
+            return;
+        }
+
+        if (buttonPressed == 4)
+        {
+            stepsCount++;
             return;
         }
 
