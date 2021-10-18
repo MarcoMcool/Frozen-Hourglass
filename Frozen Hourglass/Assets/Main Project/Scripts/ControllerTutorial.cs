@@ -98,4 +98,9 @@ public class ControllerTutorial: MonoBehaviour
             }
         }
     }
+
+    public void ContinueTutorial()
+    {
+        step++;
+    }
 }

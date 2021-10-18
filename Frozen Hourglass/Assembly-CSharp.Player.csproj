@@ -228,6 +228,11 @@
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportAimHandlerLaser.cs" />
     <Compile Include="Assets\Oculus\Avatar\Samples\SocialStarter\Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrackSegment.cs" />
+    <Compile Include="Assets\Main Project\Scripts\Tutorial Script\GrabbingCubes.cs" />
+    <Compile Include="Assets\Main Project\Scripts\Tutorial Script\TutorialController.cs" />
+    <Compile Include="Assets\Main Project\Scripts\Tutorial Script\TeleportArea.cs" />
+    <Compile Include="Assets\Main Project\Scripts\GlobalVariables.cs" />
+    <Compile Include="Assets\Main Project\Scripts\Tutorial Script\TutorialPoint.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\XingLightShader.shader" />
