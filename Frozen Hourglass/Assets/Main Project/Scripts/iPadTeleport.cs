@@ -35,6 +35,7 @@ public class iPadTeleport : MonoBehaviour
             OVRGrabber grabber = Grabbable.grabbedBy;
             onBelt = false;
             transform.parent = null;
+            //transform.rotation = Quaternion.identity;
             //transform.SetParent(grabber.gameObject.transform);
             //transform.position = new Vector3(-0.0920000002f, 0.0260000676f, 0.0199999809f);
             //grabber.

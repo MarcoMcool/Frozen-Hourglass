@@ -21,23 +21,23 @@ public class PlayerCollection: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //timer += Time.deltaTime;
-        //if (OVRInput.Get(OVRInput.RawButton.Y) && gc.popupAllowed)
-        //{
-        //    if (timer >= 0.2f)
-        //    {
-        //        if (handPopup.activeSelf)
-        //        {
-        //            handPopup.SetActive(false);
-        //            timer = 0f;
-        //        }
-        //        else
-        //        {
-        //            handPopup.SetActive(true);
-        //            timer = 0f;
-        //        }
-        //    }
-        //}
+        timer += Time.deltaTime;
+        if (OVRInput.Get(OVRInput.RawButton.X) && (gc.actionStep == gc.stepsCount))
+        {
+            if (timer >= 0.2f)
+            {
+                if (handPopup.activeSelf)
+                {
+                    handPopup.SetActive(false);
+                    timer = 0f;
+                }
+                else
+                {
+                    handPopup.SetActive(true);
+                    timer = 0f;
+                }
+            }
+        }
 
         if (gc.popupAllowed)
         {
@@ -48,6 +48,12 @@ public class PlayerCollection: MonoBehaviour
         {
             laserPointer.SetActive(false);
             Sphere.SetActive(false);
+        }
+
+        if (OVRInput.GetDown(OVRInput.RawButton.RThumbstickUp))
+        {
+
+            RightPopup.SetActive(false);
         }
 
         //if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
