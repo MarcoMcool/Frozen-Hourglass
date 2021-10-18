@@ -21,6 +21,13 @@ public class TutorialController : MonoBehaviour
     public OVRPlayerController vRPlayerController;
     public SimpleCapsuleWithStickMovement simpleCapsuleWithStickMovement;
     public GameObject playerControllerObj;
+
+    public GameObject[] wallPositions;
+    public GameObject wall;
+
+    public TextMeshPro blueCube;
+    public TextMeshProUGUI blueCubeCanvas;
+    public GameObject teleportFloor;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +54,7 @@ public class TutorialController : MonoBehaviour
         }
         if (steps == 1)
         {
+            wall.transform.position = wallPositions[1].transform.position;
             print("here in step 1");
             backWallText.text = "The main way to move around the area is by teleporting. \n " +
                 "To Teleport move the right joystick forwards. To continue teleport to the highlighted area";
@@ -55,7 +63,21 @@ public class TutorialController : MonoBehaviour
         }
         if (steps == 2)
         {
-            
+            wall.transform.position = wallPositions[2].transform.position;
+        }
+
+        if (steps == 3)
+        {
+            wall.transform.position = wallPositions[3].transform.position;
+        }
+
+        if (steps == 4)
+        {
+            wall.SetActive(false);
+            //wall.transform.position = wallPositions[2].transform.position;
+            teleportFloor.SetActive(true);
+            blueCube.text = "Nice Work!";
+            blueCubeCanvas.text = "If you feel ready to progress turn to your right and select start.";
         }
     }
 

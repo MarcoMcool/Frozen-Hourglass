@@ -6,14 +6,15 @@ using TMPro;
 public class TutorialPoint: MonoBehaviour
 {
     public GameObject rightHand;
-    public GameObject leftHand;
+    //public GameObject leftHand;
     private LineRenderer lineRenderer;
     public bool laserActive;
     public RaycastHit objectHit;
 
     public TutorialController tutController;
     public TextMeshProUGUI wallText;
-    // Start is called before the first frame update
+    bool selected = false;
+
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -24,6 +25,7 @@ public class TutorialPoint: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         CreateLaser(rightHand.transform.position, rightHand.transform.forward, 10f);
         laserActive = true;
         lineRenderer.enabled = true;
@@ -39,7 +41,10 @@ public class TutorialPoint: MonoBehaviour
         {
             endPos = hit.point;
             objectHit = hit;
-            checkObject();
+            if (OVRInput.Get(OVRInput.RawButton.A))
+            {
+                checkObject();
+            }
         }
 
         lineRenderer.SetPosition(0, targetPos);
@@ -47,11 +52,13 @@ public class TutorialPoint: MonoBehaviour
     }
     void checkObject()
     {
-        if(objectHit.collider.name == "BlueCube")
+        if (objectHit.collider.name == "BlueCube" && !selected)
         {
             wallText.text = "Well Done. \n" +
-                "Thats all for the tutorial." +
+                "Thats all for the tutorial. " +
                  "If you feel ready to progress select start.";
+            tutController.NextTutorial();
+            selected = true;
         }
     }
 }
