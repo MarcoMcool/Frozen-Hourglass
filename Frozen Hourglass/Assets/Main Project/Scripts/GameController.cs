@@ -65,6 +65,7 @@ public class GameController: MonoBehaviour
     public OVRPlayerController vRPlayerController;
     public SimpleCapsuleWithStickMovement simpleCapsuleWithStickMovement;
     public GameObject playerControllerObj;
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -74,6 +75,9 @@ public class GameController: MonoBehaviour
             simpleCapsuleWithStickMovement.enabled = true;
             vRPlayerController.enabled = false;
             playerControllerObj.AddComponent<Rigidbody>();
+            rb = playerControllerObj.GetComponent<Rigidbody>();
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+
         }
         iPad.SetActive(false);
         PopUp.SetActive(false);
