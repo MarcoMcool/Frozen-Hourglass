@@ -105,7 +105,7 @@ public class IPadMechanics : MonoBehaviour
         //After we have waited 9 seconds print the time again.
         print("Finished Coroutine at timestamp : " + Time.time);
 
-        iPad.SetActive(false);
+        //iPad.SetActive(false);
     }
 
     public void workSupervisorCalling(int num)
