@@ -6,6 +6,7 @@ using TMPro;
 
 public class RadioButtonToGC: MonoBehaviour
 {
+    public Toggle toggle;
     public ToggleGroup toggleGroup;
     public Button continueButton;
     public TextMeshProUGUI buttonText;
@@ -31,11 +32,13 @@ public class RadioButtonToGC: MonoBehaviour
         }
     }
 
+    
+
     public void ContinueButton()
     {
-        Toggle toggle = toggleGroup.GetFirstActiveToggle();
+        toggle = toggleGroup.GetFirstActiveToggle();
 
-        print(toggle.name);
+        //print(toggle.name);
         int test = toggle.GetComponentInParent<RadioButtonScript>().buttonNumber;
 
         gameController.PressButton(test);

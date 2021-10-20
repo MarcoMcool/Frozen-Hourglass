@@ -276,7 +276,7 @@ public class GameController: MonoBehaviour
         answerResponseTxtIncorrect.text = question.incorrect;
 
         answersOptions.SetActive(true);
-        buttons.SetActive(true);
+        //buttons.SetActive(true);
 
         //TODO fix this hack
         if (_answer.Length < 3)
