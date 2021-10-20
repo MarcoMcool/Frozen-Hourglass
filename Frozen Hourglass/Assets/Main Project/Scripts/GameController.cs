@@ -133,7 +133,7 @@ public class GameController: MonoBehaviour
                 {
                     //Call Work Group Supervisor
                     iPad.SetActive(true);
-                    ActionText.text = "Call Work Group Supervisor by using your iPad in front of you, hold trigger and A to select icons on the iPad";
+                    ActionText.text = "Call Work Group Supervisor by using your iPad in front of you, press A to select icons on the iPad";
                 }
                 if (stepsCount == 15)
                 {
@@ -149,7 +149,7 @@ public class GameController: MonoBehaviour
                 }
                 if (stepsCount == 18)
                 {
-                    iPad.SetActive(false);
+                    //iPad.SetActive(false);
                     askWorker.SetActive(true);
                     ActionText.text = "Ask the worker for witness recollections";
                 }

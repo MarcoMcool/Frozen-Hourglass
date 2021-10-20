@@ -39,7 +39,7 @@ public class PlayerCollection: MonoBehaviour
             }
         }
 
-        if (gc.popupAllowed)
+        if (gc.popupAllowed || gc.stepsCount > 10)
         {
             laserPointer.SetActive(true);
             Sphere.SetActive(true);
