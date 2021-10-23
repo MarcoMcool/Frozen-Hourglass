@@ -29,15 +29,26 @@ public class Pointer: MonoBehaviour
     void Update()
     {
 
-        if ((OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && !uiHelperSphere.activeSelf) || Input.GetKey(KeyCode.U))
+        //if ((OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && !uiHelperSphere.activeSelf) || Input.GetKey(KeyCode.U))
+        //{
+        //    CreateLaser(rightHand.transform.position, rightHand.transform.forward, 10f);
+        //    laserActive = true;
+        //    lineRenderer.enabled = true;
+        //}
+        //else if ((OVRInput.Get(OVRInput.RawButton.LIndexTrigger) &&!uiHelperSphere.activeSelf) || Input.GetKey(KeyCode.I))
+        //{
+        //    CreateLaser(leftHand.transform.position, leftHand.transform.forward, 10f);
+        //    laserActive = true;
+        //    lineRenderer.enabled = true;
+        //}
+        //else
+        //{
+        //    laserActive = false;
+        //    lineRenderer.enabled = false;
+        //}
+        if(gameController.stepsCount== 5)
         {
             CreateLaser(rightHand.transform.position, rightHand.transform.forward, 10f);
-            laserActive = true;
-            lineRenderer.enabled = true;
-        }
-        else if ((OVRInput.Get(OVRInput.RawButton.LIndexTrigger) &&!uiHelperSphere.activeSelf) || Input.GetKey(KeyCode.I))
-        {
-            CreateLaser(leftHand.transform.position, leftHand.transform.forward, 10f);
             laserActive = true;
             lineRenderer.enabled = true;
         }
