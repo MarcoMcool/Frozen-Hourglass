@@ -46,6 +46,8 @@ public class GameController: MonoBehaviour
     public TextMeshProUGUI answer2;
     public TextMeshProUGUI answer3;
     public GameObject buttons;
+    public GameObject replay_button;
+
 
     [Header("YesNo Variables")]
     public TextMeshProUGUI yesNoAnswerResponse;
@@ -93,9 +95,10 @@ public class GameController: MonoBehaviour
     {
         if (Ladder.done == true && animationEnd != true)
         {
-            stepsCount++;
+            //stepsCount++;
             PopUp.SetActive(true);
             animationEnd = true;
+            stepsCount++;
         }
 
         if (steps[stepsCount])
@@ -103,6 +106,7 @@ public class GameController: MonoBehaviour
             ActionPopUp.SetActive(false);
             popupAllowed = true;
             PopUp.SetActive(true);
+            replay_button.SetActive(stepsCount == 1);
             actionStep = stepsCount;
         }
         else
@@ -183,6 +187,7 @@ public class GameController: MonoBehaviour
     {
         if (buttonPressed == 0)
         {
+            stepsCount = 0;
             animationEnd = false;
             Ladder.StartFall();
             PopUp.SetActive(false);
