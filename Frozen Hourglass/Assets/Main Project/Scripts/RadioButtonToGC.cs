@@ -40,7 +40,8 @@ public class RadioButtonToGC: MonoBehaviour
 
         //print(toggle.name);
         int test = toggle.GetComponentInParent<RadioButtonScript>().buttonNumber;
-
+        toggle.isOn = false;
         gameController.PressButton(test);
+        //toggleGroup.SetAllTogglesOff();
     }
 }
