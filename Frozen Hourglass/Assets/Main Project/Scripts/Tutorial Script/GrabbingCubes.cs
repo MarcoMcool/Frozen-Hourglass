@@ -13,11 +13,6 @@ public class GrabbingCubes: MonoBehaviour
     public TutorialController tutorialController;
     public TextMeshPro cubeText;
 
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (!cubeCollided1)
@@ -25,7 +20,6 @@ public class GrabbingCubes: MonoBehaviour
             if (other.tag == "Cube")
             {
                 cubeCollided1 = other.gameObject;
-                //other.gameObject.GetComponent<Collider>().enabled = false;
                 cubesInZone++;
                 cubeText.text = "cubes in zone = " + 1 + "/2";
                 print("Cube first in the collider");
@@ -45,6 +39,5 @@ public class GrabbingCubes: MonoBehaviour
                 }
             }
         }
-        
     }
 }

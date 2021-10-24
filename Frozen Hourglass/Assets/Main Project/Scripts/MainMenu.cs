@@ -8,9 +8,7 @@ public class MainMenu: MonoBehaviour
     bool start = false;
     public void PLAY()
     {
-        print("play has been pressed.");
         start = true;
-        //SceneManager.LoadScene(1);
     }
 
     public void Start()
