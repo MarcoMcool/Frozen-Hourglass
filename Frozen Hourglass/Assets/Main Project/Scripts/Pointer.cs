@@ -14,6 +14,7 @@ public class Pointer: MonoBehaviour
 
     public PointHazards PointHazards;
     public TextMeshProUGUI wrongHazardText;
+    public GameObject RH_Prompt;
     public GameObject uiHelperSphere;
 
     // Start is called before the first frame update
@@ -100,6 +101,7 @@ public class Pointer: MonoBehaviour
         {
             StopCoroutine(WaitTime());
             wrongHazardText.text = "This is not a hazard";
+            RH_Prompt.SetActive(true);
             StartCoroutine(WaitTime());
         }
     }
@@ -107,6 +109,7 @@ public class Pointer: MonoBehaviour
     IEnumerator WaitTime()
     {
         yield return new WaitForSeconds(3f);
+        RH_Prompt.SetActive(false);
         wrongHazardText.text = "";
     }
 }
