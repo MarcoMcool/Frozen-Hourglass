@@ -47,7 +47,7 @@ public class TutorialController : MonoBehaviour
             wall.transform.position = wallPositions[1].transform.position;
             print("here in step 1");
             backWallText.text = "The main way to move around the area is by teleporting. \n " +
-                "To Teleport move the right joystick forwards. To continue teleport to the highlighted area";
+                "To Teleport, move the right joystick forwards, to rotate move the right joystick left or right. To continue teleport to the highlighted area";
             teleportation.SetActive(true);
             playerController.enabled = true;
         }
