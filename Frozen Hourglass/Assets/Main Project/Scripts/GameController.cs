@@ -268,6 +268,7 @@ public class GameController: MonoBehaviour
     public void SetAnswers(Question question)
     {
         print(question.questionText);
+        question.ShuffleAnswers();
         string[] _answer = question.answers;
         //TODO Make loop
         TextMeshProUGUI[] UIAnswers = new TextMeshProUGUI[] { answer1, answer2, answer3 };
