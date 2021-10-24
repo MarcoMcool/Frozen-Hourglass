@@ -20,6 +20,8 @@ public class IPadMechanics : MonoBehaviour
     public GameObject cameraMessage;
     public Text callText;
     public Text callTimeText;
+    public AudioSource callAudio;
+    public GameObject wrongCallPanel;
 
     private float flashTimer = 0;
     private float flashTime = 0.5f;
@@ -75,6 +77,7 @@ public class IPadMechanics : MonoBehaviour
         {
             // Turn this into a prompt
             print("Wrong Supervisor");
+            wrongCallPanel.SetActive(true);
             return;
         }
         StartCoroutine(Call());
@@ -88,9 +91,9 @@ public class IPadMechanics : MonoBehaviour
         callScreen.SetActive(false);
 
         callTimeText.text = "Calling...";
+        callAudio.Play();
 
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
+        //yield on a new YieldInstruction that waits for 9 seconds.
 
         yield return new WaitForSeconds(9);
 
