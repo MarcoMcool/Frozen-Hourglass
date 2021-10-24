@@ -74,11 +74,11 @@ public class GameController: MonoBehaviour
 
         if (!GlobalVariables.joystickMovement)
         {
-            simpleCapsuleWithStickMovement.enabled = true;
-            vRPlayerController.enabled = false;
-            playerControllerObj.AddComponent<Rigidbody>();
-            rb = playerControllerObj.GetComponent<Rigidbody>();
-            rb.constraints = RigidbodyConstraints.FreezeAll;
+            //simpleCapsuleWithStickMovement.enabled = true;
+            vRPlayerController.EnableLinearMovement = false;
+            //playerControllerObj.AddComponent<Rigidbody>();
+            //rb = playerControllerObj.GetComponent<Rigidbody>();
+            //rb.constraints = RigidbodyConstraints.FreezeAll;
 
         }
         iPad.SetActive(false);

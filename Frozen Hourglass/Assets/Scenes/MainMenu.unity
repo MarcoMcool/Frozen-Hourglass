@@ -218,7 +218,7 @@ MonoBehaviour:
   m_fontSizeMin: 1
   m_fontSizeMax: 3.5
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1630,7 +1630,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1895427800}
         m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
-        m_MethodName: TurnOffJoystick
+        m_MethodName: TurnOnJoystick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2543,9 +2543,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: EnableLinearMovement
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14300000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: m_Height
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 14300000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_Radius
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 14300000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_Enabled
@@ -3244,8 +3252,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 1.5
+  m_Radius: 0.2
+  m_Height: 1.75
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &465927041 stripped
@@ -5823,7 +5831,7 @@ MonoBehaviour:
   m_fontSizeMin: 1
   m_fontSizeMax: 3.2
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -8835,7 +8843,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1895427800}
         m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
-        m_MethodName: NextTutorial
+        m_MethodName: TurnOffJoystick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10178,7 +10186,7 @@ MonoBehaviour:
   m_fontSizeMin: 1
   m_fontSizeMax: 3
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

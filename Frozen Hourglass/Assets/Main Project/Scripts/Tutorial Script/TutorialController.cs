@@ -31,16 +31,6 @@ public class TutorialController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        if (!GlobalVariables.joystickMovement)
-        {
-            simpleCapsuleWithStickMovement.enabled = true;
-            vRPlayerController.enabled = false;
-            if (!GetComponent<Rigidbody>())
-            {
-                playerControllerObj.AddComponent<Rigidbody>();
-            }
-        }
         playerController.enabled = false;
         teleportation.SetActive(false);
     }
@@ -92,5 +82,25 @@ public class TutorialController : MonoBehaviour
         GlobalVariables.joystickMovement = false;
         otherButton.SetActive(false);
         steps++;
+    }
+    public void TurnOnJoystick()
+    {
+        GlobalVariables.joystickMovement = true;
+        otherButton.SetActive(false);
+        steps++;
+    }
+
+    public void JoystickSet()
+    {
+        if (!GlobalVariables.joystickMovement)
+        {
+            //simpleCapsuleWithStickMovement.enabled = true;
+            vRPlayerController.EnableLinearMovement = false;
+        }
+        else
+        {
+            //simpleCapsuleWithStickMovement.enabled = true;
+            vRPlayerController.EnableLinearMovement = true;
+        }
     }
 }
