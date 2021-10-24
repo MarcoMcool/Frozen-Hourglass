@@ -22,7 +22,6 @@ public class TutorialPoint: MonoBehaviour
         lineRenderer.endWidth = 0.01f;
     }
 
-    // Update is called once per frame
     void Update()
     {
 

@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class TeleportArea : MonoBehaviour
 {
-
     TutorialController tutController;
-    // Start is called before the first frame update
     void Start()
     {
         tutController = FindObjectOfType<TutorialController>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter(Collider other)

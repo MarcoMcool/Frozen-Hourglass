@@ -28,14 +28,12 @@ public class TutorialController : MonoBehaviour
     public TextMeshPro blueCube;
     public TextMeshProUGUI blueCubeCanvas;
     public GameObject teleportFloor;
-    // Start is called before the first frame update
     void Start()
     {
         playerController.enabled = false;
         teleportation.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (steps == 0)
