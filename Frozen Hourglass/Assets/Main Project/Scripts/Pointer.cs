@@ -14,6 +14,7 @@ public class Pointer: MonoBehaviour
 
     public PointHazards PointHazards;
     public TextMeshProUGUI wrongHazardText;
+    public GameObject RH_Prompt;
     public GameObject uiHelperSphere;
 
     // Start is called before the first frame update
@@ -29,15 +30,26 @@ public class Pointer: MonoBehaviour
     void Update()
     {
 
-        if ((OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && !uiHelperSphere.activeSelf) || Input.GetKey(KeyCode.U))
+        //if ((OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && !uiHelperSphere.activeSelf) || Input.GetKey(KeyCode.U))
+        //{
+        //    CreateLaser(rightHand.transform.position, rightHand.transform.forward, 10f);
+        //    laserActive = true;
+        //    lineRenderer.enabled = true;
+        //}
+        //else if ((OVRInput.Get(OVRInput.RawButton.LIndexTrigger) &&!uiHelperSphere.activeSelf) || Input.GetKey(KeyCode.I))
+        //{
+        //    CreateLaser(leftHand.transform.position, leftHand.transform.forward, 10f);
+        //    laserActive = true;
+        //    lineRenderer.enabled = true;
+        //}
+        //else
+        //{
+        //    laserActive = false;
+        //    lineRenderer.enabled = false;
+        //}
+        if(gameController.stepsCount== 5)
         {
             CreateLaser(rightHand.transform.position, rightHand.transform.forward, 10f);
-            laserActive = true;
-            lineRenderer.enabled = true;
-        }
-        else if ((OVRInput.Get(OVRInput.RawButton.LIndexTrigger) &&!uiHelperSphere.activeSelf) || Input.GetKey(KeyCode.I))
-        {
-            CreateLaser(leftHand.transform.position, leftHand.transform.forward, 10f);
             laserActive = true;
             lineRenderer.enabled = true;
         }
@@ -89,6 +101,7 @@ public class Pointer: MonoBehaviour
         {
             StopCoroutine(WaitTime());
             wrongHazardText.text = "This is not a hazard";
+            RH_Prompt.SetActive(true);
             StartCoroutine(WaitTime());
         }
     }
@@ -96,6 +109,7 @@ public class Pointer: MonoBehaviour
     IEnumerator WaitTime()
     {
         yield return new WaitForSeconds(3f);
+        RH_Prompt.SetActive(false);
         wrongHazardText.text = "";
     }
 }

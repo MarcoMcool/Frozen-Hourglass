@@ -94,19 +94,19 @@ public class LaserPointer: OVRCursor
         if (_hitTarget)
         {
 
-            if (Physics.Linecast(_startPoint, _endPoint, out hit))
-            {
-                //print("hit object");
-                print(hit.collider.name);
+            //if (Physics.Linecast(_startPoint, _endPoint, out hit))
+            //{
+            //    //print("hit object");
+            //    //print(hit.collider.name);
 
-                if (hit.collider.tag == "HighLight")
-                {
-                    print("highlighted ladder");
-                    hit.collider.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            //    if (hit.collider.tag == "HighLight")
+            //    {
+            //        print("highlighted ladder");
+            //        hit.collider.gameObject.transform.GetChild(0).gameObject.SetActive(true);
 
-                }
+            //    }
 
-            }
+            //}
             lineRenderer.SetPosition(1, _endPoint);
             UpdateLaserBeam(_startPoint, _endPoint);
             if (cursorVisual)
@@ -119,7 +119,7 @@ public class LaserPointer: OVRCursor
         {
             UpdateLaserBeam(_startPoint, _startPoint + maxLength * _forward);
             lineRenderer.SetPosition(1, _startPoint + maxLength * _forward);
-            if (cursorVisual) cursorVisual.SetActive(false);
+            //if (cursorVisual) cursorVisual.SetActive(false);
         }
     }
 
@@ -156,11 +156,11 @@ public class LaserPointer: OVRCursor
         }
     }
 
-    void OnDisable()
-    {
-        print("Pointer is disabled");
-        if (cursorVisual) cursorVisual.SetActive(false);
-    }
+    //void OnDisable()
+    //{
+    //    print("Pointer is disabled");
+    //    if (cursorVisual) cursorVisual.SetActive(false);
+    //}
     public void OnInputFocusLost()
     {
         if (gameObject && gameObject.activeInHierarchy)

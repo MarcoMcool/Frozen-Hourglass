@@ -74,7 +74,7 @@ public class QuestionSetup
         );
         questions[9] = new Question(
             "Does the work group manager need to be contacted to release the site?",
-            new string[] { "Yes, the manage needs to be contacted to continue work.", "No, work on the site can commence if workers deem the site safe.", "No, the manager doesn't need to inspect the site to release the site." },
+            new string[] { "Yes, the manager needs to be contacted to continue work.", "No, work on the site can commence if workers deem the site safe.", "No, the manager doesn't need to inspect the site to release the site." },
             "Correct! \nThe work groups manager's permission to release the site is needed after deeming the site safe again to continue work.",
             "Incorrect! \nIf the work group manager isn't contacted work cannot commence as it hasn't been deemed safe yet.",
             1

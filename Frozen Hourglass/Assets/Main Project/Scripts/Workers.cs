@@ -10,15 +10,14 @@ public class Workers: MonoBehaviour
     public Vector3 lookPos;
     bool workerMove;
     float speed = 4f;
-
     public bool rotationFinish = false;
-    // Start is called before the first frame update
+    public Animator animator;
+
     void Start()
     {
-
+        Collider[] collidersOnObject = GetComponentsInChildren<Collider>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (gameController.stepsCount == 3)
@@ -30,7 +29,9 @@ public class Workers: MonoBehaviour
             }
             if (workerMove)
             {
+                animator.SetBool("Walk", true);
                 WorkerMovement();
+
             }
         }
     }
@@ -55,7 +56,6 @@ public class Workers: MonoBehaviour
         }
         else
         {
-            print("moving here");
             float step = speed * Time.deltaTime;
 
             if (Vector3.Distance(transform.position, endPos) > 1f)
@@ -64,7 +64,8 @@ public class Workers: MonoBehaviour
             }
             else
             {
-                Vector3 lookDirection = lookPos - transform.position;
+                Vector3 lookDirection1 = lookPos - transform.position;
+                Vector3 lookDirection = new Vector3(lookDirection1.x, 0, lookDirection1.z);
                 if (Vector3.Angle(transform.forward, lookDirection) > 5f)
                 {
                     float singleStep = 2f * Time.deltaTime;
@@ -74,6 +75,10 @@ public class Workers: MonoBehaviour
                 }
                 else
                 {
+                    animator.SetBool("Spotting", false);
+                    animator.SetBool("Working", false);
+                    animator.SetBool("Walk", false);
+                    animator.Play("Base Layer.Idle");
                     workerMove = false;
                     gameController.stepsCount++;
                 }

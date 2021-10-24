@@ -14,17 +14,22 @@ public class LadderPhysics : MonoBehaviour
     public MeshCollider meshCollider;
     public bool done;
     bool ladderfall = false;
+    public Vector3 start_Pos;
+    public Quaternion start_Rot;
 
     void Start()
     {
         meshCollider = GetComponent<MeshCollider>();
+        start_Pos = transform.position;
+        start_Rot = transform.rotation;
     }
 
     void Update()
     {
         //if (Input.GetKeyDown(KeyCode.P))
         //{
-        //    StartFall();
+        //    //   StartFall();
+        //    Reset_Ani();
         //}
 
         //if (OVRInput.GetDown(OVRInput.RawButton.B))
@@ -32,11 +37,18 @@ public class LadderPhysics : MonoBehaviour
         //    StartFall();
         //}
     }
+    public void Reset_Ani()
+    {
+        print("RESET");
+        done = false;
+        floor.SetActive(true);
+        transform.position = start_Pos;
+        transform.rotation = start_Rot;
+    }
     public void StartFall()
     {
+        Reset_Ani();
         StartCoroutine(WaitTime());
-        
-        
     }
 
     private void FixedUpdate()

@@ -46,6 +46,8 @@ public class GameController: MonoBehaviour
     public TextMeshProUGUI answer2;
     public TextMeshProUGUI answer3;
     public GameObject buttons;
+    public GameObject replay_button;
+
 
     [Header("YesNo Variables")]
     public TextMeshProUGUI yesNoAnswerResponse;
@@ -62,9 +64,23 @@ public class GameController: MonoBehaviour
 
     public int actionStep = 0;
 
+    public OVRPlayerController vRPlayerController;
+    public SimpleCapsuleWithStickMovement simpleCapsuleWithStickMovement;
+    public GameObject playerControllerObj;
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
+
+        if (!GlobalVariables.joystickMovement)
+        {
+            //simpleCapsuleWithStickMovement.enabled = true;
+            vRPlayerController.EnableLinearMovement = false;
+            //playerControllerObj.AddComponent<Rigidbody>();
+            //rb = playerControllerObj.GetComponent<Rigidbody>();
+            //rb.constraints = RigidbodyConstraints.FreezeAll;
+
+        }
         iPad.SetActive(false);
         PopUp.SetActive(false);
         ActionPopUp.SetActive(false);
@@ -79,9 +95,10 @@ public class GameController: MonoBehaviour
     {
         if (Ladder.done == true && animationEnd != true)
         {
-            stepsCount++;
+            //stepsCount++;
             PopUp.SetActive(true);
             animationEnd = true;
+            stepsCount++;
         }
 
         if (steps[stepsCount])
@@ -89,6 +106,7 @@ public class GameController: MonoBehaviour
             ActionPopUp.SetActive(false);
             popupAllowed = true;
             PopUp.SetActive(true);
+            replay_button.SetActive(stepsCount == 1);
             actionStep = stepsCount;
         }
         else
@@ -119,7 +137,7 @@ public class GameController: MonoBehaviour
                 {
                     //Call Work Group Supervisor
                     iPad.SetActive(true);
-                    ActionText.text = "Call Work Group Supervisor by using your iPad in front of you, hold trigger and A to select icons on the iPad";
+                    ActionText.text = "Call Work Group Supervisor by using your iPad in front of you, press A to select icons on the iPad";
                 }
                 if (stepsCount == 15)
                 {
@@ -135,6 +153,7 @@ public class GameController: MonoBehaviour
                 }
                 if (stepsCount == 18)
                 {
+                    //iPad.SetActive(false);
                     askWorker.SetActive(true);
                     ActionText.text = "Ask the worker for witness recollections";
                 }
@@ -168,54 +187,63 @@ public class GameController: MonoBehaviour
     {
         if (buttonPressed == 0)
         {
+            stepsCount = 0;
             animationEnd = false;
             Ladder.StartFall();
             PopUp.SetActive(false);
             return;
         }
 
-        if (q[questionNumber].key == buttonPressed)
+        if (buttonPressed == 4)
         {
-            //if the input is correct
-            if (questionNumber == 1)
-            {
-                yesNoAnswerResponse.text = q[questionNumber].correct;
-                yesNoAnswerResponseObj.SetActive(true);
-                yesNoButtons.SetActive(false);
-                yesNoQuestionText.SetActive(false);
-                questionNumber++;
-                StartCoroutine(WaitTimer_2());
-            }
-            else
-            {
-                answerResponseTxtCorrect.text = q[questionNumber].correct;
-                answerResponseObj.SetActive(true);
-                answersOptions.SetActive(false);
-                buttons.SetActive(false);
-                questionNumber++;
-                StartCoroutine(WaitTimer_2());
-            }
+            stepsCount++;
+            return;
         }
-        else
-        {
-            if (questionNumber == 1)
-            {
-                yesNoAnswerResponse.text = q[questionNumber].incorrect;
-                yesNoAnswerResponseObj.SetActive(true);
-                yesNoButtons.SetActive(false);
 
-                StartCoroutine(WaitTimer());
-            }
-            else
-            {
-                answerResponseTxtCorrect.text = q[questionNumber].incorrect;
-                answersOptions.SetActive(false);
-                buttons.SetActive(false);
+        StartCoroutine(question_Handler(buttonPressed));
 
-                answerResponseObj.SetActive(true);
-                StartCoroutine(WaitTimer());
-            }
-        }
+        //if (q[questionNumber].key == buttonPressed)
+        //{
+        //    //if the input is correct
+        //    if (questionNumber == 1)
+        //    {
+        //        yesNoAnswerResponse.text = q[questionNumber].correct;
+        //        yesNoAnswerResponseObj.SetActive(true);
+        //        yesNoButtons.SetActive(false);
+        //        yesNoQuestionText.SetActive(false);
+        //        questionNumber++;
+        //        StartCoroutine(WaitTimer_2());
+        //    }
+        //    else
+        //    {
+        //        answerResponseTxtCorrect.text = q[questionNumber].correct;
+        //        answerResponseObj.SetActive(true);
+        //        answersOptions.SetActive(false);
+        //        //buttons.SetActive(false);
+        //        questionNumber++;
+        //        StartCoroutine(WaitTimer_2());
+        //    }
+        //}
+        //else
+        //{
+        //    if (questionNumber == 1)
+        //    {
+        //        yesNoAnswerResponse.text = q[questionNumber].incorrect;
+        //        yesNoAnswerResponseObj.SetActive(true);
+        //        yesNoButtons.SetActive(false);
+
+        //        StartCoroutine(WaitTimer());
+        //    }
+        //    else
+        //    {
+        //        answerResponseTxtCorrect.text = q[questionNumber].incorrect;
+        //        answersOptions.SetActive(false);
+        //        //buttons.SetActive(false);
+
+        //        answerResponseObj.SetActive(true);
+        //        StartCoroutine(WaitTimer());
+        //    }
+        //}
     }
     public void QuestionOrdering()
     {
@@ -240,6 +268,7 @@ public class GameController: MonoBehaviour
     public void SetAnswers(Question question)
     {
         print(question.questionText);
+        question.ShuffleAnswers();
         string[] _answer = question.answers;
         //TODO Make loop
         TextMeshProUGUI[] UIAnswers = new TextMeshProUGUI[] { answer1, answer2, answer3 };
@@ -253,7 +282,7 @@ public class GameController: MonoBehaviour
         answerResponseTxtIncorrect.text = question.incorrect;
 
         answersOptions.SetActive(true);
-        buttons.SetActive(true);
+        //buttons.SetActive(true);
 
         //TODO fix this hack
         if (_answer.Length < 3)
@@ -279,12 +308,49 @@ public class GameController: MonoBehaviour
         yesNoQuestions.SetActive(false);
         SetAnswers(q[questionNumber]);
     }
-    IEnumerator WaitTimer_2()
+    IEnumerator question_Handler(int buttonPressed)
     {
+        correctAnswer = q[questionNumber].key == buttonPressed;
+        string text = "";
+        if (correctAnswer)
+        {
+            text = q[questionNumber].correct;
+        }
+        else
+        {
+            text = q[questionNumber].incorrect;
+        }
+        if (questionNumber == 1)
+        {
+            yesNoAnswerResponse.text = text;
+            yesNoAnswerResponseObj.SetActive(true);
+            yesNoButtons.SetActive(false);
+            yesNoQuestionText.SetActive(false);
+        }
+        else
+        {
+            answerResponseTxtCorrect.text = text;
+            answerResponseObj.SetActive(true);
+            answersOptions.SetActive(false);
+        }
+
+
         answerReceived = false;
-        correctAnswer = false;
-        yield return new WaitForSeconds(5);
+        yield return new WaitUntil(test);
+        //yield return new WaitForSeconds(5);
+        if (correctAnswer)
+        {
+            stepsCount++;
+            questionNumber++;
+        }
         SetAnswers(q[questionNumber]);
-        stepsCount++;
+    }
+    public bool test()
+    {
+        return answerReceived;
+    }
+    public void nextQuestion()
+    {
+        answerReceived = true;
     }
 }

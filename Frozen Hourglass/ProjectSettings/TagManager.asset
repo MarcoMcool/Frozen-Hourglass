@@ -9,6 +9,7 @@ TagManager:
   - Highlight
   - PowerLine
   - CarNode
+  - Cube
   layers:
   - Default
   - TransparentFX
