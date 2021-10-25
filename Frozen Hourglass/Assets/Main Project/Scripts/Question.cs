@@ -32,9 +32,11 @@ public class Question
             return;
         }
         int newKey = Random.Range(1, answers.Length);
-        answers = givenAnswers;
-        answers[newKey] = givenAnswers[givenKey];
-        answers[givenKey] = givenAnswers[newKey];
+        answers = givenAnswers.ToArray();
+        //string temp = givenAnswers[newKey - 1];
+        answers[newKey-1] = givenAnswers[givenKey-1];
+        answers[givenKey-1] = givenAnswers[newKey - 1];
+
         key = newKey;
     }
 

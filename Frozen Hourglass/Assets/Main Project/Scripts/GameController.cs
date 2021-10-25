@@ -86,7 +86,7 @@ public class GameController: MonoBehaviour
         ActionPopUp.SetActive(false);
 
         q = QuestionSetup.SetUp();
-
+        q[questionNumber].ShuffleAnswers();
         SetAnswers(q[questionNumber]);
     }
 
@@ -267,8 +267,7 @@ public class GameController: MonoBehaviour
 
     public void SetAnswers(Question question)
     {
-        print(question.questionText);
-        question.ShuffleAnswers();
+        print(question.questionText +"\n"+ question.key);
         string[] _answer = question.answers;
         //TODO Make loop
         TextMeshProUGUI[] UIAnswers = new TextMeshProUGUI[] { answer1, answer2, answer3 };
@@ -342,6 +341,7 @@ public class GameController: MonoBehaviour
         {
             stepsCount++;
             questionNumber++;
+            q[questionNumber].ShuffleAnswers();
         }
         SetAnswers(q[questionNumber]);
     }
