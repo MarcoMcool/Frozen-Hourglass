@@ -49,7 +49,7 @@ public class Pointer: MonoBehaviour
         //}
         if(gameController.stepsCount== 5)
         {
-            CreateLaser(rightHand.transform.position, rightHand.transform.forward, 10f);
+            CreateLaser(rightHand.transform.position, rightHand.transform.forward, 13f);
             laserActive = true;
             lineRenderer.enabled = true;
         }
