@@ -15,7 +15,7 @@ public class GrabCubes: MonoBehaviour
     void Update()
     {
         bool temp = grabber.isGrabbed;
-        if (!temp && Vector3.Distance(startPos, transform.position) > 1f)
+        if (!temp && Vector3.Distance(startPos, transform.position) > 1.5f)
         {
             transform.position = startPos;
         }

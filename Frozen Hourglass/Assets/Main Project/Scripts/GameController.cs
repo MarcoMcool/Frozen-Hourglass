@@ -81,6 +81,10 @@ public class GameController: MonoBehaviour
             //rb.constraints = RigidbodyConstraints.FreezeAll;
 
         }
+        else
+        {
+            vRPlayerController.EnableLinearMovement = true;
+        }
         iPad.SetActive(false);
         PopUp.SetActive(false);
         ActionPopUp.SetActive(false);
