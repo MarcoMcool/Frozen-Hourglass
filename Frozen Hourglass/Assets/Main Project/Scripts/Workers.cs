@@ -13,8 +13,11 @@ public class Workers: MonoBehaviour
     public bool rotationFinish = false;
     public Animator animator;
 
+    public GameObject teleportRing;
+
     void Start()
     {
+        teleportRing.SetActive(false);
         Collider[] collidersOnObject = GetComponentsInChildren<Collider>();
     }
 
@@ -22,6 +25,7 @@ public class Workers: MonoBehaviour
     {
         if (gameController.stepsCount == 3)
         {
+            teleportRing.SetActive(true);
             if (gameObject.GetComponent<OVRGrabbable>().isGrabbed || Input.GetKeyDown(KeyCode.M))
             {
                 workerMove = true;
@@ -31,7 +35,6 @@ public class Workers: MonoBehaviour
             {
                 animator.SetBool("Walk", true);
                 WorkerMovement();
-
             }
         }
     }
