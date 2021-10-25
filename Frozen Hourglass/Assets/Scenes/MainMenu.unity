@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5027867, g: 0.5374264, b: 0.71638346, a: 1}
+  m_IndirectSpecularColor: {r: 0.5018044, g: 0.53746116, b: 0.71472687, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 23048212}
   - component: {fileID: 23048211}
   - component: {fileID: 23048216}
+  - component: {fileID: 23048217}
   m_Layer: 10
   m_Name: Cube
   m_TagString: Cube
@@ -392,6 +393,18 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!114 &23048217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23048210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e9a85551ac5d04ba3f24729c589d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &23255129
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,6 +2179,7 @@ GameObject:
   - component: {fileID: 431918975}
   - component: {fileID: 431918974}
   - component: {fileID: 431918979}
+  - component: {fileID: 431918980}
   m_Layer: 10
   m_Name: Cube (3)
   m_TagString: Cube
@@ -2282,6 +2296,18 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!114 &431918980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431918973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e9a85551ac5d04ba3f24729c589d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &436718025
 GameObject:
   m_ObjectHideFlags: 0
@@ -5849,6 +5875,7 @@ GameObject:
   - component: {fileID: 808376094}
   - component: {fileID: 808376093}
   - component: {fileID: 808376098}
+  - component: {fileID: 808376099}
   m_Layer: 10
   m_Name: Cube (1)
   m_TagString: Cube
@@ -5965,6 +5992,18 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!114 &808376099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808376092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e9a85551ac5d04ba3f24729c589d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &852885523
 GameObject:
   m_ObjectHideFlags: 0
@@ -6755,6 +6794,7 @@ GameObject:
   - component: {fileID: 1040231456}
   - component: {fileID: 1040231455}
   - component: {fileID: 1040231460}
+  - component: {fileID: 1040231461}
   m_Layer: 10
   m_Name: Cube (2)
   m_TagString: Cube
@@ -6871,6 +6911,18 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!114 &1040231461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040231454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e9a85551ac5d04ba3f24729c589d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1057484410
 GameObject:
   m_ObjectHideFlags: 0
@@ -12187,6 +12239,15 @@ MonoBehaviour:
   cubesInZone: 0
   tutorialController: {fileID: 1895427800}
   cubeText: {fileID: 651568505}
+  grabCubes:
+  - {fileID: 23048210}
+  - {fileID: 808376092}
+  - {fileID: 1040231454}
+  - {fileID: 431918973}
+  cube1: {x: 0, y: 0, z: 0}
+  cube2: {x: 0, y: 0, z: 0}
+  cube3: {x: 0, y: 0, z: 0}
+  cube4: {x: 0, y: 0, z: 0}
 --- !u!1 &1749563140
 GameObject:
   m_ObjectHideFlags: 0

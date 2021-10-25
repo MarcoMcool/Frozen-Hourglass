@@ -13,6 +13,19 @@ public class GrabbingCubes: MonoBehaviour
     public TutorialController tutorialController;
     public TextMeshPro cubeText;
 
+    public GameObject[] grabCubes;
+    public Vector3 cube1;
+    public Vector3 cube2;
+    public Vector3 cube3;
+    public Vector3 cube4;
+
+    private void Start()
+    {
+        cube1 = grabCubes[0].transform.position;
+        cube2 = grabCubes[1].transform.position;
+        cube3 = grabCubes[2].transform.position;
+        cube4 = grabCubes[3].transform.position;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (!cubeCollided1)
@@ -27,7 +40,7 @@ public class GrabbingCubes: MonoBehaviour
         }
         else
         {
-            if (other.tag == "Cube")
+            if (other.tag == "Cube" && other.gameObject != cubeCollided1)
             {
                 cubesInZone++;
                 cubeCollided2 = other.gameObject;

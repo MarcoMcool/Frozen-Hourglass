@@ -36,10 +36,6 @@ public class TutorialController : MonoBehaviour
 
     void Update()
     {
-        if (steps == 0)
-        {
-            print("here in step 0");
-        }
         if (steps == 1)
         {
             wall.transform.position = wallPositions[1].transform.position;

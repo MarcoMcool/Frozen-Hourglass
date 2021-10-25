@@ -14,7 +14,7 @@ public class TeleportArea : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            tutController.NextTutorial();
+            //tutController.NextTutorial();
         }
     }
 }
