@@ -33,6 +33,7 @@ public class Workers: MonoBehaviour
             }
             if (workerMove)
             {
+                teleportRing.SetActive(false);
                 animator.SetBool("Walk", true);
                 WorkerMovement();
             }
@@ -82,6 +83,7 @@ public class Workers: MonoBehaviour
                     animator.SetBool("Working", false);
                     animator.SetBool("Walk", false);
                     animator.Play("Base Layer.Idle");
+                    
                     workerMove = false;
                     gameController.stepsCount++;
                 }
