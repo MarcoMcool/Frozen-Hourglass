@@ -20,6 +20,7 @@ public class LadderPhysics : MonoBehaviour
     void Start()
     {
         meshCollider = GetComponent<MeshCollider>();
+        meshCollider.isTrigger = false;
         start_Pos = transform.position;
         start_Rot = transform.rotation;
     }
@@ -81,6 +82,10 @@ public class LadderPhysics : MonoBehaviour
         yield return new WaitForSeconds(1.7f);
         floor.SetActive(false);
         meshCollider.material = pmNoSlide;
+        rb.useGravity = false;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        meshCollider.isTrigger = true;
         done = true;
         //print("DONE");
     }

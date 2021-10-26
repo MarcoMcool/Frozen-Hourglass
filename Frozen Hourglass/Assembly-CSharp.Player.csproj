@@ -229,6 +229,7 @@
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrackSegment.cs" />
     <Compile Include="Assets\Main Project\Scripts\Safe_Zone_Line.cs" />
     <Compile Include="Assets\Main Project\Scripts\Tutorial Script\GrabCubes.cs" />
+    <Compile Include="Assets\Main Project\Scripts\WrongLadder.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\XingLightShader.shader" />

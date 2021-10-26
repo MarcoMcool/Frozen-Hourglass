@@ -14,6 +14,7 @@ public class PlayerCollection: MonoBehaviour
 
     void Update()
     {
+        
         timer += Time.deltaTime;
         if (OVRInput.Get(OVRInput.RawButton.X) && (gc.actionStep == gc.stepsCount))
         {

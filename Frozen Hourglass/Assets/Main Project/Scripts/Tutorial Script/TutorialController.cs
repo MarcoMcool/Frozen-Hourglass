@@ -35,8 +35,8 @@ public class TutorialController: MonoBehaviour
     public AudioSource audio4;
     public AudioSource audio5;
 
+    public bool playAudio = false;
 
-    float timer = 0;
     void Start()
     {
         playerController.enabled = false;
@@ -52,9 +52,16 @@ public class TutorialController: MonoBehaviour
     {
         if (steps == 0)
         {
-            if (timer > 3f)
+            if (playAudio)
             {
-
+                if (!audio2.isPlaying)
+                {
+                    audio2.Play();
+                }
+                audio1.Stop();
+                audio3.Stop();
+                audio4.Stop();
+                audio5.Stop();
             }
         }
         if (steps == 1)
@@ -150,5 +157,10 @@ public class TutorialController: MonoBehaviour
             //simpleCapsuleWithStickMovement.enabled = true;
             vRPlayerController.EnableLinearMovement = true;
         }
+    }
+
+    public void StartTutorial()
+    {
+        playAudio = true;
     }
 }
