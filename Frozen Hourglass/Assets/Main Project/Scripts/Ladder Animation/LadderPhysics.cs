@@ -16,6 +16,7 @@ public class LadderPhysics : MonoBehaviour
     bool ladderfall = false;
     public Vector3 start_Pos;
     public Quaternion start_Rot;
+    public AudioSource ladderSound;
 
     void Start()
     {
@@ -41,6 +42,10 @@ public class LadderPhysics : MonoBehaviour
     public void Reset_Ani()
     {
         print("RESET");
+        if (ladderSound.isPlaying)
+        {
+            ladderSound.Stop();
+        }
         done = false;
         floor.SetActive(true);
         transform.position = start_Pos;
@@ -82,10 +87,10 @@ public class LadderPhysics : MonoBehaviour
         yield return new WaitForSeconds(1.7f);
         floor.SetActive(false);
         meshCollider.material = pmNoSlide;
-        rb.useGravity = false;
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        meshCollider.isTrigger = true;
+        //rb.useGravity = false;
+        //rb.velocity = Vector3.zero;
+        //rb.angularVelocity = Vector3.zero;
+        //meshCollider.isTrigger = true;
         done = true;
         //print("DONE");
     }
