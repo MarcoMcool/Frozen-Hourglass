@@ -110,6 +110,7 @@ public class GameController: MonoBehaviour
             ActionPopUp.SetActive(false);
             popupAllowed = true;
             PopUp.SetActive(true);
+            iPad.SetActive(false);
             replay_button.SetActive(stepsCount == 1);
             actionStep = stepsCount;
         }
