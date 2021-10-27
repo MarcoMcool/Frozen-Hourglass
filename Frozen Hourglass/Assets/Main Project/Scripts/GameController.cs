@@ -357,4 +357,29 @@ public class GameController: MonoBehaviour
     {
         answerReceived = true;
     }
+
+    /* Section for extra menu*/
+    [Header("Extra Menu Variables")]
+    public TextMeshProUGUI Question_text;
+    public TextMeshProUGUI Question_info;
+    private int extra_Question_number = 1;
+    public void Arrow_Button_Pressed(bool right)
+    {
+        if (right)
+        {
+            extra_Question_number++;
+            Question_text.text = ("Question: " + extra_Question_number);
+            Question_info.text = q[extra_Question_number].questionText;
+        }
+        else
+        {
+            extra_Question_number--;
+            Question_text.text = ("Question: " + extra_Question_number);
+            Question_info.text = q[extra_Question_number].questionText;
+        }
+    }
+
+
+
+
 }
