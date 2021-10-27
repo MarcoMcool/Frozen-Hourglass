@@ -85,6 +85,7 @@ public class GameController: MonoBehaviour
         {
             vRPlayerController.EnableLinearMovement = true;
         }
+        //GoToQuestion(5);
         iPad.SetActive(false);
         PopUp.SetActive(false);
         ActionPopUp.SetActive(false);
@@ -378,6 +379,41 @@ public class GameController: MonoBehaviour
             Question_text.text = ("Question: " + extra_Question_number);
             Question_info.text = q[extra_Question_number].questionText;
         }
+    }
+    public void GoToQuestion(int questionNum)
+    {
+        //Find right step
+        int stepNum = 0;
+        int tracker = 0;
+        while (tracker != questionNum)
+        {
+            stepNum++;
+            if (steps[stepNum])
+            {
+                tracker++;
+            }
+            
+        }
+        if (stepNum < 3)
+        {
+            //reset worker
+        }
+        else
+        {
+            //move worker
+        }
+        if (stepNum < 7)
+        {
+            //reset ladder
+        }
+        else
+        {
+            //move ladder
+        }
+        questionNumber = questionNum;
+        stepsCount = stepNum;
+        q[questionNumber].ShuffleAnswers();
+        SetAnswers(q[questionNumber]);
     }
 
 
