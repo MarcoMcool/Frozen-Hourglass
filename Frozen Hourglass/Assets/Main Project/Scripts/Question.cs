@@ -31,7 +31,7 @@ public class Question
         {
             return;
         }
-        int newKey = Random.Range(1, answers.Length);
+        int newKey = Random.Range(1, answers.Length+1);
         answers = givenAnswers.ToArray();
         //string temp = givenAnswers[newKey - 1];
         answers[newKey-1] = givenAnswers[givenKey-1];

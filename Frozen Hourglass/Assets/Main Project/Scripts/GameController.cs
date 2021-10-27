@@ -294,6 +294,8 @@ public class GameController: MonoBehaviour
         {
             yesNoQuestions.SetActive(true);
             normalQuestions.SetActive(false);
+            yesNoButtons.SetActive(true);
+            yesNoQuestionText.SetActive(true);
         }
         else
         {
@@ -302,6 +304,7 @@ public class GameController: MonoBehaviour
         }
 
         answerResponseObj.SetActive(false);
+        yesNoAnswerResponseObj.SetActive(false);
     }
 
 
