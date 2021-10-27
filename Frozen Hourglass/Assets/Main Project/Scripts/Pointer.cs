@@ -74,6 +74,13 @@ public class Pointer: MonoBehaviour
             checkObject();
             print(hit.collider.gameObject.name);
         }
+        else if (!Physics.Raycast(ray, out RaycastHit hit1, length, layerMask) && (OVRInput.Get(OVRInput.RawButton.A)))
+        {
+            StopCoroutine(WaitTime());
+            wrongHazardText.text = "Try getting closer to the object you want to select.";
+            RH_Prompt.SetActive(true);
+            StartCoroutine(WaitTime());
+        }
 
         lineRenderer.SetPosition(0, targetPos);
         lineRenderer.SetPosition(1, endPos);
@@ -97,6 +104,7 @@ public class Pointer: MonoBehaviour
                 PointHazards.objectsFound.Add(hazardObject);
             }
         }
+
         else if (!objectHit.collider.GetComponent<Hazard>() && (OVRInput.Get(OVRInput.RawButton.A)) && gameController.stepsCount == 5)
         {
             StopCoroutine(WaitTime());
