@@ -8,6 +8,7 @@ public class IPadMechanics : MonoBehaviour
     public GameController gameController;
 
     public GameObject camera;
+
     public GameObject ladder;
     public GameObject iPad;
     public Camera cameraObj;
@@ -157,18 +158,22 @@ public class IPadMechanics : MonoBehaviour
         flashTimer = 0;
 
         Vector3 objectVisible = cameraObj.WorldToViewportPoint(ladder.transform.position);
+        if (gameController.stepsCount == 17)
+        {
 
-        if (objectVisible.x > 0 && objectVisible.x < 1 && objectVisible.y > 0 && objectVisible.y < 1)
-        {
-            print("the object was visible in the camera");
-            gameController.stepsCount++;
-        }
-        else
-        {
-            // Have message displayed to prompt
-            cameraMessage.SetActive(true);
-            cameraMessage.GetComponentInChildren<Text>().text = "Make sure the object is visible in this picture. Click on message to remove!";
-            print("Make sure the object is visible in this picture");
+
+            if (objectVisible.x > 0 && objectVisible.x < 1 && objectVisible.y > 0 && objectVisible.y < 1)
+            {
+                print("the object was visible in the camera");
+                gameController.stepsCount++;
+            }
+            else
+            {
+                // Have message displayed to prompt
+                cameraMessage.SetActive(true);
+                cameraMessage.GetComponentInChildren<Text>().text = "Make sure the object is visible in this picture. Click on message to remove!";
+                print("Make sure the object is visible in this picture");
+            }
         }
     }
     public Text notepadText;
