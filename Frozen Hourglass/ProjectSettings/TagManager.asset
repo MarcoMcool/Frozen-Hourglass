@@ -11,6 +11,7 @@ TagManager:
   - CarNode
   - Cube
   - ShockLadder
+  - MovementTutorial
   layers:
   - Default
   - TransparentFX
