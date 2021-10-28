@@ -103,17 +103,23 @@ public class Workers: MonoBehaviour
         }
         else
         {
-            teleportRing.SetActive(false);
-            transform.position = endPos;
-            Vector3 lookDirection1 = lookPos - transform.position;
-            Vector3 lookDirection = new Vector3(lookDirection1.x, 0, lookDirection1.z);
-            if (Vector3.Angle(transform.forward, lookDirection) > 5f)
-            {
-                float singleStep = 2f * Time.deltaTime;
-                Vector3 newDirection = Vector3.RotateTowards(transform.forward, lookDirection, singleStep, 0.0f);
-                Debug.DrawLine(transform.position, newDirection, Color.red);
-                transform.rotation = Quaternion.LookRotation(newDirection);
-            }
+            StartCoroutine(RotateWorker());
         }
+    }
+
+    IEnumerator RotateWorker()
+    {
+        teleportRing.SetActive(false);
+        transform.position = endPos;
+        Vector3 lookDirection1 = lookPos - transform.position;
+        Vector3 lookDirection = new Vector3(lookDirection1.x, 0, lookDirection1.z);
+        while (Vector3.Angle(transform.forward, lookDirection) > 5f)
+        {
+            float singleStep = 2f * Time.deltaTime;
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, lookDirection, singleStep, 0.0f);
+            Debug.DrawLine(transform.position, newDirection, Color.red);
+            transform.rotation = Quaternion.LookRotation(newDirection);
+        }
+        yield return null;
     }
 }
