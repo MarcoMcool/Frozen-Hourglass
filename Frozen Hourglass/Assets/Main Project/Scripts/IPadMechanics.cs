@@ -184,10 +184,27 @@ public class IPadMechanics : MonoBehaviour
             calledWorkSupervisor = false;
             calledSiteSupervisor = false;
         }
-        if (step < 15)
+        else if (step < 15)
         {
             calledWorkSupervisor = true;
             calledSiteSupervisor = false;
+        }
+        else
+        {
+            calledWorkSupervisor = true;
+            calledSiteSupervisor = true;
+        }
+        if (step < 17)
+        {
+            photosDone = 0;
+            moveLadderDone = false;
+            ladderDone = false;
+        }
+        else
+        {
+            photosDone = 2;
+            moveLadderDone = true;
+            ladderDone = true;
         }
     }
 }
