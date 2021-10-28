@@ -12,14 +12,14 @@ public class QuestionSetup
             "What was the incident that occurred?",
             new string[] { "A ladder fell on the electrical line causing a short circuit", "A worker has been electrocuted", "The electrical line snapped" },
             "Correct! \nA ladder resting against the house has fallen onto the powerlines that were close by.\n As the ladder is conductive it has caused a short circuit.",
-            "Incorrect: \nThe incident was a ladder fell onto the powerline",
+            "Incorrect: \nThe incident was a ladder fell onto the powerline.",
             1
         );
         questions[1] = new Question(
             "Should work in the vicinity be stopped?",
             new string[] { "Yes", "No"},
-            "Correct: \nWork should be stopped immediately in the area",
-            "Incorrect: \nThe answer is True, work should be halted immediately.",
+            "Correct: \nWork should be stopped immediately in the area.",
+            "Incorrect: \nThe answer is Yes, work should be halted immediately.",
             1
         );
         questions[2] = new Question(
