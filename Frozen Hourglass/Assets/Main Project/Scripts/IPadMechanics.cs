@@ -30,10 +30,6 @@ public class IPadMechanics : MonoBehaviour
     private float flashTime = 0.5f;
 
     private float callTimer = 0;
-    private float callTime = 9;
-    private bool callingWorkSupervisor = false;
-    private bool callingSiteSupervisor = false;
-    private bool callAnswered = false;
     private bool calledWorkSupervisor = false;
     private bool calledSiteSupervisor = false;
 
@@ -114,46 +110,6 @@ public class IPadMechanics : MonoBehaviour
         //iPad.SetActive(false);
     }
 
-    public void workSupervisorCalling(int num)
-    {
-        if (calledWorkSupervisor == false)
-        {
-            callingScreen.SetActive(true);
-            callScreen.SetActive(false);
-            callText.text = "Calling Work Group Supervisor";
-
-            callTimer = 0;
-            callAnswered = false;
-            callTimeText.text = "Calling...";
-            calledWorkSupervisor = true;
-        }
-        else
-        {
-            // Turn this into a prompt
-            print("You shouldn't call the work group supervisor again");
-        }
-    }
-
-    public void siteSupervisorCalling()
-    {
-        if (calledSiteSupervisor == false)
-        {
-            callingScreen.SetActive(true);
-            callScreen.SetActive(false);
-            callText.text = "Calling Work Group Manager";
-
-            callTimer = 0;
-            callAnswered = false;
-            callTimeText.text = "Calling...";
-            calledSiteSupervisor = true;
-        }
-        else
-        {
-            // Turn this into a prompt
-            print("You shouldn't call the Work Group Manager again");
-        }
-    }
-
     // Bind to the take picture button to activte
     public int photosDone = 0;
     private bool moveLadderDone = false;
@@ -218,5 +174,20 @@ public class IPadMechanics : MonoBehaviour
 
         iPad.SetActive(false);
         gameController.stepsCount++;
+    }
+
+
+    public void Reset_iPad(int step)
+    {
+        if (step < 11)
+        {
+            calledWorkSupervisor = false;
+            calledSiteSupervisor = false;
+        }
+        if (step < 15)
+        {
+            calledWorkSupervisor = true;
+            calledSiteSupervisor = false;
+        }
     }
 }
