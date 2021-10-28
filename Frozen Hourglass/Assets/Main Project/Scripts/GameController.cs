@@ -105,7 +105,7 @@ public class GameController: MonoBehaviour
         }
         if (extra_Question_number == max_Question+1)
         {
-            //rightArrow.interactable = false;
+            rightArrow.interactable = false;
         }
         else
         {
