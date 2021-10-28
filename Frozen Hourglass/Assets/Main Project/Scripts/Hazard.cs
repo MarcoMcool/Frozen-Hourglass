@@ -8,9 +8,11 @@ public class Hazard : MonoBehaviour
 
     public OVRGrabbable grab;
     public GameController gc;
+    public Vector3 startPos;
     // Start is called before the first frame update
     void Start()
     {
+        startPos = transform.position;
         grab = GetComponent<OVRGrabbable>();
         gc = FindObjectOfType<GameController>();
     }

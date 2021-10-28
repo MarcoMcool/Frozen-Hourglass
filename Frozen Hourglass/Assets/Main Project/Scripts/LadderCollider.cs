@@ -51,14 +51,6 @@ public class LadderCollider: MonoBehaviour
                 print("correct time for the ladder");
             }
         }
-        else if (other.gameObject.tag == "ShockLadder")
-        {
-            gameController.ActionPopUp.SetActive(true);
-            gameController.ActionText.text = "Do not touch this ladder. The scene should be quarantined.";
-           
-            //Needs warning popup telling the user not to move the original ladder until safe to do so
-
-        }
     }
 
     IEnumerator WaitTime()
