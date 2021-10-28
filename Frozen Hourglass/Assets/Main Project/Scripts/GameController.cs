@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameController: MonoBehaviour
 {
@@ -101,6 +102,14 @@ public class GameController: MonoBehaviour
         if (questionNumber > max_Question)
         {
             max_Question = questionNumber;
+        }
+        if (extra_Question_number == max_Question)
+        {
+            rightArrow.interactable = false;
+        }
+        else
+        {
+            rightArrow.interactable = true;
         }
         if (Ladder.done == true && animationEnd != true)
         {
@@ -353,6 +362,8 @@ public class GameController: MonoBehaviour
     [Header("Extra Menu Variables")]
     public TextMeshProUGUI Question_text;
     public TextMeshProUGUI Question_info;
+    public Button leftArrow;
+    public Button rightArrow;
     private int max_Question = 1;
     private int extra_Question_number = 1;
     public void Arrow_Button_Pressed(bool right)
@@ -362,20 +373,28 @@ public class GameController: MonoBehaviour
             extra_Question_number++;
             Question_text.text = ("Question: " + extra_Question_number);
             Question_info.text = q[extra_Question_number].questionText;
+            if (extra_Question_number > 1)
+            {
+                leftArrow.interactable = true;
+            }
         }
         else
         {
             extra_Question_number--;
             Question_text.text = ("Question: " + extra_Question_number);
             Question_info.text = q[extra_Question_number].questionText;
+            if(extra_Question_number == 1)
+            {
+                leftArrow.interactable = false;
+            }
         }
     }
-    public void GoToQuestion(int questionNum)
+    public void GoToQuestion()
     {
         //Find right step
         int stepNum = 0;
         int tracker = 0;
-        while (tracker != questionNum)
+        while (tracker != extra_Question_number)
         {
             stepNum++;
             if (steps[stepNum])
@@ -388,7 +407,7 @@ public class GameController: MonoBehaviour
 
         Reseter.Step_Reset(stepNum);
 
-        questionNumber = questionNum;
+        questionNumber = extra_Question_number;
         stepsCount = stepNum;
         q[questionNumber].ShuffleAnswers();
         SetAnswers(q[questionNumber]);
