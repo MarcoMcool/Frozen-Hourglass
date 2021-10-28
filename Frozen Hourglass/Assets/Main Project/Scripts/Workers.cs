@@ -14,9 +14,12 @@ public class Workers: MonoBehaviour
     public Animator animator;
 
     public GameObject teleportRing;
+    private Vector3 startPos;
+    private 
 
     void Start()
     {
+        startPos = transform.position;
         teleportRing.SetActive(false);
         Collider[] collidersOnObject = GetComponentsInChildren<Collider>();
     }
@@ -87,6 +90,29 @@ public class Workers: MonoBehaviour
                     workerMove = false;
                     gameController.stepsCount++;
                 }
+            }
+        }
+    }
+    public void Reset_Worker(int step)
+    {
+        if (step < 3)
+        {
+            teleportRing.SetActive(true);
+            transform.position = startPos;
+            transform.rotation = Quaternion.identity;
+        }
+        else
+        {
+            teleportRing.SetActive(false);
+            transform.position = endPos;
+            Vector3 lookDirection1 = lookPos - transform.position;
+            Vector3 lookDirection = new Vector3(lookDirection1.x, 0, lookDirection1.z);
+            if (Vector3.Angle(transform.forward, lookDirection) > 5f)
+            {
+                float singleStep = 2f * Time.deltaTime;
+                Vector3 newDirection = Vector3.RotateTowards(transform.forward, lookDirection, singleStep, 0.0f);
+                Debug.DrawLine(transform.position, newDirection, Color.red);
+                transform.rotation = Quaternion.LookRotation(newDirection);
             }
         }
     }
