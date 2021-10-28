@@ -99,13 +99,13 @@ public class GameController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (questionNumber > max_Question)
+        if (questionNumber > max_Question+1)
         {
             max_Question = questionNumber;
         }
-        if (extra_Question_number == max_Question)
+        if (extra_Question_number == max_Question+1)
         {
-            rightArrow.interactable = false;
+            //rightArrow.interactable = false;
         }
         else
         {
@@ -372,7 +372,7 @@ public class GameController: MonoBehaviour
         {
             extra_Question_number++;
             Question_text.text = ("Question: " + extra_Question_number);
-            Question_info.text = q[extra_Question_number].questionText;
+            Question_info.text = q[extra_Question_number-1].questionText;
             if (extra_Question_number > 1)
             {
                 leftArrow.interactable = true;
@@ -382,7 +382,7 @@ public class GameController: MonoBehaviour
         {
             extra_Question_number--;
             Question_text.text = ("Question: " + extra_Question_number);
-            Question_info.text = q[extra_Question_number].questionText;
+            Question_info.text = q[extra_Question_number-1].questionText;
             if(extra_Question_number == 1)
             {
                 leftArrow.interactable = false;
@@ -403,11 +403,12 @@ public class GameController: MonoBehaviour
             }
             
         }
+        //stepNum--;
         Reset_Controller Reseter = GetComponent<Reset_Controller>();
 
         Reseter.Step_Reset(stepNum);
 
-        questionNumber = extra_Question_number;
+        questionNumber = extra_Question_number-1;
         stepsCount = stepNum;
         q[questionNumber].ShuffleAnswers();
         SetAnswers(q[questionNumber]);

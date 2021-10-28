@@ -98,12 +98,12 @@ public class IPadMechanics : MonoBehaviour
 
         callTimeText.text = "Talking";
         print("CAll Answered");
-        gameController.stepsCount++;
+        
         yield return new WaitForSeconds(4);
         print("Supervisor called");
         callingScreen.SetActive(false);
         callScreen.SetActive(true);
-
+        gameController.stepsCount++;
         //After we have waited 9 seconds print the time again.
         print("Finished Coroutine at timestamp : " + Time.time);
 
@@ -176,7 +176,7 @@ public class IPadMechanics : MonoBehaviour
         gameController.stepsCount++;
     }
 
-
+    public GameObject saved_text;
     public void Reset_iPad(int step)
     {
         if (step < 11)
@@ -199,6 +199,7 @@ public class IPadMechanics : MonoBehaviour
             photosDone = 0;
             moveLadderDone = false;
             ladderDone = false;
+            saved_text.SetActive(false);
         }
         else
         {
