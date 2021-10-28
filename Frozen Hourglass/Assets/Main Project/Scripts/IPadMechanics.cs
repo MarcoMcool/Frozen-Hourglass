@@ -23,6 +23,7 @@ public class IPadMechanics : MonoBehaviour
     public Text callTimeText;
     public AudioSource callAudio;
     public GameObject wrongCallPanel;
+    public Text stopPhotos;
 
     private float flashTimer = 0;
     private float flashTime = 0.5f;
@@ -164,6 +165,7 @@ public class IPadMechanics : MonoBehaviour
 
             if (objectVisible.x > 0 && objectVisible.x < 1 && objectVisible.y > 0 && objectVisible.y < 1)
             {
+                stopPhotos.SetActive(true);
                 print("the object was visible in the camera");
                 gameController.stepsCount++;
             }
