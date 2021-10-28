@@ -16,9 +16,10 @@ public class IPadMechanics : MonoBehaviour
 
     public Material flash;
     public Material cameraImage;
-
+    public GameObject mainScreen;
     public GameObject callingScreen;
     public GameObject callScreen;
+    public GameObject notesScreen;
     public GameObject cameraMessage;
     public Text callText;
     public Text callTimeText;
@@ -103,6 +104,10 @@ public class IPadMechanics : MonoBehaviour
         print("Supervisor called");
         callingScreen.SetActive(false);
         callScreen.SetActive(true);
+        mainScreen.SetActive(true);
+        callScreen.SetActive(false);
+        camera.SetActive(false);
+        notesScreen.SetActive(false);
         gameController.stepsCount++;
         //After we have waited 9 seconds print the time again.
         print("Finished Coroutine at timestamp : " + Time.time);
@@ -143,6 +148,10 @@ public class IPadMechanics : MonoBehaviour
             }
             if (photosDone == 2)
             {
+                mainScreen.SetActive(true);
+                callScreen.SetActive(false);
+                camera.SetActive(false);
+                notesScreen.SetActive(false);
                 gameController.stepsCount++;
             }
         }
@@ -171,7 +180,10 @@ public class IPadMechanics : MonoBehaviour
 
         //After we have waited 5 seconds print the time again.
         //print("Finished Coroutine at timestamp : " + Time.time);
-
+        mainScreen.SetActive(true);
+        callScreen.SetActive(false);
+        camera.SetActive(false);
+        notesScreen.SetActive(false);
         iPad.SetActive(false);
         gameController.stepsCount++;
     }
@@ -179,6 +191,12 @@ public class IPadMechanics : MonoBehaviour
     public GameObject saved_text;
     public void Reset_iPad(int step)
     {
+        mainScreen.SetActive(true);
+        callScreen.SetActive(false);
+        camera.SetActive(false);
+        notesScreen.SetActive(false);
+
+
         if (step < 11)
         {
             calledWorkSupervisor = false;
