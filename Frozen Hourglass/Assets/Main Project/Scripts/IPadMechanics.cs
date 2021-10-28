@@ -10,6 +10,7 @@ public class IPadMechanics : MonoBehaviour
     public GameObject camera;
 
     public GameObject ladder;
+    public GameObject moveLadder;
     public GameObject iPad;
     public Camera cameraObj;
 
@@ -154,20 +155,28 @@ public class IPadMechanics : MonoBehaviour
     }
 
     // Bind to the take picture button to activte
+    public int photosDone = 0;
+    private bool moveLadderDone = false;
+    private bool ladderDone = false;
     public void pictureSnap()
     {
         flashTimer = 0;
 
         Vector3 objectVisible = cameraObj.WorldToViewportPoint(ladder.transform.position);
+        Vector3 moveObjectVisible = cameraObj.WorldToViewportPoint(moveLadder.transform.position);
         if (gameController.stepsCount == 17)
         {
-
-
-            if (objectVisible.x > 0 && objectVisible.x < 1 && objectVisible.y > 0 && objectVisible.y < 1)
+            if (moveObjectVisible.x > 0 && moveObjectVisible.x < 1 && moveObjectVisible.y > 0 && moveObjectVisible.y < 1 && moveLadderDone == false)
             {
-                stopPhotos.SetActive(true);
+                print("the move ladder was visible in the camera");
+                photosDone++;
+                moveLadderDone = true;
+            }
+            else if (objectVisible.x > 0 && objectVisible.x < 1 && objectVisible.y > 0 && objectVisible.y < 1 && ladderDone == false)
+            {
                 print("the object was visible in the camera");
-                gameController.stepsCount++;
+                photosDone++;
+                ladderDone = true;
             }
             else
             {
@@ -176,6 +185,14 @@ public class IPadMechanics : MonoBehaviour
                 cameraMessage.GetComponentInChildren<Text>().text = "Make sure the object is visible in this picture. Click on message to remove!";
                 print("Make sure the object is visible in this picture");
             }
+            if (photosDone == 2)
+            {
+                gameController.stepsCount++;
+            }
+        }
+        if (photosDone == 2)
+        {
+            stopPhotos.SetActive(true);
         }
     }
     public Text notepadText;
