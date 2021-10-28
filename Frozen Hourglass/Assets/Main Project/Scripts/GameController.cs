@@ -98,6 +98,10 @@ public class GameController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (questionNumber > max_Question)
+        {
+            max_Question = questionNumber;
+        }
         if (Ladder.done == true && animationEnd != true)
         {
             //stepsCount++;
@@ -251,25 +255,7 @@ public class GameController: MonoBehaviour
         //    }
         //}
     }
-    public void QuestionOrdering()
-    {
-        if (answerReceived && correctAnswer)
-        {
-            answersOptions.SetActive(false);
-            answerResponseObj.SetActive(false);
-            questionNumber++;
-            StartCoroutine(WaitTimer());
-        }
-        else if (answerReceived && !correctAnswer)
-        {
-            answerResponseObj.SetActive(true);
-            StartCoroutine(WaitTimer());
-        }
-        else
-        {
-            answerResponseObj.SetActive(false);
-        }
-    }
+
 
     public void SetAnswers(Question question)
     {
@@ -367,6 +353,7 @@ public class GameController: MonoBehaviour
     [Header("Extra Menu Variables")]
     public TextMeshProUGUI Question_text;
     public TextMeshProUGUI Question_info;
+    private int max_Question = 1;
     private int extra_Question_number = 1;
     public void Arrow_Button_Pressed(bool right)
     {
@@ -397,22 +384,10 @@ public class GameController: MonoBehaviour
             }
             
         }
-        if (stepNum < 3)
-        {
-            //reset worker
-        }
-        else
-        {
-            //move worker
-        }
-        if (stepNum < 7)
-        {
-            //reset ladder
-        }
-        else
-        {
-            //move ladder
-        }
+        Reset_Controller Reseter = GetComponent<Reset_Controller>();
+
+        Reseter.Step_Reset(stepNum);
+
         questionNumber = questionNum;
         stepsCount = stepNum;
         q[questionNumber].ShuffleAnswers();
