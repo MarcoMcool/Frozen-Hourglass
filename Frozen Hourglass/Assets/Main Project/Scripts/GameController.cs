@@ -99,7 +99,7 @@ public class GameController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (questionNumber > max_Question+1)
+        if (questionNumber > max_Question)
         {
             max_Question = questionNumber;
         }
@@ -364,7 +364,7 @@ public class GameController: MonoBehaviour
     public TextMeshProUGUI Question_info;
     public Button leftArrow;
     public Button rightArrow;
-    private int max_Question = 1;
+    private int max_Question = 0;
     private int extra_Question_number = 1;
     public void Arrow_Button_Pressed(bool right)
     {
