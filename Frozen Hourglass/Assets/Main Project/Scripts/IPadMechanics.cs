@@ -23,7 +23,7 @@ public class IPadMechanics : MonoBehaviour
     public Text callTimeText;
     public AudioSource callAudio;
     public GameObject wrongCallPanel;
-    public Text stopPhotos;
+    public GameObject stopPhotos;
 
     private float flashTimer = 0;
     private float flashTime = 0.5f;
