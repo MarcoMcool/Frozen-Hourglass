@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Workers: MonoBehaviour
+public class Workers : MonoBehaviour
 {
     public GameController gameController;
 
@@ -15,7 +15,6 @@ public class Workers: MonoBehaviour
 
     public GameObject teleportRing;
     private Vector3 startPos;
-    private 
 
     void Start()
     {
@@ -29,16 +28,26 @@ public class Workers: MonoBehaviour
         if (gameController.stepsCount == 3)
         {
             teleportRing.SetActive(true);
-            if (gameObject.GetComponent<OVRGrabbable>().isGrabbed || Input.GetKeyDown(KeyCode.M))
-            {
-                workerMove = true;
-                gameObject.GetComponent<OVRGrabbable>().enabled = false;
-            }
             if (workerMove)
             {
                 teleportRing.SetActive(false);
                 animator.SetBool("Walk", true);
                 WorkerMovement();
+            }
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "PlayerHands")
+        {
+            if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger) || OVRInput.Get(OVRInput.Button.SecondaryHandTrigger))
+            {
+                if (gameController.stepsCount == 3)
+                {
+                    teleportRing.SetActive(true);
+                    workerMove = true;
+                    gameObject.GetComponent<OVRGrabbable>().enabled = false;
+                }
             }
         }
     }
@@ -86,7 +95,7 @@ public class Workers: MonoBehaviour
                     animator.SetBool("Working", false);
                     animator.SetBool("Walk", false);
                     animator.Play("Base Layer.Idle");
-                    
+
                     workerMove = false;
                     gameController.stepsCount++;
                 }
