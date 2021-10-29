@@ -185,6 +185,7 @@ public class IPadMechanics : MonoBehaviour
         cameraObject.SetActive(false);
         notesScreen.SetActive(false);
         iPad.SetActive(false);
+        iPad.GetComponent<Rigidbody>().useGravity = false;
         gameController.stepsCount++;
     }
 
