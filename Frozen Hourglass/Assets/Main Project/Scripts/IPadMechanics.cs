@@ -7,7 +7,7 @@ public class IPadMechanics : MonoBehaviour
 {
     public GameController gameController;
 
-    public GameObject camera;
+    public GameObject cameraObject;
 
     public GameObject ladder;
     public GameObject moveLadder;
@@ -50,11 +50,11 @@ public class IPadMechanics : MonoBehaviour
         // Change material to white then change it back to the camera
         if (flashTime >= flashTimer)
         {
-            camera.GetComponent<Image>().material = flash;
+            cameraObject.GetComponent<Image>().material = flash;
         }
         else
         {
-            camera.GetComponent<Image>().material = cameraImage;
+            cameraObject.GetComponent<Image>().material = cameraImage;
         }
 
     }
@@ -106,7 +106,7 @@ public class IPadMechanics : MonoBehaviour
         callScreen.SetActive(true);
         mainScreen.SetActive(true);
         callScreen.SetActive(false);
-        camera.SetActive(false);
+        cameraObject.SetActive(false);
         notesScreen.SetActive(false);
         gameController.stepsCount++;
         //After we have waited 9 seconds print the time again.
@@ -150,7 +150,7 @@ public class IPadMechanics : MonoBehaviour
             {
                 mainScreen.SetActive(true);
                 callScreen.SetActive(false);
-                camera.SetActive(false);
+                cameraObject.SetActive(false);
                 notesScreen.SetActive(false);
                 gameController.stepsCount++;
             }
@@ -182,7 +182,7 @@ public class IPadMechanics : MonoBehaviour
         //print("Finished Coroutine at timestamp : " + Time.time);
         mainScreen.SetActive(true);
         callScreen.SetActive(false);
-        camera.SetActive(false);
+        cameraObject.SetActive(false);
         notesScreen.SetActive(false);
         iPad.SetActive(false);
         gameController.stepsCount++;
@@ -193,7 +193,7 @@ public class IPadMechanics : MonoBehaviour
     {
         mainScreen.SetActive(true);
         callScreen.SetActive(false);
-        camera.SetActive(false);
+        cameraObject.SetActive(false);
         notesScreen.SetActive(false);
 
 

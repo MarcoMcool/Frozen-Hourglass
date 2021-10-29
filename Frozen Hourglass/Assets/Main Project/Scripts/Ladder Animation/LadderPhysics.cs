@@ -28,16 +28,6 @@ public class LadderPhysics : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.P))
-        //{
-        //    //   StartFall();
-        //    Reset_Ani();
-        //}
-
-        //if (OVRInput.GetDown(OVRInput.RawButton.B))
-        //{
-        //    StartFall();
-        //}
     }
     public void Reset_Ani()
     {
@@ -87,12 +77,7 @@ public class LadderPhysics : MonoBehaviour
         yield return new WaitForSeconds(1.7f);
         floor.SetActive(false);
         meshCollider.material = pmNoSlide;
-        //rb.useGravity = false;
-        //rb.velocity = Vector3.zero;
-        //rb.angularVelocity = Vector3.zero;
-        //meshCollider.isTrigger = true;
         done = true;
-        //print("DONE");
     }
 
     IEnumerator WaitTime()

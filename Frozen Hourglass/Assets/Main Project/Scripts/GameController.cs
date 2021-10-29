@@ -75,11 +75,7 @@ public class GameController: MonoBehaviour
 
         if (!GlobalVariables.joystickMovement)
         {
-            //simpleCapsuleWithStickMovement.enabled = true;
             vRPlayerController.EnableLinearMovement = false;
-            //playerControllerObj.AddComponent<Rigidbody>();
-            //rb = playerControllerObj.GetComponent<Rigidbody>();
-            //rb.constraints = RigidbodyConstraints.FreezeAll;
 
         }
         else
@@ -113,7 +109,6 @@ public class GameController: MonoBehaviour
         }
         if (Ladder.done == true && animationEnd != true)
         {
-            //stepsCount++;
             PopUp.SetActive(true);
             animationEnd = true;
             stepsCount++;
@@ -220,49 +215,6 @@ public class GameController: MonoBehaviour
         }
 
         StartCoroutine(question_Handler(buttonPressed));
-
-        //if (q[questionNumber].key == buttonPressed)
-        //{
-        //    //if the input is correct
-        //    if (questionNumber == 1)
-        //    {
-        //        yesNoAnswerResponse.text = q[questionNumber].correct;
-        //        yesNoAnswerResponseObj.SetActive(true);
-        //        yesNoButtons.SetActive(false);
-        //        yesNoQuestionText.SetActive(false);
-        //        questionNumber++;
-        //        StartCoroutine(WaitTimer_2());
-        //    }
-        //    else
-        //    {
-        //        answerResponseTxtCorrect.text = q[questionNumber].correct;
-        //        answerResponseObj.SetActive(true);
-        //        answersOptions.SetActive(false);
-        //        //buttons.SetActive(false);
-        //        questionNumber++;
-        //        StartCoroutine(WaitTimer_2());
-        //    }
-        //}
-        //else
-        //{
-        //    if (questionNumber == 1)
-        //    {
-        //        yesNoAnswerResponse.text = q[questionNumber].incorrect;
-        //        yesNoAnswerResponseObj.SetActive(true);
-        //        yesNoButtons.SetActive(false);
-
-        //        StartCoroutine(WaitTimer());
-        //    }
-        //    else
-        //    {
-        //        answerResponseTxtCorrect.text = q[questionNumber].incorrect;
-        //        answersOptions.SetActive(false);
-        //        //buttons.SetActive(false);
-
-        //        answerResponseObj.SetActive(true);
-        //        StartCoroutine(WaitTimer());
-        //    }
-        //}
     }
 
 
@@ -270,7 +222,6 @@ public class GameController: MonoBehaviour
     {
         print(question.questionText +"\n"+ question.key);
         string[] _answer = question.answers;
-        //TODO Make loop
         TextMeshProUGUI[] UIAnswers = new TextMeshProUGUI[] { answer1, answer2, answer3 };
         for (int i = 0; i < _answer.Length; i++)
         {
@@ -282,9 +233,6 @@ public class GameController: MonoBehaviour
         answerResponseTxtIncorrect.text = question.incorrect;
 
         answersOptions.SetActive(true);
-        //buttons.SetActive(true);
-
-        //TODO fix this hack
         if (_answer.Length < 3)
         {
             yesNoQuestions.SetActive(true);
@@ -303,14 +251,7 @@ public class GameController: MonoBehaviour
     }
 
 
-    IEnumerator WaitTimer()
-    {
-        answerReceived = false;
-        correctAnswer = false;
-        yield return new WaitForSeconds(5);
-        yesNoQuestions.SetActive(false);
-        SetAnswers(q[questionNumber]);
-    }
+
     IEnumerator question_Handler(int buttonPressed)
     {
         correctAnswer = q[questionNumber].key == buttonPressed;
@@ -340,7 +281,6 @@ public class GameController: MonoBehaviour
 
         answerReceived = false;
         yield return new WaitUntil(test);
-        //yield return new WaitForSeconds(5);
         if (correctAnswer)
         {
             stepsCount++;
@@ -403,7 +343,6 @@ public class GameController: MonoBehaviour
             }
             
         }
-        //stepNum--;
         Reset_Controller Reseter = GetComponent<Reset_Controller>();
 
         Reseter.Step_Reset(stepNum);
