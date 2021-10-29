@@ -124,8 +124,11 @@ public class GameController: MonoBehaviour
         }
         else
         {
-            popupAllowed = false;
-            PopUp.SetActive(false);
+            if (stepsCount != 20)
+            {
+                popupAllowed = false;
+                PopUp.SetActive(false);
+            }
             //Action Steps in order:
             //Start, Stop work, Point Hazards, Move Hazards, Call Supervisor, Call Group Manager, Take Photos
             if (stepsCount != 0 && actionStep == stepsCount - 1)
@@ -180,7 +183,12 @@ public class GameController: MonoBehaviour
                 // End of Experience Pop-up
                 if (stepsCount == 20)
                 {
+                    ActionPopUp.SetActive(false);
                     workerText.SetActive(false);
+                    popupAllowed = true;
+                    PopUp.SetActive(true);
+                    endScreen.SetActive(true);
+                    answersOptions.SetActive(false);
                     endSequence.SetActive(true);
                 }
 
@@ -305,6 +313,7 @@ public class GameController: MonoBehaviour
     public Button rightArrow;
     private int max_Question = 0;
     private int extra_Question_number = 1;
+    public GameObject endScreen;
     public void Arrow_Button_Pressed(bool right)
     {
         if (right)
@@ -333,14 +342,22 @@ public class GameController: MonoBehaviour
         //Find right step
         int stepNum = 0;
         int tracker = 0;
-        while (tracker != extra_Question_number)
+        if (extra_Question_number == 12)
         {
-            stepNum++;
-            if (steps[stepNum])
+            stepNum = steps.Length - 1;
+            actionStep = 19;
+        }
+        else
+        {
+            while (tracker != extra_Question_number)
             {
-                tracker++;
+                stepNum++;
+                if (steps[stepNum])
+                {
+                    tracker++;
+                }
+
             }
-            
         }
         Reset_Controller Reseter = GetComponent<Reset_Controller>();
 
@@ -350,6 +367,16 @@ public class GameController: MonoBehaviour
         stepsCount = stepNum;
         q[questionNumber].ShuffleAnswers();
         SetAnswers(q[questionNumber]);
+        if (extra_Question_number == 12)
+        {
+            answersOptions.SetActive(false);
+            endScreen.SetActive(true);
+        }
+        else
+        {
+            answersOptions.SetActive(true);
+            endScreen.SetActive(false);
+        }
     }
 
 
