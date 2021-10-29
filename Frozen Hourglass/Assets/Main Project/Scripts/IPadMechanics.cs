@@ -100,7 +100,7 @@ public class IPadMechanics : MonoBehaviour
         callTimeText.text = "Talking";
         print("CAll Answered");
         
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(1);
         print("Supervisor called");
         callingScreen.SetActive(false);
         callScreen.SetActive(true);
