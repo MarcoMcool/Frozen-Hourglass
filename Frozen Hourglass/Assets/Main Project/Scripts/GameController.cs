@@ -13,22 +13,22 @@ public class GameController: MonoBehaviour
     public GameObject iPad;
     public GameObject endSequence;
 
-    public int buttonPressed;
-    public int question = 0;
+    //public int buttonPressed;
+    //public int question = 0;
 
-    public bool selectHazardsStage;
-    public bool moveHazardsStage;
+    //public bool selectHazardsStage;
+    //public bool moveHazardsStage;
 
-    public float timer = 0f;
+    //public float timer = 0f;
 
     bool answerReceived;
     bool correctAnswer;
     int questionNumber = 0;
     public bool popupAllowed;
 
-    public bool ladderCorrectPosition;
+    //public bool ladderCorrectPosition;
 
-    public int numberObjectsHighlighted;
+    //public int numberObjectsHighlighted;
 
     Question[] q;
 
@@ -46,7 +46,6 @@ public class GameController: MonoBehaviour
     public TextMeshProUGUI answer1;
     public TextMeshProUGUI answer2;
     public TextMeshProUGUI answer3;
-    public GameObject buttons;
     public GameObject replay_button;
 
 

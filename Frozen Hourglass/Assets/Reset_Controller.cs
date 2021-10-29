@@ -6,9 +6,7 @@ public class Reset_Controller : MonoBehaviour
 {
     public IPadMechanics iPad;
     public Workers worker;
-    public GameObject moveLadder;
     public GameObject ladder;
-    public PointHazards pointHazard;
     public LadderCollider safeZone;
     public int max_Step =0;
     private GameController gameController;
